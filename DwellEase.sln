@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.WebAPI", "DwellEase.WebAPI\DwellEase.WebAPI.csproj", "{789F7EC6-30B5-4FE8-BF39-550535AD78C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Service", "DwellEase.Service\DwellEase.Service.csproj", "{B25900FC-99C0-4F37-9F84-DD788FB03255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Domain", "DwellEase.Domain\DwellEase.Domain.csproj", "{8F1BCCFF-3CB0-46BC-AFDC-66C039DF67EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.DataManagement", "DwellEase.DataManagement\DwellEase.DataManagement.csproj", "{23C9FFAF-C29B-47D2-A83A-777319651773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Shared", "DwellEase.Shared\DwellEase.Shared.csproj", "{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Tests", "DwellEase.Tests\DwellEase.Tests.csproj", "{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{789F7EC6-30B5-4FE8-BF39-550535AD78C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789F7EC6-30B5-4FE8-BF39-550535AD78C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789F7EC6-30B5-4FE8-BF39-550535AD78C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789F7EC6-30B5-4FE8-BF39-550535AD78C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25900FC-99C0-4F37-9F84-DD788FB03255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25900FC-99C0-4F37-9F84-DD788FB03255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25900FC-99C0-4F37-9F84-DD788FB03255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25900FC-99C0-4F37-9F84-DD788FB03255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F1BCCFF-3CB0-46BC-AFDC-66C039DF67EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1BCCFF-3CB0-46BC-AFDC-66C039DF67EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1BCCFF-3CB0-46BC-AFDC-66C039DF67EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1BCCFF-3CB0-46BC-AFDC-66C039DF67EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C9FFAF-C29B-47D2-A83A-777319651773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C9FFAF-C29B-47D2-A83A-777319651773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
