@@ -2,6 +2,7 @@
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using MongoDB.Bson.Serialization.Attributes;
+using SharedLibrary.Models;
 
 namespace DwellEase.Domain.Entity;
 
@@ -16,5 +17,6 @@ public class ApartmentPage
     public Apartment Apartment { get; set; }
     public PhoneNumber PhoneNumber { get; set; }
     public Guid OwnerId { get; set; }
-    public Image Image { get; set; }
+    public Image[] Images { get; set; }
+    public DateOnly Date { get; set; }
 }

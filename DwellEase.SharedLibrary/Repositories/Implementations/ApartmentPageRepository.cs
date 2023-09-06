@@ -2,7 +2,7 @@
 using DwellEase.Domain.Entity;
 using MongoDB.Driver;
 
-namespace DwellEase.DataManagement.Repositories.Implementations;
+namespace SharedLibrary.Repositories.Implementations;
 
 public class ApartmentPageRepository:IBaseRepository<ApartmentPage>
 {
@@ -36,7 +36,7 @@ public class ApartmentPageRepository:IBaseRepository<ApartmentPage>
             .Set(a => a.Apartment, model.Apartment)
             .Set(a => a.PhoneNumber, model.PhoneNumber)
             .Set(a => a.OwnerId, model.OwnerId)
-            .Set(a => a.Image, model.Image);
+            .Set(a => a.Images, model.Images);
 
         return _collection.FindOneAndUpdateAsync(filter, update);
     }

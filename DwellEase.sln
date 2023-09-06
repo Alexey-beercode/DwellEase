@@ -6,11 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Domain", "DwellEa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.DataManagement", "DwellEase.DataManagement\DwellEase.DataManagement.csproj", "{23C9FFAF-C29B-47D2-A83A-777319651773}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Shared", "DwellEase.Shared\DwellEase.Shared.csproj", "{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Tests", "DwellEase.Tests\DwellEase.Tests.csproj", "{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.WebAPI", "DwellEase.WebAPI\DwellEase.WebAPI.csproj", "{E6C552B3-DF89-4A71-9C04-C033D17DFA28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.SharedLibrary", "DwellEase.SharedLibrary\DwellEase.SharedLibrary.csproj", "{360FCE77-F90C-4782-ABA5-54C40A9BED1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,6 @@ Global
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56DBCB58-5A3D-4B14-8E2D-460F1CC8B69D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,5 +38,9 @@ Global
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
