@@ -19,6 +19,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<IBaseRepository<ApartmentPage>, ApartmentPageRepository>();
         builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
         builder.Services.AddScoped<IUserStore<User>, UserSrore>();
+        builder.Services.AddControllers();
     }
 
     public static void AddDatabase(this WebApplicationBuilder builder)

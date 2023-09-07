@@ -2,7 +2,7 @@
 
 public class PhoneNumber
 {
-    public string Number { get; set; }
+    public string Number { get; set; } = null!;
 
     public PhoneNumber(string number)
     {

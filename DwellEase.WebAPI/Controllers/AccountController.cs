@@ -3,7 +3,9 @@ using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Extensions;
+using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,60 +21,34 @@ public class AccountsController : ControllerBase
     private readonly ITokenService _tokenService;
     private readonly IConfiguration _configuration;
     private readonly RoleManager<Role> _roleManager;
+    private readonly IMediator _mediator;
 
     public AccountsController(ITokenService tokenService, UserManager<User> userManager,
-        IConfiguration configuration, RoleManager<Role> roleManager)
+        IConfiguration configuration, RoleManager<Role> roleManager, IMediator mediator)
     {
         _tokenService = tokenService;
         _userManager = userManager;
         _configuration = configuration;
         _roleManager = roleManager;
+        _mediator = mediator;
     }
 
     [HttpPost("login")]
     public async Task<ActionResult<AuthResponse>> Authenticate([FromBody] AuthRequest request)
     {
-        if (!ModelState.IsValid)
+        
+        var query = new LoginQuery
         {
-            return BadRequest(ModelState);
-        }
+            Email = request.Email,
+            Password = request.Password
+        };
 
-        var managedUser = await _userManager.FindByEmailAsync(request.Email);
+        var authResponse = await _mediator.Send(query);
 
-        if (managedUser == null)
-        {
-            return BadRequest("Bad credentials");
-        }
-
-        var isPasswordValid = await _userManager.CheckPasswordAsync(managedUser, request.Password);
-
-        if (!isPasswordValid)
-        {
-            return BadRequest("Bad credentials");
-        }
-
-        var user = _userManager.Users.FirstOrDefault(u => u.Email == request.Email);
-        var use1 = _userManager.Users.FirstOrDefault(u => u.Email == request.Email);
-
-        if (user is null)
-            return Unauthorized();
-
-        var roleIds = await _roleManager.Roles.Where(r => r.UserId == user.Id).Select(x => x.Id).ToListAsync();
-        var roles = _roleManager.Roles.Where(x => roleIds.Contains(x.Id)).ToList();
-
-        var accessToken = _tokenService.CreateToken(user, roles);
-        user.RefreshToken = _configuration.GenerateRefreshToken();
-        user.RefreshTokenExpiryTime =
-            DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenValidityInDays").Get<int>());
-
-        return Ok(new AuthResponse
-        {
-            Username = user.UserName!,
-            Email = user.Email!,
-            Token = accessToken,
-            RefreshToken = user.RefreshToken
-        });
+        // Возвращаете результат аутентификации
+        return Ok(authResponse);
     }
+
 
     [HttpPost("register")]
     public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)

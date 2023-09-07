@@ -3,8 +3,10 @@ using MediatR;
 
 namespace DwellEase.Service.Commands;
 
-public class RegisterCommand:IRequest<AuthResponse>
+public class RegisterCommand:IRequest<RegisterRequest>
 {
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string Email { get; set; } = null!;
+    public string Password { get; set; } = null!;
+    public string PasswordConfirm { get; set; } = null!;
+    public string UserName { get; set; } = null!;
 }
