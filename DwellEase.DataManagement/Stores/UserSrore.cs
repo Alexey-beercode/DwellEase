@@ -1,11 +1,10 @@
 ﻿using DwellEase.Domain.Entity;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
-using SharedLibrary.Entity;
 
 namespace DwellEase.DataManagement.Repositories.Stores;
 
-public class UserSrore:IUserStore<User>
+public class UserSrore : IUserStore<User>
 {
     private readonly IMongoCollection<User> _collection;
 
@@ -14,7 +13,7 @@ public class UserSrore:IUserStore<User>
         _collection = database.GetCollection<User>("Users");
     }
 
-   
+
     public async Task<IdentityResult> CreateAsync(User user, CancellationToken cancellationToken)
     {
         await _collection.InsertOneAsync(user, cancellationToken);
@@ -35,14 +34,14 @@ public class UserSrore:IUserStore<User>
         return IdentityResult.Success;
     }
 
-    public async Task<string> GetUserIdAsync(User user, CancellationToken cancellationToken)
+    public Task<string> GetUserIdAsync(User user, CancellationToken cancellationToken)
     {
-        return user.Id.ToString();
+        return Task.FromResult(user.Id.ToString());
     }
 
-    public async Task<string> GetUserNameAsync(User user, CancellationToken cancellationToken)
+    public Task<string> GetUserNameAsync(User user, CancellationToken cancellationToken)
     {
-        return user.UserName;
+        return Task.FromResult(user.UserName);
     }
 
     public async Task SetUserNameAsync(User user, string userName, CancellationToken cancellationToken)
@@ -67,7 +66,8 @@ public class UserSrore:IUserStore<User>
 
     public async Task<User> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
     {
-        return await _collection.Find(u => u.NormalizedUserName == normalizedUserName).FirstOrDefaultAsync(cancellationToken);
+        return await _collection.Find(u => u.NormalizedUserName == normalizedUserName)
+            .FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<string> GetPasswordHashAsync(User user, CancellationToken cancellationToken)

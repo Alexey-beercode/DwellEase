@@ -1,6 +1,6 @@
-﻿using SharedLibrary.Entity;
+﻿using DwellEase.Domain.Entity;
 
-namespace SharedLibrary.Services.Interfaces;
+namespace DwellEase.Service.Services.Interfaces;
 
 public interface ITokenService
 {

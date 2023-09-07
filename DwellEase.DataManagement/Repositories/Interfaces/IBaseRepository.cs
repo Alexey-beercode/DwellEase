@@ -1,6 +1,4 @@
-﻿using DwellEase.Domain.Entity;
-
-namespace DwellEase.DataManagement.Repositories.Interfaces;
+﻿namespace DwellEase.DataManagement.Repositories.Interfaces;
 
 public interface IBaseRepository<T>
 {

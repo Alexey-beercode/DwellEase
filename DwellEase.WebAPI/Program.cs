@@ -1,5 +1,4 @@
 using DwellEase.WebAPI.Extensions;
-using SharedLibrary.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddIdentity();
 builder.AddDatabase();
 builder.AddServices();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 var app = builder.Build();
 //app.AddApplicationMiddleware();

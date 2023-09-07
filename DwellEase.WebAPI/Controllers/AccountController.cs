@@ -2,13 +2,12 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
+using DwellEase.Service.Extensions;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SharedLibrary.Entity;
-using SharedLibrary.Extensions;
-using SharedLibrary.Services.Interfaces;
 
 namespace DwellEase.WebAPI.Controllers;
 

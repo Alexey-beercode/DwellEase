@@ -1,15 +1,14 @@
 ﻿using System.Text;
+using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.DataManagement.Repositories.Stores;
 using DwellEase.Domain.Entity;
+using DwellEase.Service.Services.Implementations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
-using SharedLibrary.Entity;
-using SharedLibrary.Repositories.Implementations;
-using SharedLibrary.Services.Implementations;
 
 namespace DwellEase.WebAPI.Extensions;
 

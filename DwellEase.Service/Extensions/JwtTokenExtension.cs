@@ -3,11 +3,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using DwellEase.Domain.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using SharedLibrary.Entity;
 
-namespace SharedLibrary.Extensions;
+namespace DwellEase.Service.Extensions;
 
 public static class JwtTokenExtension
 {
@@ -24,7 +24,7 @@ public static class JwtTokenExtension
         };
         return claims;
     }
-    
+
     public static SigningCredentials CreateSigningCredentials(this IConfiguration configuration)
     {
         return new SigningCredentials(
@@ -47,7 +47,7 @@ public static class JwtTokenExtension
             signingCredentials: configuration.CreateSigningCredentials()
         );
     }
-    
+
     public static JwtSecurityToken CreateToken(this IConfiguration configuration, List<Claim> authClaims)
     {
         var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]!));
@@ -85,7 +85,9 @@ public static class JwtTokenExtension
 
         var tokenHandler = new JwtSecurityTokenHandler();
         var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
-        if (securityToken is not JwtSecurityToken jwtSecurityToken || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+        if (securityToken is not JwtSecurityToken jwtSecurityToken ||
+            !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256,
+                StringComparison.InvariantCultureIgnoreCase))
             throw new SecurityTokenException("Invalid token");
 
         return principal;

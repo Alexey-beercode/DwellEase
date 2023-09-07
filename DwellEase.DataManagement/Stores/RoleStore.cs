@@ -1,7 +1,7 @@
-﻿using DwellEase.Domain.Models;
+﻿using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
-using SharedLibrary.Entity;
 
 namespace DwellEase.DataManagement.Repositories.Stores;
 

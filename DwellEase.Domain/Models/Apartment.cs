@@ -1,6 +1,6 @@
 ﻿using DwellEase.Domain.Enum;
 
-namespace SharedLibrary.Models;
+namespace DwellEase.Domain.Models;
 
 public class Apartment
 {

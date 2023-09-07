@@ -1,10 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using DwellEase.Domain.Entity;
+using DwellEase.Service.Extensions;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
-using SharedLibrary.Entity;
-using SharedLibrary.Extensions;
-using SharedLibrary.Services.Interfaces;
 
-namespace SharedLibrary.Services.Implementations;
+namespace DwellEase.Service.Services.Implementations;
+
 public class TokenService : ITokenService
 {
     private readonly IConfiguration _configuration;
@@ -13,7 +14,7 @@ public class TokenService : ITokenService
     {
         _configuration = configuration;
     }
-    
+
 
     public string CreateToken(User user, List<Role> roles)
     {
@@ -21,7 +22,7 @@ public class TokenService : ITokenService
             .CreateClaims(roles)
             .CreateJwtToken(_configuration);
         var tokenHandler = new JwtSecurityTokenHandler();
-        
+
         return tokenHandler.WriteToken(token);
     }
 }

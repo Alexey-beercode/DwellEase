@@ -2,14 +2,14 @@
 using DwellEase.Domain.Entity;
 using MongoDB.Driver;
 
-namespace SharedLibrary.Repositories.Implementations;
+namespace DwellEase.DataManagement.Repositories.Implementations;
 
-public class ApartmentPageRepository:IBaseRepository<ApartmentPage>
+public class ApartmentPageRepository : IBaseRepository<ApartmentPage>
 {
     private readonly IMongoCollection<ApartmentPage> _collection;
 
     public ApartmentPageRepository(IMongoDatabase dataBase)
-    { 
+    {
         _collection = dataBase.GetCollection<ApartmentPage>("ApartmentPages");
     }
 
@@ -42,11 +42,10 @@ public class ApartmentPageRepository:IBaseRepository<ApartmentPage>
     }
 
     public async Task<Task<List<ApartmentPage>>> GetAll()
-    { 
+    {
         var filter = Builders<ApartmentPage>.Filter.Empty;
         var apartmentPages = await _collection.FindAsync(filter);
         return apartmentPages.ToListAsync();
-
     }
 
     public async Task<Task<ApartmentPage>> GetById(int id)

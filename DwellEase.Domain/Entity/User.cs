@@ -1,7 +1,7 @@
 ﻿using DwellEase.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace SharedLibrary.Entity;
+namespace DwellEase.Domain.Entity;
 
 public class User:IdentityUser<Guid>
 {
