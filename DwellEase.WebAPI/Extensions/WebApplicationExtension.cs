@@ -9,6 +9,5 @@ public static class WebApplicationExtension
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
-        app.UseSession();
     }
 }

@@ -42,19 +42,19 @@ public class RoleStore : IRoleStore<Role>
         return IdentityResult.Success;
     }
 
-    public async Task<string> GetRoleIdAsync(Role role, CancellationToken cancellationToken)
+    public Task<string> GetRoleIdAsync(Role role, CancellationToken cancellationToken)
     {
-        return role.Id.ToString();
+        return Task.FromResult(role.Id.ToString());
     }
 
-    public async Task<string?> GetRoleNameAsync(Role role, CancellationToken cancellationToken)
+    public Task<string?> GetRoleNameAsync(Role role, CancellationToken cancellationToken)
     {
-        return role.RoleName;
+        return Task.FromResult(role.RoleName)!;
     }
 
     public async Task SetRoleNameAsync(Role role, string? roleName, CancellationToken cancellationToken)
     {
-        role.RoleName = roleName;
+        role.RoleName = roleName!;
         await _collection.ReplaceOneAsync(r => r.Id == role.Id, role, cancellationToken: cancellationToken);
     }
 
@@ -65,7 +65,7 @@ public class RoleStore : IRoleStore<Role>
 
     public async Task SetNormalizedRoleNameAsync(Role role, string? normalizedName, CancellationToken cancellationToken)
     {
-        role.NormalizedRoleName = normalizedName;
+        role.NormalizedRoleName = normalizedName!;
         await _collection.ReplaceOneAsync(r => r.Id == role.Id, role, cancellationToken: cancellationToken);
     }
 

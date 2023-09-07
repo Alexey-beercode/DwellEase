@@ -19,6 +19,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<IBaseRepository<ApartmentPage>, ApartmentPageRepository>();
         builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
         builder.Services.AddScoped<IUserStore<User>, UserSrore>();
+        builder.Services.AddScoped<TokenService>();
         builder.Services.AddControllers();
     }
 
@@ -51,7 +52,6 @@ public static class WebApplicationBuilderExtension
 
     public static void AddAuthentication(this WebApplicationBuilder builder)
     {
-        builder.Services.AddScoped<TokenService>();
         builder.Services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -65,10 +65,10 @@ public static class WebApplicationBuilderExtension
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"]!,
-                    ValidAudience = builder.Configuration["Jwt:Audience"]!,
+                    ValidIssuer = builder.Configuration["JwtSettings:Issuer"]!,
+                    ValidAudience = builder.Configuration["JwtSettings:Audience"]!,
                     IssuerSigningKey =
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!))
+                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Secret"]!))
                 };
             });
         builder.Services.AddAuthorization(options => options.DefaultPolicy =

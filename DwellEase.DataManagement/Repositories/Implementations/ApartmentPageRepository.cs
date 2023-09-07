@@ -36,7 +36,8 @@ public class ApartmentPageRepository : IBaseRepository<ApartmentPage>
             .Set(a => a.Apartment, model.Apartment)
             .Set(a => a.PhoneNumber, model.PhoneNumber)
             .Set(a => a.OwnerId, model.OwnerId)
-            .Set(a => a.Images, model.Images);
+            .Set(a => a.Images, model.Images)
+            .Set(a=>a.Date,model.Date);
 
         return _collection.FindOneAndUpdateAsync(filter, update);
     }
