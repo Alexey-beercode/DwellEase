@@ -1,6 +1,4 @@
-﻿using System.Net.Mime;
-
-namespace DwellEase.Domain.Models;
+﻿namespace DwellEase.Domain.Models;
 
 public class Image
 {

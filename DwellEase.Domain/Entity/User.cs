@@ -1,17 +1,20 @@
 ﻿using DwellEase.Domain.Models;
 using Microsoft.AspNetCore.Identity;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DwellEase.Domain.Entity;
 
-public class User:IdentityUser<Guid>
+public class User
 {
+    [BsonId]
     public Guid Id { get; set; }
-    public string UserName { get; set; }
-    public string NormalizedUserName { get; set; }
-    public string Email { get; set; }
-    public string PasswordHash { get; set; }
+    public string UserName { get; set; } = null!;
+    public string NormalizedUserName { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public string PasswordHash { get; set; } = null!;
     public PhoneNumber PhoneNumber { get; set; }
-    public Role Role { get; set; }
+    public Role Role { get; set; } = null!;
     public string? RefreshToken { get; set; }
     public DateTime RefreshTokenExpiryTime { get; set; }
     

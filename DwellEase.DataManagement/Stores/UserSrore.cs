@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
 
-namespace DwellEase.DataManagement.Repositories.Stores;
+namespace DwellEase.DataManagement.Stores;
 
 public class UserSrore : IUserStore<User>
 {

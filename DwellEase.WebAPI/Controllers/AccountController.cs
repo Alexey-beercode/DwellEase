@@ -1,38 +1,37 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using DwellEase.Domain.Entity;
-using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
+using DwellEase.Service.Commands;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
-using DwellEase.Service.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DwellEase.WebAPI.Controllers;
 
 [ApiController]
-[Route("accounts")]
+[Route("Account")]
 public class AccountsController : ControllerBase
 {
     private readonly UserManager<User> _userManager;
-    private readonly ITokenService _tokenService;
     private readonly IConfiguration _configuration;
-    private readonly RoleManager<Role> _roleManager;
     private readonly IMediator _mediator;
 
-    public AccountsController(ITokenService tokenService, UserManager<User> userManager,
-        IConfiguration configuration, RoleManager<Role> roleManager, IMediator mediator)
+    public AccountsController(UserManager<User> userManager,
+        IConfiguration configuration, IMediator mediator)
     {
-        _tokenService = tokenService;
         _userManager = userManager;
         _configuration = configuration;
-        _roleManager = roleManager;
         _mediator = mediator;
     }
 
+    [HttpGet("log")]
+    public async Task<string> Log()
+    {
+        return ((await _userManager.FindByNameAsync("Admin"))!).Role.RoleName;
+    }
     [HttpPost("login")]
     public async Task<ActionResult<AuthResponse>> Authenticate([FromBody] AuthRequest request)
     {
@@ -44,8 +43,7 @@ public class AccountsController : ControllerBase
         };
 
         var authResponse = await _mediator.Send(query);
-
-        // Возвращаете результат аутентификации
+        
         return Ok(authResponse);
     }
 
@@ -53,32 +51,23 @@ public class AccountsController : ControllerBase
     [HttpPost("register")]
     public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
     {
-        if (!ModelState.IsValid) return BadRequest(request);
-
-        var user = new User
+        if (!ModelState.IsValid)
         {
-            Email = request.Email,
-            UserName = request.UserName,
-        };
-        var result = await _userManager.CreateAsync(user, request.Password);
-
-        foreach (var error in result.Errors)
-        {
-            ModelState.AddModelError(string.Empty, error.Description);
+            return BadRequest(request);
         }
 
-        if (!result.Succeeded) return BadRequest(request);
-
-        var findUser = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
-
-        if (findUser == null) throw new Exception($"User {request.Email} not found");
-
-        await _userManager.AddToRoleAsync(findUser, RoleConsts.Creater);
-
-        return await Authenticate(new AuthRequest
+        var result = await _mediator.Send(new RegisterCommand
         {
             Email = request.Email,
-            Password = request.Password
+            Password = request.Password,
+            PasswordConfirm = request.PasswordConfirm,
+            UserName = request.UserName
+        });
+        
+        return await Authenticate(new AuthRequest
+        {
+            Email = result.Email,
+            Password = result.Password
         });
     }
 

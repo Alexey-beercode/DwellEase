@@ -1,7 +1,10 @@
 ﻿using System.Text;
+using DwellEase.DataManagement;
+using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.DataManagement.Repositories.Stores;
+using DwellEase.DataManagement.Stores;
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Services.Implementations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -33,8 +36,13 @@ public static class WebApplicationBuilderExtension
         var mongoDatabase = mongoClient.GetDatabase(mongoDatabaseName);
         mongoDatabase.CreateCollectionAsync("Users");
         mongoDatabase.CreateCollectionAsync("Roles");
-        mongoDatabase.CreateCollectionAsync("ApartmentPages");
+        mongoDatabase.CreateCollectionAsync("ApartmentPages", new CreateCollectionOptions()
+        {
+            
+        });
         builder.Services.AddSingleton(mongoDatabase);
+        UserDataSeeder.SeedData();
+        RoleDataSender.SeedData();
     }
 
     public static void AddIdentity(this WebApplicationBuilder builder)

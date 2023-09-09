@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using DwellEase.Domain.Entity;
+﻿using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
@@ -53,7 +49,7 @@ namespace DwellEase.Service.Handlers
                 throw new UnauthorizedAccessException();
             }
 
-            var roleIds = await _roleManager.Roles.Where(r => r.UserId == user.Id).Select(x => x.Id).ToListAsync();
+            var roleIds = await _roleManager.Roles.Where(r => r.RoleName == user.Role.RoleName).Select(x => x.Id).ToListAsync();
             var roles = _roleManager.Roles.Where(x => roleIds.Contains(x.Id)).ToList();
 
             var accessToken = _tokenService.CreateToken(user, roles);

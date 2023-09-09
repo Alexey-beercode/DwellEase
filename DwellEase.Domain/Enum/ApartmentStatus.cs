@@ -5,7 +5,7 @@ namespace DwellEase.Domain.Enum;
 public enum ApartmentStatus
 {
     [Display(Name = "Доступно")]
-    IsAvailabel,
+    Available,
     [Display(Name = "Куплено")]
     Bought,
     [Display(Name = "Арендовано")]
