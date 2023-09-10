@@ -5,9 +5,9 @@ namespace DwellEase.Domain.Models;
 public class Apartment
 {
     public int Id { get; set; }
-    public string Title { get; set; }
+    public string Title { get; set; } = null!;
     public int Rooms { get; set; }
     public double Area { get; set; }
-    public string Location { get; set; }
+    public Address Address { get; set; } = null!;
     public ApartmentType ApartmentType { get; set; }
 }
