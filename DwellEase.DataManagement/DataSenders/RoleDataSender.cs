@@ -17,7 +17,7 @@ public class RoleDataSender
             {
                 RoleName = "Admin",
                 NormalizedRoleName = "ADMIN",
-                Id = Guid.NewGuid()
+                Id = new Guid("9b0dc8cd-35a0-4ca6-b820-74052c74417b")
             };
 
             roleCollection.InsertOneAsync(role);

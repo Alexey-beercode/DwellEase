@@ -15,13 +15,15 @@ public class UserDataSeeder
         {
             var user = new User
             {
-                Id=Guid.NewGuid(),
+                Id= new Guid("7b4200d1-2199-4e04-80b6-bda31c152d9b"),
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 Role = new Role()
                 {
+                    Id = new Guid("9b0dc8cd-35a0-4ca6-b820-74052c74417b"),
                     RoleName = "Admin",
                     NormalizedRoleName = "ADMIN"
+                    
                 },
                 PasswordHash = new PasswordHasher<User>().HashPassword(null, "169032048414Admin1526653")
             };

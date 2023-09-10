@@ -36,10 +36,8 @@ public static class WebApplicationBuilderExtension
         var mongoDatabase = mongoClient.GetDatabase(mongoDatabaseName);
         mongoDatabase.CreateCollectionAsync("Users");
         mongoDatabase.CreateCollectionAsync("Roles");
-        mongoDatabase.CreateCollectionAsync("ApartmentPages", new CreateCollectionOptions()
-        {
-            
-        });
+        mongoDatabase.CreateCollectionAsync("ApartmentPages");
+        mongoDatabase.CreateCollectionAsync("ApartmentOperations");
         builder.Services.AddSingleton(mongoDatabase);
         UserDataSeeder.SeedData();
         RoleDataSender.SeedData();

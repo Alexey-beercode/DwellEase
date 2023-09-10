@@ -20,7 +20,7 @@ public class AccountsController : ControllerBase
     private readonly IMediator _mediator;
 
     public AccountsController(UserManager<User> userManager,
-        IConfiguration configuration, IMediator mediator)
+        IConfiguration configuration, IMediator mediator, RoleManager<Role> roleManager)
     {
         _userManager = userManager;
         _configuration = configuration;
@@ -30,12 +30,12 @@ public class AccountsController : ControllerBase
     [HttpGet("log")]
     public async Task<string> Log()
     {
-        return ((await _userManager.FindByNameAsync("Admin"))!).Role.RoleName;
+        return ((await (_userManager.FindByNameAsync("Admin")))!).Id.ToString();
     }
-    [HttpPost("login")]
+
+    [HttpPost("Login")]
     public async Task<ActionResult<AuthResponse>> Authenticate([FromBody] AuthRequest request)
     {
-        
         var query = new LoginQuery
         {
             Email = request.Email,
@@ -43,12 +43,12 @@ public class AccountsController : ControllerBase
         };
 
         var authResponse = await _mediator.Send(query);
-        
+
         return Ok(authResponse);
     }
 
 
-    [HttpPost("register")]
+    [HttpPost("Register")]
     public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
     {
         if (!ModelState.IsValid)
@@ -63,7 +63,7 @@ public class AccountsController : ControllerBase
             PasswordConfirm = request.PasswordConfirm,
             UserName = request.UserName
         });
-        
+
         return await Authenticate(new AuthRequest
         {
             Email = result.Email,
@@ -72,7 +72,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost]
-    [Route("refresh-token")]
+    [Route("Refresh-token")]
     public async Task<IActionResult> RefreshToken(TokenModel? tokenModel)
     {
         if (tokenModel is null)
@@ -112,7 +112,7 @@ public class AccountsController : ControllerBase
 
     [Authorize]
     [HttpPost]
-    [Route("revoke/{username}")]
+    [Route("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
     {
         var user = await _userManager.FindByNameAsync(username);
@@ -126,7 +126,7 @@ public class AccountsController : ControllerBase
 
     [Authorize]
     [HttpPost]
-    [Route("revoke-all")]
+    [Route("Revoke-all")]
     public async Task<IActionResult> RevokeAll()
     {
         var users = _userManager.Users.ToList();

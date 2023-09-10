@@ -11,5 +11,5 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Progr
 
 var app = builder.Build();
 app.AddApplicationMiddleware();
-app.MapGet("/", () => "Hello World!");
+app.MapControllers();
 app.Run();
