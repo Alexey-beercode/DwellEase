@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
+using NLog;
+using NLog.Web;
 
 namespace DwellEase.WebAPI.Extensions;
 
@@ -82,5 +84,11 @@ public static class WebApplicationBuilderExtension
                     (JwtBearerDefaults.AuthenticationScheme)
                 .RequireAuthenticatedUser()
                 .Build());
+    }
+
+    public static void AddLogging(this WebApplicationBuilder builder)
+    {
+        builder.Logging.ClearProviders();
+        builder.Host.UseNLog();
     }
 }

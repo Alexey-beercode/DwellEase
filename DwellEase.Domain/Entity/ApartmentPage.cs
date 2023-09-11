@@ -7,7 +7,7 @@ namespace DwellEase.Domain.Entity;
 public class ApartmentPage
 {
     [BsonId] 
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public ListingApprovalStatus ApprovalStatus { get; set; }
     public PriorityType PriorityType { get; set; }
     public ApartmentStatus Status { get; set; }

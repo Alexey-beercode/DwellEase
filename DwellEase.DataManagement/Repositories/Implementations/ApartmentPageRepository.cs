@@ -18,8 +18,9 @@ public class ApartmentPageRepository : IBaseRepository<ApartmentPage>
     {
         return _collection.InsertOneAsync(model);
     }
+    
 
-    public Task Delete(int id)
+    public Task Delete(Guid id)
     {
         var filter = Builders<ApartmentPage>.Filter.Eq(a => a.Id, id);
         return _collection.DeleteOneAsync(filter);
@@ -51,9 +52,10 @@ public class ApartmentPageRepository : IBaseRepository<ApartmentPage>
         return apartmentPages.ToListAsync();
     }
 
-    public async Task<Task<ApartmentPage>> GetById(int id)
+    public async Task<Task<ApartmentPage>> GetById(Guid id)
     {
         var filter = Builders<ApartmentPage>.Filter.Eq(a => a.Id, id);
         return (await _collection.FindAsync(filter)).FirstOrDefaultAsync();
     }
+    
 }
