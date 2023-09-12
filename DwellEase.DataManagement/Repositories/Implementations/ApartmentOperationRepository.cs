@@ -33,7 +33,7 @@ public class ApartmentOperationRepository:IBaseRepository<ApartmentOperation>
             .Set(a => a.StartDate, model.StartDate)
             .Set(a => a.EndDate, model.EndDate)
             .Set(a => a.OperationType, model.OperationType)
-            .Set(a => a.RentPrice, model.RentPrice);
+            .Set(a => a.Price, model.Price);
 
         return _collection.FindOneAndUpdateAsync(filter, update);
     }

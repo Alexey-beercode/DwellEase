@@ -16,13 +16,11 @@ public class ApartmentPageService
 {
     private readonly ApartmentPageRepository _apartmentPageRepository;
     private readonly ILogger<ApartmentPageService> _logger;
-    private readonly UserManager<User> _userManager;
 
     public ApartmentPageService(ApartmentPageRepository apartmentPageRepository, ILogger<ApartmentPageService> logger, UserManager<User> userManager)
     {
         _apartmentPageRepository = apartmentPageRepository;
         _logger = logger;
-        _userManager = userManager;
     }
 
     private async Task<BaseResponse<T>> HandleNotFound<T>(string description)
@@ -36,19 +34,18 @@ public class ApartmentPageService
         return response;
     }
     
-    public async Task<BaseResponse<bool>> CreateApartmentPageAsync(ApartmentPage apartmentPageModel,ClaimsPrincipal userClaims)
+    public async Task<BaseResponse<bool>> CreateApartmentPageAsync(ApartmentPage apartmentPageModel,Guid ownerId)
     {
         var response = new BaseResponse<bool>();
-        var user = await _userManager.GetUserAsync(userClaims);
         var apartmentPage = new ApartmentPage()
         {
             Apartment = apartmentPageModel.Apartment,
             ApprovalStatus = ListingApprovalStatus.Pending,
-            Date = DateOnly.FromDateTime(DateTime.Now),
+            Date = DateOnly.FromDateTime(DateTime.Today),
             DaylyPrice = apartmentPageModel.DaylyPrice,
             Images = apartmentPageModel.Images,
             IsAvailableForPurchase = apartmentPageModel.IsAvailableForPurchase,
-            OwnerId = user!.Id,
+            OwnerId = ownerId,
             PhoneNumber = apartmentPageModel.PhoneNumber,
             Price = apartmentPageModel.Price
         };
@@ -113,7 +110,7 @@ public class ApartmentPageService
         await _apartmentPageRepository.Update(newApartmentPage);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
-        _logger.LogInformation("Successfully update apartmentpage");
+        _logger.LogInformation($"Successfully update apartmentpage with id: {apartmentPage.Id}");
         return response;
     }
 
@@ -128,7 +125,7 @@ public class ApartmentPageService
 
         response.Data = apartmentPages;
         response.StatusCode = HttpStatusCode.OK;
-        _logger.LogInformation("Successfully get aprtmentpages by owner id");
+        _logger.LogInformation($"Successfully get aprtmentpages by owner id: {ownerId}");
         return response;
     }
 
@@ -190,7 +187,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageForPurchase()
+    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageForPurchaseAsync()
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase).ToList();
@@ -204,7 +201,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageOnlyForRent()
+    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageOnlyForRentAsync()
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase==false).ToList();
@@ -217,6 +214,35 @@ public class ApartmentPageService
         response.Data = apartmentPages;
         return response;
     }
-    
+
+    public async Task<BaseResponse<bool>> EditApartmentPageApprovalStatusAsync(Guid id, ListingApprovalStatus newStatus)
+    {
+        var response = new BaseResponse<bool>();
+        var apartmentPage = await await _apartmentPageRepository.GetById(id);
+        if (apartmentPage==null)
+        {
+            return await HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
+        }
+
+        apartmentPage.ApprovalStatus = newStatus;
+        response.Data = true;
+        response.StatusCode = HttpStatusCode.OK;
+        return response;
+    }
+
+    public async Task<BaseResponse<bool>> EditApartmentPagePriorityTypeAsync(Guid id, PriorityType newPriorityType)
+    {
+        var response = new BaseResponse<bool>();
+        var apartmentPage = await await _apartmentPageRepository.GetById(id);
+        if (apartmentPage==null)
+        {
+            return await HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
+        }
+
+        apartmentPage.PriorityType=newPriorityType;
+        response.Data = true;
+        response.StatusCode = HttpStatusCode.OK;
+        return response;
+    }
 
 }

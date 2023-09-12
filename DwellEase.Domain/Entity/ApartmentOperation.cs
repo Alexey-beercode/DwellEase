@@ -5,11 +5,11 @@ namespace DwellEase.Domain.Entity;
 
 public class ApartmentOperation
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public OperationType OperationType { get; set; }
     public Guid UserId { get; set; }
     public ApartmentPage ApartmentPage { get; set; } = null!;
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public decimal RentPrice { get; set; }
+    public DateOnly StartDate { get; set; }
+    public DateOnly EndDate { get; set; }
+    public decimal Price { get; set; }
 }
