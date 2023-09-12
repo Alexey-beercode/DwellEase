@@ -6,9 +6,6 @@ using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using System.Linq;
-using DwellEase.Service.Services.Interfaces;
-using MongoDB.Driver.Linq;
 
 namespace DwellEase.Service.Services.Implementations;
 
