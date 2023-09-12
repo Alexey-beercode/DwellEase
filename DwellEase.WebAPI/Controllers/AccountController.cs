@@ -1,8 +1,5 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using DwellEase.Domain.Entity;
-using DwellEase.Domain.Enum;
-using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Extensions;
