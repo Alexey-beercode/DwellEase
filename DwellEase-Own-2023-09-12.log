@@ -1,0 +1,369 @@
+2023-09-12 02:39:57.7299|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 02:39:57.9744|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 02:39:57.9758|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 02:39:57.9758|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 02:40:11.9262|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-12 02:53:38.5247|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 02:53:38.5943|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 02:53:38.5943|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 02:53:38.5943|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 02:53:39.9927|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NotSupportedException: Store does not implement IQueryableUserStore<TUser>.
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 33
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 02:53:40.1949|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NotSupportedException: Store does not implement IQueryableUserStore<TUser>.
+   at Microsoft.AspNetCore.Identity.UserManager`1.get_Users()
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 33
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 02:53:53.6807|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-12 03:13:52.0525|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:13:52.1414|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:13:52.1414|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:13:52.1414|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:13:55.7791|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 698e8535-c186-4c8b-ad88-f3992ec266c3 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:13:55.7791|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:13:56.7286|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 25b4e49d-8e44-44ea-817e-aec6306fc145 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:13:56.7286|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:13:56.9103|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 10a39fe3-ddbe-485f-93e8-7bff94c1a492 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:13:56.9103|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:14:20.4515|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-12 03:14:31.1065|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:14:31.3202|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:14:31.3202|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:14:31.3707|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:15:55.7265|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:15:55.8059|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:15:55.8059|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:15:55.8059|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:15:58.1084|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:15:58.1293|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 936d8d5f-8d7f-4389-af48-baa02eb1c75d not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:15:58.1428|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:16:00.3890|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 1171eeed-b5e1-45ad-8482-16c73c68de31 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:16:00.3890|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:16:00.3890|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:16:00.5595|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 7a5e88f0-aea9-4da2-9652-f7c75eb5141f not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:16:00.5595|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:16:00.5595|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:16:16.4766|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-12 03:16:27.8267|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:16:27.9712|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:16:27.9712|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:16:27.9712|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:16:44.7418|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:16:46.7039|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 53b8ccef-4895-4081-a3d3-33858b495c46 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:16:46.7488|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:17:01.2422|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:17:11.0862|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 1af8b72a-7357-417c-a175-8050c859c80a not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:17:11.1304|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:17:14.8006|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:17:15.7823|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 7e32c138-b33d-468c-ba41-e3908d7b6f6f not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:17:15.8120|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:18:03.0768|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:18:03.1569|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:18:03.1569|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:18:03.1569|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:18:06.4530|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:18:06.4804|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 2e68568a-cf9c-4aac-ade9-2ed39d3efc45 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:18:06.4857|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:18:06.9309|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 357c911a-5675-42c6-b898-c145c1879893 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:18:06.9309|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:18:06.9309|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:18:07.0888|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:18:07.0888|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 5199c552-f722-4ee9-a9d2-dc2b5c226591 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:18:07.0888|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:21:29.4274|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:21:29.5080|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:21:29.5080|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:21:29.5080|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:21:31.9143|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:21:32.1697|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:23:00.7474|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:23:00.8269|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:23:00.8269|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:23:00.8269|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:23:03.1085|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:23:03.5954|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:25:27.8520|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:25:27.9310|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:25:27.9310|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:25:27.9310|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:25:29.8493|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:25:30.1363|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:29:49.8251|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:29:49.9019|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:29:49.9019|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:29:49.9019|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:30:11.1690|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:30:11.1944|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: bf1a87f9-e7a1-4c09-bbea-d56e525b6af1 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:30:11.1990|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:30:11.5731|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:30:11.5731|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 53a56b3e-136d-46a5-8065-864248b4f5ba not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:30:11.5731|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:30:11.7461|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully create apartmentpage |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.CreateApartmentPageAsync| body: 
+2023-09-12 03:30:11.7461|0|ERROR|DwellEase.Service.Services.Implementations.ApartmentPageService|Apartmeentpage with id: 24517235-6c3b-4c24-9d71-4e0c0a2887a8 not found |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.HandleNotFound| body: 
+2023-09-12 03:30:11.7461|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at DwellEase.WebAPI.Controllers.AccountsController.Log() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 65
+   at lambda_method4(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/log|action: Log|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-12 03:30:15.5719|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-12 03:32:04.9070|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:32:04.9798|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:32:04.9798|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:32:04.9798|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:32:20.0900|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:32:20.3422|0|INFO|DwellEase.Service.Services.Implementations.ApartmentPageService|Successfully get all apartmentpages |url: https://localhost/Account/log|action: Log|DwellEase.Service.Services.Implementations.ApartmentPageService.GetApartmentPagesAsync| body: 
+2023-09-12 03:35:12.2342|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-12 03:35:12.2907|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:35:12.2907|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-12 03:35:12.2907|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-12 03:35:20.4143|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 

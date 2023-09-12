@@ -7,6 +7,7 @@ using DwellEase.DataManagement.Repositories.Stores;
 using DwellEase.DataManagement.Stores;
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -21,10 +22,12 @@ public static class WebApplicationBuilderExtension
 {
     public static void AddServices(this WebApplicationBuilder builder)
     {
-        builder.Services.AddScoped<IBaseRepository<ApartmentPage>, ApartmentPageRepository>();
+        builder.Services.AddScoped<ApartmentPageRepository>();
+        builder.Services.AddScoped<IBaseRepository<ApartmentOperation>, ApartmentOperationRepository>();
         builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
         builder.Services.AddScoped<IUserStore<User>, UserSrore>();
         builder.Services.AddScoped<TokenService>();
+        builder.Services.AddScoped<ApartmentPageService>();
         builder.Services.AddControllers();
     }
 

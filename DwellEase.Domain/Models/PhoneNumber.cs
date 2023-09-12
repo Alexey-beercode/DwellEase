@@ -14,14 +14,14 @@ public class PhoneNumber
 
     private bool IsPhoneValid(string number)
     {
-        if (number.Length != 12 || string.IsNullOrEmpty(number))
+        if (number.Length != 13 || string.IsNullOrEmpty(number))
         {
             return false;
         }
 
-        foreach (var symbol in number)
+        for (int i = 1; i < number.Length; i++)
         {
-            if (!char.IsDigit(symbol))
+            if (!char.IsDigit(number[i]))
             {
                 return false;
             }

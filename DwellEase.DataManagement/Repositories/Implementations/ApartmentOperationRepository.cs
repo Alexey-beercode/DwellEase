@@ -20,7 +20,7 @@ public class ApartmentOperationRepository:IBaseRepository<ApartmentOperation>
 
     public Task Delete(Guid id)
     {
-        var filter = Builders<ApartmentOperation>.Filter.Eq<>(a => a.Id, id);
+        var filter = Builders<ApartmentOperation>.Filter.Eq(a => a.Id.ToString(), id.ToString());
         return _collection.DeleteOneAsync(filter);
     }
 
@@ -47,7 +47,7 @@ public class ApartmentOperationRepository:IBaseRepository<ApartmentOperation>
 
     public async Task<Task<ApartmentOperation>> GetById(Guid id)
     {
-        var filter = Builders<ApartmentOperation>.Filter.Eq<>(a => a.Id, id);
+        var filter = Builders<ApartmentOperation>.Filter.Eq(a => a.Id.ToString(), id.ToString());
         return (await _collection.FindAsync(filter)).FirstOrDefaultAsync();
     }
 }
