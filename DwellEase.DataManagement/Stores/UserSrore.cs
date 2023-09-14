@@ -61,7 +61,7 @@ public class UserSrore : IUserStore<User>
 
     public async Task<User> FindByIdAsync(string userId, CancellationToken cancellationToken)
     {
-        return await _collection.Find(u => u.Id.ToString() == userId).FirstOrDefaultAsync(cancellationToken);
+        return await _collection.Find(u => u.Id == new Guid(userId)).FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<User> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)

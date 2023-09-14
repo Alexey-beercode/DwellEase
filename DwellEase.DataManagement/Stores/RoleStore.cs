@@ -71,7 +71,7 @@ public class RoleStore : IRoleStore<Role>
 
     public async Task<Role?> FindByIdAsync(string roleId, CancellationToken cancellationToken)
     {
-        return await _collection.Find(r => r.Id.ToString() == roleId).FirstOrDefaultAsync(cancellationToken);
+        return await _collection.Find(r => r.Id == new Guid(roleId)).FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<Role?> FindByNameAsync(string normalizedRoleName, CancellationToken cancellationToken)

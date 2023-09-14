@@ -8,7 +8,6 @@ public class ApartmentPage
 {
     [BsonId] 
     public Guid Id { get; set; }
-
     public ListingApprovalStatus ApprovalStatus { get; set; } = ListingApprovalStatus.Pending;
     public PriorityType PriorityType { get; set; }
     public ApartmentStatus Status { get; set; }

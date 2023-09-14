@@ -44,7 +44,6 @@ namespace DwellEase.Service.Handlers
                 throw new Exception($"User {request.Email} not found");
             }
             
-            // Добавление пользователя в роль Creater
             await _userManager.AddToRoleAsync(findUser,request.Role);
 
             return new RegisterRequest

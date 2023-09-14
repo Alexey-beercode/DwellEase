@@ -17,5 +17,6 @@ var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentCla
 var app = builder.Build();
 app.AddApplicationMiddleware();
 app.MapControllers();
+app.AddSignalRConfiguration();
 logger.Log(LogLevel.Info,"Program initial");
 app.Run();

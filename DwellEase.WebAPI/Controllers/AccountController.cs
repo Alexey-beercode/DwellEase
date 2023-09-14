@@ -4,7 +4,6 @@ using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
-using DwellEase.Service.Services.Implementations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -17,22 +16,25 @@ namespace DwellEase.WebAPI.Controllers;
 public class AccountsController : ControllerBase
 {
     private readonly UserManager<User> _userManager;
+    private readonly RoleManager<Role> _roleManager;
     private readonly IConfiguration _configuration;
     private readonly IMediator _mediator;
-    private readonly ApartmentPageService _apartmentPageService;
-    private readonly IHttpContextAccessor _httpContextAccessor;
 
     public AccountsController(UserManager<User> userManager,
-        IConfiguration configuration, IMediator mediator, RoleManager<Role> roleManager, ApartmentPageService apartmentPageService, IHttpContextAccessor httpContext, IHttpContextAccessor httpContextAccessor)
+        IConfiguration configuration, IMediator mediator, RoleManager<Role> roleManager)
     {
         _userManager = userManager;
         _configuration = configuration;
         _mediator = mediator;
-        _apartmentPageService = apartmentPageService;
-        _httpContextAccessor = httpContextAccessor;
+        _roleManager = roleManager;
     }
-    
 
+
+    [HttpGet("log")]
+    public async Task<string> Log()
+    {
+        return $"{(await _roleManager.FindByIdAsync("cfcfe2d0-7c45-43d3-8df4-02dcb715ed40")).RoleName}";
+    }
     [HttpPost("Login")]
     public async Task<ActionResult<AuthResponse>> Authenticate([FromBody] AuthRequest request)
     {

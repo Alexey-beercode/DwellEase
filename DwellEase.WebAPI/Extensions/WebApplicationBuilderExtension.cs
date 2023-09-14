@@ -24,11 +24,14 @@ public static class WebApplicationBuilderExtension
     {
         builder.Services.AddScoped<ApartmentPageRepository>();
         builder.Services.AddScoped<IBaseRepository<ApartmentOperation>, ApartmentOperationRepository>();
+        builder.Services.AddScoped<ApartmentOperationRepository>();
         builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
         builder.Services.AddScoped<IUserStore<User>, UserSrore>();
         builder.Services.AddScoped<TokenService>();
         builder.Services.AddScoped<ApartmentPageService>();
+        builder.Services.AddScoped<RentalService>();
         builder.Services.AddControllers();
+        builder.Services.AddSignalR();
     }
 
     public static void AddDatabase(this WebApplicationBuilder builder)

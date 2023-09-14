@@ -13,6 +13,7 @@
       <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
       <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.0-rc.1.23421.29" />
       <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
       <PackageReference Include="NLog" Version="5.2.4" />
       <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.4" />
@@ -23,5 +24,7 @@
       <ProjectReference Include="..\DwellEase.Domain\DwellEase.Domain.csproj" />
       <ProjectReference Include="..\DwellEase.Service\DwellEase.Service.csproj" />
     </ItemGroup>
+
+
 
 </Project>

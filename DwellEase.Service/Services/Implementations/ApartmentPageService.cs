@@ -20,7 +20,7 @@ public class ApartmentPageService
         _logger = logger;
     }
 
-    private async Task<BaseResponse<T>> HandleNotFound<T>(string description)
+    private BaseResponse<T> HandleNotFound<T>(string description)
     {
         var response = new BaseResponse<T>
         {
@@ -59,7 +59,7 @@ public class ApartmentPageService
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
         if (apartmentPage==null)
         {
-            return await HandleNotFound<ApartmentPage>($"Apartmeentpage with id: {id} not found");
+            return HandleNotFound<ApartmentPage>($"Apartmeentpage with id: {id} not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -74,7 +74,7 @@ public class ApartmentPageService
         var apartmentPage = await await _apartmentPageRepository.GetById(apartmentPageId);
         if (apartmentPage==null)
         {
-            return await HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPageId} not found");
+            return HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPageId} not found");
         }
         apartmentPage.ApprovalStatus = newStatus;
         await _apartmentPageRepository.Update(apartmentPage);
@@ -90,7 +90,7 @@ public class ApartmentPageService
         var newApartmentPage = await await _apartmentPageRepository.GetById(apartmentPage.Id);
         if (newApartmentPage == null)
         {
-            return await HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPage.Id} not found");
+            return HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPage.Id} not found");
         }
 
         newApartmentPage.Apartment = apartmentPage.Apartment;
@@ -117,7 +117,7 @@ public class ApartmentPageService
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.OwnerId == ownerId).ToList();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>($"Apartmeentpages with owner id: {ownerId} are not found");
+            return HandleNotFound<List<ApartmentPage>>($"Apartmeentpages with owner id: {ownerId} are not found");
         }
 
         response.Data = apartmentPages;
@@ -132,7 +132,7 @@ public class ApartmentPageService
         var apartmentPages = await await _apartmentPageRepository.GetAll();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>("Apartmeentpages are not found");
+            return HandleNotFound<List<ApartmentPage>>("Apartmeentpages are not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -147,7 +147,7 @@ public class ApartmentPageService
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
         if (apartmentPage==null)
         {
-            return await HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
+            return HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
         }
 
         await _apartmentPageRepository.Delete(id);
@@ -162,7 +162,7 @@ public class ApartmentPageService
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.Status == status).ToList();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>($"Apartmentpages with status: {status} are not found");
+            return HandleNotFound<List<ApartmentPage>>($"Apartmentpages with status: {status} are not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -176,7 +176,7 @@ public class ApartmentPageService
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.ApprovalStatus==approvalStatus).ToList();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>($"Apartmentpages with approvalstatus: {approvalStatus} are not found");
+            return HandleNotFound<List<ApartmentPage>>($"Apartmentpages with approvalstatus: {approvalStatus} are not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -190,7 +190,7 @@ public class ApartmentPageService
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase).ToList();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>($"Apartmentpages available for purchase are not found");
+            return HandleNotFound<List<ApartmentPage>>($"Apartmentpages available for purchase are not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -204,7 +204,7 @@ public class ApartmentPageService
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase==false).ToList();
         if (apartmentPages.Count==0)
         {
-            return await HandleNotFound<List<ApartmentPage>>($"Apartmentpages available only for rent are not found");
+            return HandleNotFound<List<ApartmentPage>>($"Apartmentpages available only for rent are not found");
         }
 
         response.StatusCode = HttpStatusCode.OK;
@@ -218,7 +218,7 @@ public class ApartmentPageService
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
         if (apartmentPage==null)
         {
-            return await HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
+            return HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
         }
 
         apartmentPage.ApprovalStatus = newStatus;
@@ -233,7 +233,7 @@ public class ApartmentPageService
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
         if (apartmentPage==null)
         {
-            return await HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
+            return HandleNotFound<bool>($"Apartmeentpage with id: {id} not found");
         }
 
         apartmentPage.PriorityType=newPriorityType;

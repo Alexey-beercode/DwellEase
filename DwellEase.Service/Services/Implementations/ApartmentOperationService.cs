@@ -18,7 +18,7 @@ public class ApartmentOperationService
         _logger = logger;
     }
     
-    private async Task<BaseResponse<T>> HandleNotFound<T>(string description)
+    private BaseResponse<T> HandleNotFound<T>(string description)
     {
         var response = new BaseResponse<T>
         {
@@ -34,7 +34,7 @@ public class ApartmentOperationService
         var response = new BaseResponse<bool>();
         if (apartmentOperation.OperationType!=OperationType.Purchase)
         {
-            return await HandleNotFound<bool>("Operationtype of model is not purchase");
+            return HandleNotFound<bool>("Operationtype of model is not purchase");
         }
 
         var newApartmentOperation = new ApartmentOperation()
@@ -56,14 +56,14 @@ public class ApartmentOperationService
         var response = new BaseResponse<bool>();
         if (apartmentOperation.OperationType!=OperationType.Rent)
         {
-            return await HandleNotFound<bool>("Operationtype of model is not rent");
+            return HandleNotFound<bool>("Operationtype of model is not rent");
         }
 
         var newApartmentOperation = new ApartmentOperation()
         {
             ApartmentPage = apartmentOperation.ApartmentPage,
             OperationType = OperationType.Rent,
-            StartDate = DateOnly.FromDateTime(DateTime.Today),
+            StartDate = DateTime.Now,
             EndDate = apartmentOperation.EndDate,
             UserId = userId,
             Price = apartmentOperation.Price
@@ -74,13 +74,13 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentOperationEndDateAsync(Guid id, DateOnly newEndDate)
+    public async Task<BaseResponse<bool>> EditApartmentOperationEndDateAsync(Guid id, DateTime newEndDate)
     {
         var response = new BaseResponse<bool>();
         var apartmentOperation = await await _apartmentOperationRepository.GetById(id);
         if (apartmentOperation==null)
         {
-            return await HandleNotFound<bool>($"Apartmentoperation with id: {id} not found");
+            return HandleNotFound<bool>($"Apartmentoperation with id: {id} not found");
         }
         apartmentOperation.EndDate = newEndDate;
         await _apartmentOperationRepository.Update(apartmentOperation);
@@ -96,7 +96,7 @@ public class ApartmentOperationService
         var apartmentOperations = await await _apartmentOperationRepository.GetAll();
         if (apartmentOperations.Count==0)
         {
-            return await HandleNotFound<List<ApartmentOperation>>("Apartmentoperations are not found");
+            return HandleNotFound<List<ApartmentOperation>>("Apartmentoperations are not found");
         }
         response.Data = apartmentOperations;
         response.StatusCode = HttpStatusCode.OK;
@@ -110,7 +110,7 @@ public class ApartmentOperationService
         var operation = await await _apartmentOperationRepository.GetById(apartmentOperation.Id);
         if (operation==null)
         {
-            return await HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
+            return HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
         }
 
         operation.OperationType = apartmentOperation.OperationType;
@@ -130,7 +130,7 @@ public class ApartmentOperationService
         var apartmentOperation = await await _apartmentOperationRepository.GetById(id);
         if (apartmentOperation==null)
         {
-            return await HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
+            return HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
         }
 
         await _apartmentOperationRepository.Delete(id);
@@ -138,4 +138,5 @@ public class ApartmentOperationService
         response.StatusCode = HttpStatusCode.OK;
         return response;
     }
+    
 }
