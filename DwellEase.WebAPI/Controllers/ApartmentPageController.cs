@@ -1,7 +1,7 @@
 ﻿using System.Net;
+using DwellEase.Domain.Models;
 using DwellEase.Service.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 
 namespace DwellEase.WebAPI.Controllers
 {
@@ -18,18 +18,33 @@ namespace DwellEase.WebAPI.Controllers
             _logger = logger;
         }
 
+        private IActionResult HandleResponse<T>(BaseResponse<T> response)
+        {
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                _logger.LogError($"Response from service status is not OK: {response.StatusCode}");
+                return StatusCode((int)response.StatusCode, response.Description);
+            }
+            return Ok(response.Data);
+        }
         [HttpGet("Get-All")]
         public async Task<IActionResult> GetAllApartmentPages()
         {
             var response = await _apartmentPageService.GetApartmentPagesAsync();
-            if (response.StatusCode != HttpStatusCode.OK)
+            return HandleResponse(response);
+        }
+
+        [HttpGet("Get-ById/{id}")]
+        public async Task<IActionResult> GetApartmentPageById(string id)
+        {
+            if (!Guid.TryParse(id, out var guid))
             {
-                _logger.LogError("Response from service status is not OK");
-                return new JsonResult(response.Description);
+                return BadRequest("Invalid ID format");
             }
 
-            _logger.LogInformation("Successfully return all apartmentpages");
-            return new JsonResult(response.Data[0].OwnerId);
+            var response = await _apartmentPageService.GetApartmentPageByIdAsync(guid);
+            return HandleResponse(response);
         }
+
     }
 }
