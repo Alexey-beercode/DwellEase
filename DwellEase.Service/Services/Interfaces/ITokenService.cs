@@ -4,5 +4,5 @@ namespace DwellEase.Service.Services.Interfaces;
 
 public interface ITokenService
 {
-    string CreateToken(User user, List<Role> roles);
+    string CreateToken(User user);
 }

@@ -20,7 +20,7 @@ public static class JwtTokenExtension
             new(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new(ClaimTypes.Name, user.UserName!),
             new(ClaimTypes.Email, user.Email!),
-            new(ClaimTypes.Role, string.Join(" ", roles.Select(x => x.RoleName))),
+            new(ClaimTypes.Role, roles[0].RoleName),
         };
         return claims;
     }

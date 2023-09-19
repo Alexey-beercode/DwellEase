@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.Domain.Models.Identity;
 
 public class AuthRequest
 {
-    [EmailAddress]
-    public string Email { get; set; } = null!;
-    [MinLength(5)]
+    public string UserName { get; set; } = null!;
+    [FromBody]
     public string Password { get; set; } = null!;
 }

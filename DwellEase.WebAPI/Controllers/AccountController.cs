@@ -23,16 +23,16 @@ public class AccountsController : ControllerBase
     private readonly IConfiguration _configuration;
     private readonly ILogger<AccountsController> _logger;
     private readonly IMediator _mediator;
-    private readonly ApartmentOperationService _apartmentOperationService;
+    private readonly TokenService _tokenService;
 
-    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger, ApartmentPageService apartmentPageService, ApartmentOperationService apartmentOperationService, UserService userService)
+    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger, ApartmentPageService apartmentPageService, UserService userService,TokenService tokenService)
     {
         _configuration = configuration;
         _mediator = mediator;
         _logger = logger;
         _apartmentPageService = apartmentPageService;
-        _apartmentOperationService = apartmentOperationService;
         _userService = userService;
+        _tokenService = tokenService;
     }
     
     [HttpGet("log")]
@@ -86,25 +86,24 @@ public class AccountsController : ControllerBase
     {
         var user = new User()
         {
-            UserName = "Alexanderrr",
             Email = "cripster12@yandex.ru",
+            UserName = "Alexey",
+            NormalizedUserName = "ALEXEY",
+            Id = Guid.NewGuid()
         };
-        await _userService.CreateAsync(user, "CHEATS145");
-        var response = await _userService.FindByNameAsync("Alexander1");
-        if (response.StatusCode != HttpStatusCode.OK)
-        {
-            return StatusCode((int)response.StatusCode, response.Description);
-        }
-        await _userService.AddToRoleAsync(response.Data, "Admin");
-        return Ok(response.Data.Role.RoleName);
+        var accessToken = _tokenService.CreateToken(user);
+        user.RefreshToken = _configuration.GenerateRefreshToken();
+        user.RefreshTokenExpiryTime =
+            DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenValidityInDays").Get<int>());
+        return Ok();
     }
    
     [HttpPost("Login")]
-    public async Task<ActionResult<AuthResponse>> Authenticate([FromBody] AuthRequest request)
+    public async Task<ActionResult<AuthResponse>> Authenticate(AuthRequest request)
     {
         var query = new LoginQuery
         {
-            Email = request.Email,
+            UserName = request.UserName,
             Password = request.Password
         };
 
@@ -115,26 +114,44 @@ public class AccountsController : ControllerBase
 
 
     [HttpPost("Register")]
-    public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
+    public async Task<ActionResult<AuthResponse>> Register(RegisterRequest request)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(request);
         }
 
-        var result = await _mediator.Send(new RegisterCommand
+        if (!PhoneNumber.IsPhoneValid(request.PhoneNumber))
         {
-            Email = request.Email,
-            Password = request.Password,
-            PasswordConfirm = request.PasswordConfirm,
-            UserName = request.UserName
-        });
+            return BadRequest("Phone number is not valid");
+        }
+        
+        var response = await _userService.FindByNameAsync(request.UserName);
+        if (response.StatusCode==HttpStatusCode.OK)
+        {
+            return Unauthorized("User with this username exists");
+        }
 
-        return await Authenticate(new AuthRequest
+        try
         {
-            Email = result.Email,
-            Password = result.Password
-        });
+            var result = await _mediator.Send(new RegisterCommand
+            {
+                Role = request.Role,
+                Email = request.Email,
+                Password = request.Password,
+                UserName = request.UserName,
+                PhoneNumber=new PhoneNumber(request.PhoneNumber)
+            });
+            return await Authenticate(new AuthRequest
+            {
+                UserName = result.UserName,
+                Password = request.Password
+            });
+        }
+        catch (Exception e)
+        { 
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpPost]
@@ -198,7 +215,7 @@ public class AccountsController : ControllerBase
         return Ok();
     }
 
-    [Authorize]
+    [Authorize(Policy = "AdminArea")]
     [HttpPost]
     [Route("Revoke-all")]
     public async Task<IActionResult> RevokeAll()

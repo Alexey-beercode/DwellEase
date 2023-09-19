@@ -7,7 +7,7 @@ using MediatR;
 
 namespace DwellEase.Service.Handlers
 {
-    public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterRequest>
+    public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AuthRequest>
     {
         private readonly UserService _userSrevice;
 
@@ -16,7 +16,7 @@ namespace DwellEase.Service.Handlers
             _userSrevice = userSrevice;
         }
 
-        public async Task<RegisterRequest> Handle(RegisterCommand request, CancellationToken cancellationToken)
+        public async Task<AuthRequest> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
             if (request == null)
             {
@@ -27,13 +27,14 @@ namespace DwellEase.Service.Handlers
             {
                 Email = request.Email,
                 UserName = request.UserName,
-                Role = new Role(){RoleName = request.Role}
+                NormalizedUserName = request.UserName.ToUpper(),
+                PhoneNumber = request.PhoneNumber
             };
             
             await _userSrevice.CreateAsync(user, request.Password);
             
 
-            var response = await _userSrevice.FindByEmailAsync(request.Email);
+            var response = await _userSrevice.FindByNameAsync(request.UserName);
             if (response.StatusCode!=HttpStatusCode.OK)
             {
                 throw new Exception($"User {request.Email} not found");
@@ -41,9 +42,9 @@ namespace DwellEase.Service.Handlers
             
             await _userSrevice.AddToRoleAsync(response.Data,request.Role);
 
-            return new RegisterRequest
+            return new AuthRequest
             {
-                Email = user.Email,
+                Password = request.Password,
                 UserName = user.UserName
             };
         }

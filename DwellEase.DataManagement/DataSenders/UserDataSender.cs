@@ -1,4 +1,5 @@
-﻿using DwellEase.Domain.Entity;
+﻿using DwellEase.DataManagement.Repositories.Implementations;
+using DwellEase.Domain.Entity;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
 
@@ -11,6 +12,8 @@ public class UserDataSeeder
         var mongoClient = new MongoClient("mongodb://localhost:27017");
         var mongoDatabase = mongoClient.GetDatabase("DwellEaseApartmentsDB");
         var userCollection = mongoDatabase.GetCollection<User>("Users");
+        var workFactor = 12; 
+        var salt = BCrypt.Net.BCrypt.GenerateSalt(workFactor);
         if (!userCollection.Find(_ => true).Any())
         {
             var user = new User
@@ -20,14 +23,13 @@ public class UserDataSeeder
                 NormalizedUserName = "ADMIN",
                 Role = new Role()
                 {
-                    Id = new Guid("9b0dc8cd-35a0-4ca6-b820-74052c74417b"),
+                    Id=new Guid("9b0dc8cd-35a0-4ca6-b820-74052c74417b"),
                     RoleName = "Admin",
                     NormalizedRoleName = "ADMIN"
-                    
                 },
-                PasswordHash = new PasswordHasher<User>().HashPassword(null, "169032048414Admin1526653")
+                PasswordSalt = salt,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword("1025556478955466Admin445", salt)
             };
-
             userCollection.InsertOneAsync(user);
         }
     }

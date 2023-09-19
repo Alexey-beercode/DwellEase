@@ -1,13 +1,10 @@
 ﻿using System.Net;
-using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace DwellEase.Service.Handlers
@@ -17,23 +14,21 @@ namespace DwellEase.Service.Handlers
         private readonly UserService _userService;
         private readonly IConfiguration _configuration;
         private readonly ITokenService _tokenService;
-        private readonly RoleService _roleService;
 
-        public LoginQueryHandler(IConfiguration configuration, ITokenService tokenService, UserService userService, RoleService roleService)
+        public LoginQueryHandler(IConfiguration configuration, ITokenService tokenService, UserService userService)
         {
             _configuration = configuration;
             _tokenService = tokenService;
             _userService = userService;
-            _roleService = roleService;
         }
 
         public async Task<AuthResponse> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
-            var response = await _userService.FindByEmailAsync(request.Email);
+            var response = await _userService.FindByNameAsync(request.UserName);
 
             if (response.StatusCode!=HttpStatusCode.OK)
             {
-               
+                throw new AggregateException("User are not found");
             }
 
             var isPasswordValid = (await _userService.CheckPasswordAsync(response.Data, request.Password)).Data;
@@ -43,18 +38,14 @@ namespace DwellEase.Service.Handlers
                 throw new ApplicationException("Bad credentials");
             }
 
-            var user =(await _userService.FindByEmailAsync(request.Email)).Data;
+            var user = response.Data;
 
             if (user == null)
             {
                 throw new UnauthorizedAccessException();
             }
 
-            var allRoles = (await _roleService.GetAllAsync()).Data;
-            List<Guid> roleIds =allRoles.Where(r => r.RoleName == user.Role.RoleName).Select(x => x.Id).ToList();
-            var roles = (await _roleService.GetAllAsync()).Data.Where(x => roleIds.Contains(x.Id)).ToList();
-
-            var accessToken = _tokenService.CreateToken(user, roles);
+            var accessToken = _tokenService.CreateToken(user);
             user.RefreshToken = _configuration.GenerateRefreshToken();
             user.RefreshTokenExpiryTime =
                 DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenValidityInDays").Get<int>());

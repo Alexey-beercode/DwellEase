@@ -73,10 +73,10 @@ public static class WebApplicationBuilderExtension
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["JwtSettings:Issuer"]!,
-                    ValidAudience = builder.Configuration["JwtSettings:Audience"]!,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"]!,
+                    ValidAudience = builder.Configuration["Jwt:Audience"]!,
                     IssuerSigningKey =
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Secret"]!))
+                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!))
                 };
             });
         builder.Services.AddAuthorization(options => options.DefaultPolicy =

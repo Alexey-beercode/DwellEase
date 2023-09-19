@@ -12,7 +12,7 @@ public class PhoneNumber
         }
     }
 
-    private bool IsPhoneValid(string number)
+    public static bool IsPhoneValid(string number)
     {
         if (number.Length != 13 || string.IsNullOrEmpty(number))
         {

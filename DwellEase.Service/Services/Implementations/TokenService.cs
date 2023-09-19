@@ -16,10 +16,10 @@ public class TokenService : ITokenService
     }
 
 
-    public string CreateToken(User user, List<Role> roles)
+    public string CreateToken(User user)
     {
         JwtSecurityToken token = user
-            .CreateClaims(roles)
+            .CreateClaims(new List<Role> { user.Role })
             .CreateJwtToken(_configuration);
         var tokenHandler = new JwtSecurityTokenHandler();
 
