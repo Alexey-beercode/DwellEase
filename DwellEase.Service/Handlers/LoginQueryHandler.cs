@@ -1,7 +1,9 @@
-﻿using DwellEase.Domain.Entity;
+﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
+using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -12,45 +14,45 @@ namespace DwellEase.Service.Handlers
 {
     public class LoginQueryHandler : IRequestHandler<LoginQuery, AuthResponse>
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserService _userService;
         private readonly IConfiguration _configuration;
-        private readonly RoleManager<Role> _roleManager;
         private readonly ITokenService _tokenService;
+        private readonly RoleService _roleService;
 
-        public LoginQueryHandler(UserManager<User> userManager, IConfiguration configuration, RoleManager<Role> roleManager,
-            ITokenService tokenService)
+        public LoginQueryHandler(IConfiguration configuration, ITokenService tokenService, UserService userService, RoleService roleService)
         {
-            _userManager = userManager;
             _configuration = configuration;
-            _roleManager = roleManager;
             _tokenService = tokenService;
+            _userService = userService;
+            _roleService = roleService;
         }
 
         public async Task<AuthResponse> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
-            var managedUser = await _userManager.FindByEmailAsync(request.Email);
+            var response = await _userService.FindByEmailAsync(request.Email);
 
-            if (managedUser == null)
+            if (response.StatusCode!=HttpStatusCode.OK)
             {
-                throw new ApplicationException("Bad credentials");
+               
             }
 
-            var isPasswordValid = await _userManager.CheckPasswordAsync(managedUser, request.Password);
+            var isPasswordValid = (await _userService.CheckPasswordAsync(response.Data, request.Password)).Data;
 
             if (!isPasswordValid)
             {
                 throw new ApplicationException("Bad credentials");
             }
 
-            var user = _userManager.Users.FirstOrDefault(u => u.Email == request.Email);
+            var user =(await _userService.FindByEmailAsync(request.Email)).Data;
 
             if (user == null)
             {
                 throw new UnauthorizedAccessException();
             }
 
-            var roleIds = await _roleManager.Roles.Where(r => r.RoleName == user.Role.RoleName).Select(x => x.Id).ToListAsync();
-            var roles = _roleManager.Roles.Where(x => roleIds.Contains(x.Id)).ToList();
+            var allRoles = (await _roleService.GetAllAsync()).Data;
+            List<Guid> roleIds =allRoles.Where(r => r.RoleName == user.Role.RoleName).Select(x => x.Id).ToList();
+            var roles = (await _roleService.GetAllAsync()).Data.Where(x => roleIds.Contains(x.Id)).ToList();
 
             var accessToken = _tokenService.CreateToken(user, roles);
             user.RefreshToken = _configuration.GenerateRefreshToken();

@@ -1,8 +1,6 @@
 ﻿using System.Text;
 using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
-using DwellEase.DataManagement.Repositories.Interfaces;
-using DwellEase.DataManagement.Stores;
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Queries;
@@ -24,15 +22,14 @@ public static class WebApplicationBuilderExtension
     {
         builder.Services.AddScoped<ApartmentPageRepository>();
         builder.Services.AddScoped<ApartmentOperationRepository>();
+        builder.Services.AddScoped<UserService>();
+        builder.Services.AddScoped<RoleService>();
         builder.Services.AddScoped<UserRepository>();
         builder.Services.AddScoped<RoleRepository>();
-        builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
-        builder.Services.AddScoped<IUserStore<User>, UserSrore>();
         builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<TokenService>();
         builder.Services.AddScoped<ApartmentPageService>();
         builder.Services.AddScoped<ApartmentOperationService>();
-        builder.Services.AddScoped<UserManager<User>>();
         builder.Services.AddScoped<RentalService>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
@@ -59,18 +56,6 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddSingleton(mongoDatabase);
         UserDataSeeder.SeedData();
         RoleDataSender.SeedData();
-    }
-
-    public static void AddIdentity(this WebApplicationBuilder builder)
-    {
-        builder.Services.AddIdentity<User, Role>(options =>
-        {
-            options.Password.RequiredLength = 5;
-            options.Password.RequireNonAlphanumeric = false;
-            options.Password.RequireLowercase = false;
-            options.Password.RequireUppercase = false;
-            options.Password.RequireDigit = false;
-        }).AddRoleStore<RoleStore>().AddUserStore<UserSrore>().AddDefaultTokenProviders();
     }
 
     public static void AddAuthentication(this WebApplicationBuilder builder)

@@ -11,7 +11,7 @@ public class UserRepository:IBaseRepository<User>
 
     public UserRepository(IMongoDatabase database)
     {
-        _collection = database.GetCollection<User>("User");
+        _collection = database.GetCollection<User>("Users");
     }
     public Task Create(User model)
     {

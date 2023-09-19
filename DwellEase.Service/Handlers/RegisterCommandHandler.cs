@@ -1,20 +1,19 @@
-﻿using DwellEase.Domain.Entity;
+﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Commands;
+using DwellEase.Service.Services.Implementations;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using MongoFramework.Linq;
 
 namespace DwellEase.Service.Handlers
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterRequest>
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserService _userSrevice;
 
-        public RegisterCommandHandler(UserManager<User> userManager)
+        public RegisterCommandHandler(UserService userSrevice)
         {
-            _userManager = userManager;
+            _userSrevice = userSrevice;
         }
 
         public async Task<RegisterRequest> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -31,26 +30,16 @@ namespace DwellEase.Service.Handlers
                 Role = new Role(){RoleName = request.Role}
             };
             
-            var result = await _userManager.CreateAsync(user, request.Password);
+            await _userSrevice.CreateAsync(user, request.Password);
+            
 
-            if (!result.Succeeded)
-            {
-                throw new ArgumentException("User are not created");
-            }
-
-            var findUser = await _userManager.FindByEmailAsync(request.Email);
-            if (findUser == null)
-            {
-                throw new Exception($"User {request.Email} not found");
-            }
-
-
-            if (findUser == null)
+            var response = await _userSrevice.FindByEmailAsync(request.Email);
+            if (response.StatusCode!=HttpStatusCode.OK)
             {
                 throw new Exception($"User {request.Email} not found");
             }
             
-            var result1= await _userManager.AddToRoleAsync(findUser,request.Role);
+            await _userSrevice.AddToRoleAsync(response.Data,request.Role);
 
             return new RegisterRequest
             {

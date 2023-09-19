@@ -27,7 +27,7 @@ public class RoleService
         return response;
     }
 
-    public async Task<BaseResponse<List<Role>>> GetRolesAsync()
+    public async Task<BaseResponse<List<Role>>> GetAllAsync()
     {
         var roles = await await _roleRepository.GetAll();
         if (roles.Count==0)
@@ -37,7 +37,7 @@ public class RoleService
         return new BaseResponse<List<Role>> { Data = roles, StatusCode = HttpStatusCode.OK };
     }
 
-    public async Task<BaseResponse<Role>> GetRoleByIdAsync(Guid id)
+    public async Task<BaseResponse<Role>> GetByIdAsync(Guid id)
     {
         var role = await await _roleRepository.GetById(id);
         if (role==null)

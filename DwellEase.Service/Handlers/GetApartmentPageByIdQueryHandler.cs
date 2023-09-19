@@ -17,6 +17,6 @@ public class GetApartmentPageByIdQueryHandler:IRequestHandler<GetApartmentPageBy
     
     public async Task<BaseResponse<ApartmentPage>> Handle(GetApartmentPageByIdQuery request, CancellationToken cancellationToken)
     {
-        return await _apartmentPageService.GetApartmentPageByIdAsync(request.Id);
+        return await _apartmentPageService.GetByIdAsync(request.Id);
     }
 }

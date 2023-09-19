@@ -14,7 +14,7 @@ public class ApartmentPageService
     private readonly ApartmentPageRepository _apartmentPageRepository;
     private readonly ILogger<ApartmentPageService> _logger;
 
-    public ApartmentPageService(ApartmentPageRepository apartmentPageRepository, ILogger<ApartmentPageService> logger, UserManager<User> userManager)
+    public ApartmentPageService(ApartmentPageRepository apartmentPageRepository, ILogger<ApartmentPageService> logger)
     {
         _apartmentPageRepository = apartmentPageRepository;
         _logger = logger;
@@ -31,7 +31,7 @@ public class ApartmentPageService
         return response;
     }
     
-    public async Task<BaseResponse<bool>> CreateApartmentPageAsync(ApartmentPage apartmentPageModel,Guid ownerId)
+    public async Task<BaseResponse<bool>> CreateAsync(ApartmentPage apartmentPageModel,Guid ownerId)
     {
         var response = new BaseResponse<bool>();
         var apartmentPage = new ApartmentPage()
@@ -53,7 +53,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<ApartmentPage>> GetApartmentPageByIdAsync(Guid id)
+    public async Task<BaseResponse<ApartmentPage>> GetByIdAsync(Guid id)
     {
         var response = new BaseResponse<ApartmentPage>();
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
@@ -68,7 +68,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentPageAsync(ApartmentPage apartmentPage)
+    public async Task<BaseResponse<bool>> EditAsync(ApartmentPage apartmentPage)
     {
         var response = new BaseResponse<bool>();
         var newApartmentPage = await await _apartmentPageRepository.GetById(apartmentPage.Id);
@@ -84,7 +84,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPagesByOwnerAsync(Guid ownerId)
+    public async Task<BaseResponse<List<ApartmentPage>>> GetByOwnerAsync(Guid ownerId)
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.OwnerId == ownerId).ToList();
@@ -99,7 +99,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPagesAsync()
+    public async Task<BaseResponse<List<ApartmentPage>>> GetAllAsync()
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = await await _apartmentPageRepository.GetAll();
@@ -114,7 +114,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> DeleteApartmentPageAsync(Guid id)
+    public async Task<BaseResponse<bool>> DeleteAsync(Guid id)
     {
         var response = new BaseResponse<bool>();
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
@@ -129,7 +129,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPagesByStatusAsync(ApartmentStatus status)
+    public async Task<BaseResponse<List<ApartmentPage>>> GetByStatusAsync(ApartmentStatus status)
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.Status == status).ToList();
@@ -143,7 +143,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPagesByApprovalStatusAsync(ListingApprovalStatus approvalStatus)
+    public async Task<BaseResponse<List<ApartmentPage>>> GetByApprovalStatusAsync(ListingApprovalStatus approvalStatus)
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.ApprovalStatus==approvalStatus).ToList();
@@ -157,7 +157,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageForPurchaseAsync()
+    public async Task<BaseResponse<List<ApartmentPage>>> GetForPurchaseAsync()
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase).ToList();
@@ -171,7 +171,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentPage>>> GetApartmentPageOnlyForRentAsync()
+    public async Task<BaseResponse<List<ApartmentPage>>> GetOnlyForRentAsync()
     {
         var response = new BaseResponse<List<ApartmentPage>>();
         var apartmentPages = (await await _apartmentPageRepository.GetAll()).Where(a => a.IsAvailableForPurchase==false).ToList();
@@ -185,7 +185,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentPageApprovalStatusAsync(Guid id, ListingApprovalStatus newStatus)
+    public async Task<BaseResponse<bool>> EditApprovalStatusAsync(Guid id, ListingApprovalStatus newStatus)
     {
         var response = new BaseResponse<bool>();
         var apartmentPage = await await _apartmentPageRepository.GetById(id);
@@ -200,7 +200,7 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentPagePriorityTypeAsync(Guid id, PriorityType newPriorityType)
+    public async Task<BaseResponse<bool>> EditPriorityTypeAsync(Guid id, PriorityType newPriorityType)
     {
         var response = new BaseResponse<bool>();
         var apartmentPage = await await _apartmentPageRepository.GetById(id);

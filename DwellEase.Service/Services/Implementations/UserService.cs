@@ -3,7 +3,6 @@ using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using Microsoft.Extensions.Logging;
-using BCrypt.Net;
 
 namespace DwellEase.Service.Services.Implementations;
 
@@ -31,7 +30,7 @@ public class UserService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> CreateUserAsync(User user,string password)
+    public async Task<BaseResponse<bool>> CreateAsync(User user,string password)
     {
         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
         user.PasswordHash = hashedPassword;
@@ -39,20 +38,20 @@ public class UserService
         return new BaseResponse<bool>(){StatusCode = HttpStatusCode.OK};
     }
 
-    public async Task<BaseResponse<bool>> AddToRole(User user, string role)
+    public async Task<BaseResponse<bool>> AddToRoleAsync(User user, string role)
     {
         if (!(role == "Admin" || role == "Creator" || role == "Resident"))
         {
             HandleError<bool>("Role are not contains right role type",HttpStatusCode.BadRequest);
         }
 
-        var roles = (await _roleService.GetRolesAsync()).Data;
+        var roles = (await _roleService.GetAllAsync()).Data;
         user.Role = roles.FirstOrDefault(a => a.RoleName == role);
         await _userRepository.Update(user);
         return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK};
     }
 
-    public async Task<BaseResponse<bool>> DeleteUserAsync(Guid id)
+    public async Task<BaseResponse<bool>> DeleteAsync(Guid id)
     {
         var user = await await _userRepository.GetById(id);
         if (user==null)
@@ -64,7 +63,7 @@ public class UserService
         return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
     }
 
-    public async Task<BaseResponse<User>> GetUserByIdAsync(Guid id)
+    public async Task<BaseResponse<User>> GetByIdAsync(Guid id)
     {
         var user = await await _userRepository.GetById(id);
         if (user==null)
@@ -75,7 +74,7 @@ public class UserService
         return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
     }
 
-    public async Task<BaseResponse<User>> FindUserByNameAsync(string userName)
+    public async Task<BaseResponse<User>> FindByNameAsync(string userName)
     {
         var user = (await await _userRepository.GetAll()).FirstOrDefault(a => a.UserName == userName);
         if (user==null)
@@ -86,7 +85,7 @@ public class UserService
         return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
     }
 
-    public async Task<BaseResponse<bool>> UpdateUserAsync(User user)
+    public async Task<BaseResponse<bool>> UpdateAsync(User user)
     {
         var findUser =await await _userRepository.GetById(user.Id);
         if (findUser==null)
@@ -120,6 +119,17 @@ public class UserService
 
         return new BaseResponse<bool>()
             { Data = hashedPassword == findUser.PasswordHash, StatusCode = HttpStatusCode.OK };
+    }
+
+    public async Task<BaseResponse<List<User>>> GetAllAsync()
+    {
+        var users = await await _userRepository.GetAll();
+        if (users.Count==0)
+        {
+            return HandleError<List<User>>("Users are not found", HttpStatusCode.NoContent);
+        }
+
+        return new BaseResponse<List<User>>() { Data = users, StatusCode = HttpStatusCode.OK };
     }
     
 }

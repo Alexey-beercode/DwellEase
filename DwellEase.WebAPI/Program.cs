@@ -5,7 +5,7 @@ using LogLevel = NLog.LogLevel;
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.AddIdentity();
+//builder.AddIdentity();
 builder.AddDatabase();
 builder.AddServices();
 builder.AddAuthentication();

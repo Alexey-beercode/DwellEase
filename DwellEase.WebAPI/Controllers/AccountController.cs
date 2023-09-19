@@ -10,7 +10,6 @@ using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Controllers;
@@ -19,22 +18,21 @@ namespace DwellEase.WebAPI.Controllers;
 [Route("Account")]
 public class AccountsController : ControllerBase
 {
-    private readonly UserManager<User> _userManager;
+    private readonly UserService _userService;
     private readonly ApartmentPageService _apartmentPageService;
     private readonly IConfiguration _configuration;
     private readonly ILogger<AccountsController> _logger;
     private readonly IMediator _mediator;
     private readonly ApartmentOperationService _apartmentOperationService;
 
-    public AccountsController(UserManager<User> userManager,
-        IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger, ApartmentPageService apartmentPageService, ApartmentOperationService apartmentOperationService)
+    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger, ApartmentPageService apartmentPageService, ApartmentOperationService apartmentOperationService, UserService userService)
     {
-        _userManager = userManager;
         _configuration = configuration;
         _mediator = mediator;
         _logger = logger;
         _apartmentPageService = apartmentPageService;
         _apartmentOperationService = apartmentOperationService;
+        _userService = userService;
     }
     
     [HttpGet("log")]
@@ -74,7 +72,7 @@ public class AccountsController : ControllerBase
         // await _apartmentOperationService.CreateRentOperationAsync(operation,new Guid());
         //var response = await _apartmentOperationService.GetApartmenOperationsAsync();
         var response =
-            await _apartmentPageService.GetApartmentPageByIdAsync(new Guid("da52082f-a3eb-4917-89bb-57a14bd41c98"));
+            await _apartmentPageService.GetByIdAsync(new Guid("da52082f-a3eb-4917-89bb-57a14bd41c98"));
         if (response.StatusCode!=HttpStatusCode.OK)
         {
             _logger.LogError("Status code from service is not Ok");
@@ -88,14 +86,17 @@ public class AccountsController : ControllerBase
     {
         var user = new User()
         {
-            UserName = "Alexander1",
+            UserName = "Alexanderrr",
             Email = "cripster12@yandex.ru",
         };
-        await _userManager.CreateAsync(user, "CHEATS145");
-        var findUser = await _userManager.FindByNameAsync("Alexander1");
-        await _userManager.AddToRoleAsync(findUser, "Admin");
-        var findUser2 = await _userManager.FindByNameAsync("Alexander1");
-        return Ok(findUser2.Role.RoleName);
+        await _userService.CreateAsync(user, "CHEATS145");
+        var response = await _userService.FindByNameAsync("Alexander1");
+        if (response.StatusCode != HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
+        await _userService.AddToRoleAsync(response.Data, "Admin");
+        return Ok(response.Data.Role.RoleName);
     }
    
     [HttpPost("Login")]
@@ -155,9 +156,14 @@ public class AccountsController : ControllerBase
         }
 
         var username = principal.Identity!.Name;
-        var user = await _userManager.FindByNameAsync(username!);
-
-        if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+        var response = await _userService.FindByNameAsync(username!);
+        
+        if (response.StatusCode != HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
+        
+        if (response.Data.RefreshToken != refreshToken || response.Data.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
             return BadRequest("Invalid access token or refresh token");
         }
@@ -165,8 +171,8 @@ public class AccountsController : ControllerBase
         var newAccessToken = _configuration.CreateToken(principal.Claims.ToList());
         var newRefreshToken = _configuration.GenerateRefreshToken();
 
-        user.RefreshToken = newRefreshToken;
-        await _userManager.UpdateAsync(user);
+        response.Data.RefreshToken = newRefreshToken;
+        await _userService.UpdateAsync(response.Data);
 
         return new ObjectResult(new
         {
@@ -180,11 +186,14 @@ public class AccountsController : ControllerBase
     [Route("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
     {
-        var user = await _userManager.FindByNameAsync(username);
-        if (user == null) return BadRequest("Invalid user name");
+        var response = await _userService.FindByNameAsync(username);
+        if (response.StatusCode != HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
 
-        user.RefreshToken = null;
-        await _userManager.UpdateAsync(user);
+        response.Data.RefreshToken = null;
+        await _userService.UpdateAsync(response.Data);
 
         return Ok();
     }
@@ -194,11 +203,17 @@ public class AccountsController : ControllerBase
     [Route("Revoke-all")]
     public async Task<IActionResult> RevokeAll()
     {
-        var users = _userManager.Users.ToList();
+        var response =await _userService.GetAllAsync();
+        if (response.StatusCode != HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
+
+        var users = response.Data;
         foreach (var user in users)
         {
             user.RefreshToken = null;
-            await _userManager.UpdateAsync(user);
+            await _userService.UpdateAsync(user);
         }
 
         return Ok();

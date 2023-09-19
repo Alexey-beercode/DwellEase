@@ -31,10 +31,10 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> CreatePurchaseOperationAsync(ApartmentOperation apartmentOperation ,Guid userId)
+    public async Task<BaseResponse<bool>> CreateAsync(ApartmentOperation apartmentOperation ,Guid userId)
     {
         var response = new BaseResponse<bool>();
-        var apartmentPageResponse = await _apartmentPageService.GetApartmentPageByIdAsync(apartmentOperation.ApartmentPageId);
+        var apartmentPageResponse = await _apartmentPageService.GetByIdAsync(apartmentOperation.ApartmentPageId);
         if (apartmentOperation.OperationType!=OperationType.Purchase)
         {
             return HandleNotFound<bool>("Operationtype of model is not purchase");
@@ -53,7 +53,7 @@ public class ApartmentOperationService
         };
 
         apartmentPageResponse.Data.Status = ApartmentStatus.Bought;
-        await _apartmentPageService.EditApartmentPageAsync(apartmentPageResponse.Data);
+        await _apartmentPageService.EditAsync(apartmentPageResponse.Data);
         await _apartmentOperationRepository.Create(newApartmentOperation);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
@@ -64,7 +64,7 @@ public class ApartmentOperationService
     public async Task<BaseResponse<bool>> CreateRentOperationAsync(ApartmentOperation apartmentOperation ,Guid userId)
     {
         var response = new BaseResponse<bool>();
-        var apartmentPageResponse = await _apartmentPageService.GetApartmentPageByIdAsync(apartmentOperation.ApartmentPageId);
+        var apartmentPageResponse = await _apartmentPageService.GetByIdAsync(apartmentOperation.ApartmentPageId);
         if (apartmentOperation.OperationType!=OperationType.Rent)
         {
             return HandleNotFound<bool>("Operationtype of model is not rent");
@@ -84,14 +84,14 @@ public class ApartmentOperationService
             Price = apartmentOperation.Price
         };
         apartmentPageResponse.Data.Status = ApartmentStatus.Rented;
-        await _apartmentPageService.EditApartmentPageAsync(apartmentPageResponse.Data);
+        await _apartmentPageService.EditAsync(apartmentPageResponse.Data);
         await _apartmentOperationRepository.Create(newApartmentOperation);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentOperationEndDateAsync(Guid id, DateTime newEndDate)
+    public async Task<BaseResponse<bool>> EditEndDateAsync(Guid id, DateTime newEndDate)
     {
         var response = new BaseResponse<bool>();
         var apartmentOperation = await await _apartmentOperationRepository.GetById(id);
@@ -107,7 +107,7 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<List<ApartmentOperation>>> GetApartmenOperationsAsync()
+    public async Task<BaseResponse<List<ApartmentOperation>>> GetAllAsync()
     {
         var response = new BaseResponse<List<ApartmentOperation>>();
         var apartmentOperations = await await _apartmentOperationRepository.GetAll();
@@ -121,7 +121,7 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> EditApartmentOperationAsync(ApartmentOperation apartmentOperation)
+    public async Task<BaseResponse<bool>> EditAsync(ApartmentOperation apartmentOperation)
     {
         var response = new BaseResponse<bool>();
         var operation = await await _apartmentOperationRepository.GetById(apartmentOperation.Id);
@@ -141,7 +141,7 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> DeleteApartmenOperationAsync(Guid id)
+    public async Task<BaseResponse<bool>> DeleteAsync(Guid id)
     {
         var response = new BaseResponse<bool>();
         var apartmentOperation = await await _apartmentOperationRepository.GetById(id);

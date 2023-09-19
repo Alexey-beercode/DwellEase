@@ -17,6 +17,6 @@ public class GetAllApartmentPagesQueryHandler : IRequestHandler<GetAllApartmentP
 
     public async Task<BaseResponse<List<ApartmentPage>>> Handle(GetAllApartmentPagesQuery request, CancellationToken cancellationToken)
     {
-        return await _apartmentPageService.GetApartmentPagesAsync();
+        return await _apartmentPageService.GetAllAsync();
     }
 }
