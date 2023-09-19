@@ -23,8 +23,9 @@ public static class WebApplicationBuilderExtension
     public static void AddServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<ApartmentPageRepository>();
-        builder.Services.AddScoped<IBaseRepository<ApartmentOperation>, ApartmentOperationRepository>();
         builder.Services.AddScoped<ApartmentOperationRepository>();
+        builder.Services.AddScoped<UserRepository>();
+        builder.Services.AddScoped<RoleRepository>();
         builder.Services.AddScoped<IRoleStore<Role>, RoleStore>();
         builder.Services.AddScoped<IUserStore<User>, UserSrore>();
         builder.Services.AddScoped<ITokenService, TokenService>();

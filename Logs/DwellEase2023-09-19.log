@@ -3947,3 +3947,108 @@
 2023-09-19 13:17:18.1937|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
    at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)
 2023-09-19 13:17:18.2307|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 
+2023-09-19 13:29:37.2272|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-09-19 13:29:37.4068|0|DEBUG|Microsoft.AspNetCore.SignalR.Internal.DefaultHubProtocolResolver|Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol. 
+2023-09-19 13:29:37.4337|0|TRACE|Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher|'RentalHub' hub method 'SendRemainingTimeUpdate' is bound. 
+2023-09-19 13:29:37.4337|0|INFO|Program|Program initial 
+2023-09-19 13:29:37.4688|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-09-19 13:29:37.4973|0|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-09-19 13:29:37.4973|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-201f091d-1492-40cf-8448-2970d8f8302a.xml'. 
+2023-09-19 13:29:37.4973|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e.xml'. 
+2023-09-19 13:29:37.4973|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-fe0fd9ec-cbd2-45ba-94c2-4c4db8302271.xml'. 
+2023-09-19 13:29:37.5146|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {201f091d-1492-40cf-8448-2970d8f8302a}. 
+2023-09-19 13:29:37.5146|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e}. 
+2023-09-19 13:29:37.5146|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {fe0fd9ec-cbd2-45ba-94c2-4c4db8302271}. 
+2023-09-19 13:29:37.5304|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {201f091d-1492-40cf-8448-2970d8f8302a} with expiration date 2023-10-02 22:10:13Z as default key. 
+2023-09-19 13:29:37.5304|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-09-19 13:29:37.5421|0|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI. 
+2023-09-19 13:29:37.5421|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-09-19 13:29:37.5421|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2023-09-19 13:29:37.5421|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2023-09-19 13:29:37.5588|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {201f091d-1492-40cf-8448-2970d8f8302a} as the default key. 
+2023-09-19 13:29:37.5588|0|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {201f091d-1492-40cf-8448-2970d8f8302a} was loaded during application startup. 
+2023-09-19 13:29:37.6217|0|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly DwellEase.WebAPI 
+2023-09-19 13:29:37.6217|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-09-19 13:29:37.6217|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-09-19 13:29:37.6217|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI 
+2023-09-19 13:29:37.6217|0|TRACE|Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager|Starting connection heartbeat. 
+2023-09-19 13:29:37.6217|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-09-19 13:29:37.6531|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44300/ - - 
+2023-09-19 13:29:37.6531|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-09-19 13:29:37.6531|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-09-19 13:29:37.6531|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path / does not match a supported file type 
+2023-09-19 13:29:37.6926|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/' 
+2023-09-19 13:29:37.6926|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/' 
+2023-09-19 13:29:37.6926|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'Fallback {*path:nonfile}' 
+2023-09-19 13:29:37.7349|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-09-19 13:29:37.7349|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Fallback {*path:nonfile}' 
+2023-09-19 13:29:37.7349|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path /index.html does not match an existing file 
+2023-09-19 13:29:37.7349|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Fallback {*path:nonfile}' 
+2023-09-19 13:29:37.7575|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18302628899323904169" disconnecting. 
+2023-09-19 13:29:37.7575|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44300/ - - - 404 - - 109.1900ms 
+2023-09-19 13:29:37.8463|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found 
+2023-09-19 13:30:07.8687|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found 
+2023-09-19 13:30:11.6225|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44300/Account/lg - - 
+2023-09-19 13:30:11.6225|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path /Account/lg does not match a supported file type 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|2 candidate(s) found for the request path '/Account/lg' 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI)' with route pattern 'Account/lg' is valid for the request path '/Account/lg' 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/Account/lg' 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI)' 
+2023-09-19 13:30:11.6225|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-09-19 13:30:11.6225|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI)' 
+2023-09-19 13:30:11.6500|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "LogG", controller = "Accounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogG() on controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI). 
+2023-09-19 13:30:11.6500|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-09-19 13:30:11.6500|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-09-19 13:30:11.6518|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-09-19 13:30:11.6518|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-09-19 13:30:11.6518|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-09-19 13:30:11.6518|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI) 
+2023-09-19 13:30:11.6518|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI) 
+2023-09-19 13:30:11.6657|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-09-19 13:30:11.6657|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-09-19 13:30:11.6657|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-09-19 13:30:11.6657|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-09-19 13:30:11.6657|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI) - Validation state: Valid 
+2023-09-19 13:30:11.9123|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-09-19 13:30:11.9123|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-09-19 13:30:11.9123|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-09-19 13:30:11.9123|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-09-19 13:30:11.9200|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI) in 263.7751ms 
+2023-09-19 13:30:11.9200|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'DwellEase.WebAPI.Controllers.AccountsController.LogG (DwellEase.WebAPI)' 
+2023-09-19 13:30:11.9200|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.FormatException: Element 'EmailConfirmed' does not match any field or property of class DwellEase.Domain.Entity.User.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.FirstOrDefaultAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at DwellEase.DataManagement.Stores.UserSrore.FindByNameAsync(String normalizedUserName, CancellationToken cancellationToken) in C:\AProject\DwellEase\DwellEase.DataManagement\Stores\UserSrore.cs:line 74
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at DwellEase.WebAPI.Controllers.AccountsController.LogG() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-09-19 13:30:12.0283|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18302628899323904171" disconnecting. 
+2023-09-19 13:30:12.0307|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44300/Account/lg - - - 500 - text/html;+charset=utf-8 408.3834ms 

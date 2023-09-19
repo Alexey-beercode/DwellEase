@@ -1,4 +1,3 @@
-using DwellEase.Domain.Models;
 using DwellEase.WebAPI.Extensions;
 using NLog;
 using NLog.Web;

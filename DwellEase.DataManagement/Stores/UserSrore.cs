@@ -108,29 +108,27 @@ public class UserSrore : IUserEmailStore<User>, IUserPasswordStore<User>, IQuery
 
     public Task<bool> GetEmailConfirmedAsync(User user, CancellationToken cancellationToken)
     {
-        return Task.FromResult(user.EmailConfirmed);
+        return Task.FromResult(true);
     }
 
     public Task SetEmailConfirmedAsync(User user, bool confirmed, CancellationToken cancellationToken)
     {
-        user.EmailConfirmed = confirmed;
         return Task.CompletedTask;
     }
 
     public async Task<User?> FindByEmailAsync(string normalizedEmail, CancellationToken cancellationToken)
     {
-        return await _collection.Find(u => u.NormalizedEmail == normalizedEmail)
+        return await _collection.Find(u => u.Email==normalizedEmail)
             .FirstOrDefaultAsync(cancellationToken);
     }
 
     public Task<string?> GetNormalizedEmailAsync(User user, CancellationToken cancellationToken)
     {
-        return Task.FromResult(user.NormalizedEmail);
+        return Task.FromResult(user.UserName);
     }
 
     public Task SetNormalizedEmailAsync(User user, string? normalizedEmail, CancellationToken cancellationToken)
     {
-        user.NormalizedEmail = normalizedEmail;
         return Task.CompletedTask;
     }
 
