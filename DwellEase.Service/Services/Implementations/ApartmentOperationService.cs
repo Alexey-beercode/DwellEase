@@ -11,11 +11,13 @@ public class ApartmentOperationService
 {
     private readonly ApartmentOperationRepository _apartmentOperationRepository;
     private readonly ILogger<ApartmentOperationRepository> _logger;
+    private readonly ApartmentPageService _apartmentPageService;
 
-    public ApartmentOperationService(ApartmentOperationRepository apartmentOperationRepository, ILogger<ApartmentOperationRepository> logger)
+    public ApartmentOperationService(ApartmentOperationRepository apartmentOperationRepository, ILogger<ApartmentOperationRepository> logger, ApartmentPageService apartmentPageService)
     {
         _apartmentOperationRepository = apartmentOperationRepository;
         _logger = logger;
+        _apartmentPageService = apartmentPageService;
     }
     
     private BaseResponse<T> HandleNotFound<T>(string description)
@@ -32,18 +34,26 @@ public class ApartmentOperationService
     public async Task<BaseResponse<bool>> CreatePurchaseOperationAsync(ApartmentOperation apartmentOperation ,Guid userId)
     {
         var response = new BaseResponse<bool>();
+        var apartmentPageResponse = await _apartmentPageService.GetApartmentPageByIdAsync(apartmentOperation.ApartmentPageId);
         if (apartmentOperation.OperationType!=OperationType.Purchase)
         {
             return HandleNotFound<bool>("Operationtype of model is not purchase");
+        } 
+        if(apartmentPageResponse.StatusCode!=HttpStatusCode.OK)
+        {
+            return HandleNotFound<bool>($"Apartmentpage with id: {apartmentOperation.ApartmentPageId} not found");
         }
-
+        
         var newApartmentOperation = new ApartmentOperation()
         {
-            ApartmentPage = apartmentOperation.ApartmentPage,
+            ApartmentPageId = apartmentOperation.ApartmentPageId,
             OperationType = OperationType.Purchase,
             UserId = userId,
             Price = apartmentOperation.Price
         };
+
+        apartmentPageResponse.Data.Status = ApartmentStatus.Bought;
+        await _apartmentPageService.EditApartmentPageAsync(apartmentPageResponse.Data);
         await _apartmentOperationRepository.Create(newApartmentOperation);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
@@ -54,20 +64,27 @@ public class ApartmentOperationService
     public async Task<BaseResponse<bool>> CreateRentOperationAsync(ApartmentOperation apartmentOperation ,Guid userId)
     {
         var response = new BaseResponse<bool>();
+        var apartmentPageResponse = await _apartmentPageService.GetApartmentPageByIdAsync(apartmentOperation.ApartmentPageId);
         if (apartmentOperation.OperationType!=OperationType.Rent)
         {
             return HandleNotFound<bool>("Operationtype of model is not rent");
         }
 
+        if(apartmentPageResponse.StatusCode!=HttpStatusCode.OK)
+        {
+            return HandleNotFound<bool>($"Apartmentpage with id: {apartmentOperation.ApartmentPageId} not found");
+        }
         var newApartmentOperation = new ApartmentOperation()
         {
-            ApartmentPage = apartmentOperation.ApartmentPage,
+            ApartmentPageId = apartmentOperation.ApartmentPageId,
             OperationType = OperationType.Rent,
             StartDate = DateTime.Now,
             EndDate = apartmentOperation.EndDate,
             UserId = userId,
             Price = apartmentOperation.Price
         };
+        apartmentPageResponse.Data.Status = ApartmentStatus.Rented;
+        await _apartmentPageService.EditApartmentPageAsync(apartmentPageResponse.Data);
         await _apartmentOperationRepository.Create(newApartmentOperation);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
@@ -114,7 +131,7 @@ public class ApartmentOperationService
         }
 
         operation.OperationType = apartmentOperation.OperationType;
-        operation.ApartmentPage = apartmentOperation.ApartmentPage;
+        operation.ApartmentPageId = apartmentOperation.ApartmentPageId;
         operation.StartDate = apartmentOperation.StartDate;
         operation.EndDate = apartmentOperation.EndDate;
         operation.Price = apartmentOperation.Price;

@@ -1,36 +1,29 @@
 ﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
+using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Controllers
 {
     [Route("ApartmentPage")]
-    public class ApartmentPageController : Controller
+    public class ApartmentPageController : ControllerBase
     {
-        private readonly ApartmentPageService _apartmentPageService;
+        private readonly IMediator _mediator;
         private readonly ILogger<ApartmentPageController> _logger;
 
-        public ApartmentPageController(ApartmentPageService apartmentPageService,
-            ILogger<ApartmentPageController> logger)
+        public ApartmentPageController(IMediator mediator, ILogger<ApartmentPageController> logger)
         {
-            _apartmentPageService = apartmentPageService;
+            _mediator = mediator;
             _logger = logger;
         }
 
-        private IActionResult HandleResponse<T>(BaseResponse<T> response)
-        {
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                _logger.LogError($"Response from service status is not OK: {response.StatusCode}");
-                return StatusCode((int)response.StatusCode, response.Description);
-            }
-            return Ok(response.Data);
-        }
         [HttpGet("Get-All")]
         public async Task<IActionResult> GetAllApartmentPages()
         {
-            var response = await _apartmentPageService.GetApartmentPagesAsync();
+            BaseResponse<List<ApartmentPage>> response = await _mediator.Send(new GetAllApartmentPagesQuery());
             return HandleResponse(response);
         }
 
@@ -42,9 +35,19 @@ namespace DwellEase.WebAPI.Controllers
                 return BadRequest("Invalid ID format");
             }
 
-            var response = await _apartmentPageService.GetApartmentPageByIdAsync(guid);
+            BaseResponse<ApartmentPage> response = await _mediator.Send(new GetApartmentPageByIdQuery(guid));
             return HandleResponse(response);
         }
 
+        private IActionResult HandleResponse<T>(BaseResponse<T> response)
+        {
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                _logger.LogError($"Response from service status is not OK: {response.StatusCode}");
+                return StatusCode((int)response.StatusCode, response.Description);
+            }
+
+            return Ok(response.Data);
+        }
     }
 }

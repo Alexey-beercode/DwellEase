@@ -1,9 +1,9 @@
 ﻿using DwellEase.Domain.Entity;
-using DwellEase.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
+using Microsoft.AspNetCore.Identity;
 
-namespace DwellEase.DataManagement.Repositories.Stores;
+namespace DwellEase.DataManagement.Stores;
 
 public class RoleStore : IRoleStore<Role>
 {

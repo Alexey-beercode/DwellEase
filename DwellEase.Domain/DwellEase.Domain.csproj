@@ -10,6 +10,7 @@
       <PackageReference Include="AspNetCore.Identity.Mongo" Version="8.3.3" />
       <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.10" />
       <PackageReference Include="MongoDB.Bson" Version="2.21.0" />
+      <PackageReference Include="MongoFramework.AspNetCore.Identity" Version="0.5.0" />
     </ItemGroup>
 
 </Project>

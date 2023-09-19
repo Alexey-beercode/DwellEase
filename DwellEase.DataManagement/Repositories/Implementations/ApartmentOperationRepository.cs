@@ -28,7 +28,7 @@ public class ApartmentOperationRepository:IBaseRepository<ApartmentOperation>
     {
         var filter = Builders<ApartmentOperation>.Filter.Eq(a => a.Id, model.Id);
         var update = Builders<ApartmentOperation>.Update
-            .Set(a => a.ApartmentPage, model.ApartmentPage)
+            .Set(a => a.ApartmentPageId, model.ApartmentPageId)
             .Set(a => a.UserId, model.UserId)
             .Set(a => a.StartDate, model.StartDate)
             .Set(a => a.EndDate, model.EndDate)

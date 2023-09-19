@@ -21,7 +21,7 @@ public class RentalService
 
     public async Task<BaseResponse<List<ApartmentPageRentInfo>>> CheckAndUpdateApartmentStatus()
     {
-        var response = new BaseResponse<System.Collections.Generic.List<ApartmentPageRentInfo>>();
+        var response = new BaseResponse<List<ApartmentPageRentInfo>>();
         var list = new List<ApartmentPageRentInfo>();
         var apartmentPages =await await _apartmentPageRepository.GetAll();
         if (apartmentPages.Count==0)
@@ -36,13 +36,13 @@ public class RentalService
         {
             var operation =
                 (await await _apartmentOperationRepository.GetAll())
-                .Where(a => a.ApartmentPage == apartmentPage && a.OperationType == OperationType.Rent)
+                .Where(a => a.ApartmentPageId == apartmentPage.Id && a.OperationType == OperationType.Rent)
                 .MaxBy(op => op.StartDate);
             if (operation == null)
             {
                 continue;
             }
-            var timeRemaining = operation.EndDate - DateTime.Now;
+            var timeRemaining = operation.EndDate.ToLocalTime() - DateTime.Now;
             if (timeRemaining<=TimeSpan.Zero)
             {
                 apartmentPage.Status = ApartmentStatus.Available;

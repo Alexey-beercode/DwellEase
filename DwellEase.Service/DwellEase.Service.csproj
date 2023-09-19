@@ -20,4 +20,11 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <Folder Include="Handlers\Admin\" />
+      <Folder Include="Handlers\Creator\" />
+      <Folder Include="Queries\Admin\" />
+      <Folder Include="Queries\Creator\" />
+    </ItemGroup>
+
 </Project>

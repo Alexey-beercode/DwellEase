@@ -4,6 +4,7 @@ using DwellEase.Service.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MongoFramework.Linq;
 
 namespace DwellEase.Service.Handlers
 {
@@ -27,24 +28,29 @@ namespace DwellEase.Service.Handlers
             {
                 Email = request.Email,
                 UserName = request.UserName,
+                Role = new Role(){RoleName = request.Role}
             };
-
+            
             var result = await _userManager.CreateAsync(user, request.Password);
 
             if (!result.Succeeded)
             {
-                // Обработка ошибок регистрации, например, добавление их в ValidationResult.
-                // Вам также можно выбрасывать исключение, если это необходимо.
+                throw new ArgumentException("User are not created");
             }
 
-            var findUser = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
+            var findUser = await _userManager.FindByEmailAsync(request.Email);
+            if (findUser == null)
+            {
+                throw new Exception($"User {request.Email} not found");
+            }
+
 
             if (findUser == null)
             {
                 throw new Exception($"User {request.Email} not found");
             }
             
-            await _userManager.AddToRoleAsync(findUser,request.Role);
+            var result1= await _userManager.AddToRoleAsync(findUser,request.Role);
 
             return new RegisterRequest
             {

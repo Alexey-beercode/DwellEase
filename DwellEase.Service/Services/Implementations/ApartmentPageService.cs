@@ -68,22 +68,6 @@ public class ApartmentPageService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> UpdateApprovalStatusAsync(Guid apartmentPageId, ListingApprovalStatus newStatus)
-    {
-        var response = new BaseResponse<bool>();
-        var apartmentPage = await await _apartmentPageRepository.GetById(apartmentPageId);
-        if (apartmentPage==null)
-        {
-            return HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPageId} not found");
-        }
-        apartmentPage.ApprovalStatus = newStatus;
-        await _apartmentPageRepository.Update(apartmentPage);
-        response.Data = true;
-        response.StatusCode = HttpStatusCode.OK;
-        _logger.LogInformation("Successfully update approval status");
-        return response;
-    }
-
     public async Task<BaseResponse<bool>> EditApartmentPageAsync(ApartmentPage apartmentPage)
     {
         var response = new BaseResponse<bool>();
@@ -92,18 +76,7 @@ public class ApartmentPageService
         {
             return HandleNotFound<bool>($"Apartmeentpage with id: {apartmentPage.Id} not found");
         }
-
-        newApartmentPage.Apartment = apartmentPage.Apartment;
-        newApartmentPage.ApprovalStatus = apartmentPage.ApprovalStatus;
-        newApartmentPage.DaylyPrice = apartmentPage.DaylyPrice;
-        newApartmentPage.PhoneNumber = apartmentPage.PhoneNumber;
-        newApartmentPage.Images = apartmentPage.Images;
-        newApartmentPage.Date = apartmentPage.Date;
-        newApartmentPage.Price = newApartmentPage.Price;
-        newApartmentPage.Status = newApartmentPage.Status;
-        newApartmentPage.OwnerId = apartmentPage.OwnerId;
-        newApartmentPage.PriorityType = apartmentPage.PriorityType;
-        newApartmentPage.IsAvailableForPurchase = apartmentPage.IsAvailableForPurchase;
+        newApartmentPage = apartmentPage;
         await _apartmentPageRepository.Update(newApartmentPage);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;

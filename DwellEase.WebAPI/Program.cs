@@ -11,7 +11,6 @@ builder.AddDatabase();
 builder.AddServices();
 builder.AddAuthentication();
 builder.AddLogging();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 var app = builder.Build();
