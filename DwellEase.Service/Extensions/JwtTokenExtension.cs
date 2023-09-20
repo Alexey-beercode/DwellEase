@@ -6,6 +6,7 @@ using System.Text;
 using DwellEase.Domain.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver.Linq;
 
 namespace DwellEase.Service.Extensions;
 
@@ -43,7 +44,7 @@ public static class JwtTokenExtension
             configuration["Jwt:Issuer"],
             configuration["Jwt:Audience"],
             claims,
-            expires: DateTime.UtcNow.AddMinutes(expire),
+            expires: DateTime.UtcNow.AddHours(expire),
             signingCredentials: configuration.CreateSigningCredentials()
         );
     }
@@ -51,12 +52,12 @@ public static class JwtTokenExtension
     public static JwtSecurityToken CreateToken(this IConfiguration configuration, List<Claim> authClaims)
     {
         var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]!));
-        var tokenValidityInMinutes = configuration.GetSection("Jwt:TokenValidityInMinutes").Get<int>();
+        var tokenValidityInHours = configuration.GetSection("Jwt:TokenValidityInHours").Get<int>();
 
         var token = new JwtSecurityToken(
             issuer: configuration["Jwt:Issuer"],
             audience: configuration["Jwt:Audience"],
-            expires: DateTime.Now.AddMinutes(tokenValidityInMinutes),
+            expires: DateTime.Now.AddHours(tokenValidityInHours),
             claims: authClaims,
             signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
         );

@@ -84,18 +84,8 @@ public class AccountsController : ControllerBase
     [HttpGet("lg")]
     public async Task<IActionResult> LogG()
     {
-        var user = new User()
-        {
-            Email = "cripster12@yandex.ru",
-            UserName = "Alexey",
-            NormalizedUserName = "ALEXEY",
-            Id = Guid.NewGuid()
-        };
-        var accessToken = _tokenService.CreateToken(user);
-        user.RefreshToken = _configuration.GenerateRefreshToken();
-        user.RefreshTokenExpiryTime =
-            DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenValidityInDays").Get<int>());
-        return Ok();
+        var user =await _userService.FindByNameAsync("Alexey");
+        return Ok(user.Data.RefreshTokenExpiryTime);
     }
    
     [HttpPost("Login")]

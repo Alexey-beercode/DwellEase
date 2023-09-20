@@ -47,9 +47,8 @@ namespace DwellEase.Service.Handlers
 
             var accessToken = _tokenService.CreateToken(user);
             user.RefreshToken = _configuration.GenerateRefreshToken();
-            user.RefreshTokenExpiryTime =
-                DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenValidityInDays").Get<int>());
-
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddHours(_configuration.GetSection("Jwt:TokenValidityInHours").Get<int>());
+            await _userService.UpdateAsync(user);
             return new AuthResponse
             {
                 Username = user.UserName!,

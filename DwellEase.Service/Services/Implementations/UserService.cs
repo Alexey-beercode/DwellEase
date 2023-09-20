@@ -30,6 +30,15 @@ public class UserService
         return response;
     }
 
+    private Task<List<User>> CorrectUsersRefreshTokenExpiryTime(List<User> users)
+    {
+        return Task.FromResult(users.Select(user =>
+        {
+            user.RefreshTokenExpiryTime = user.RefreshTokenExpiryTime.ToLocalTime();
+            return user;
+        }).ToList());
+    }
+
     public async Task<BaseResponse<bool>> CreateAsync(User user, string password)
     {
         var workFactor = 12;
@@ -76,6 +85,7 @@ public class UserService
             return HandleError<User>($"User with id: {id} not found", HttpStatusCode.NoContent);
         }
 
+        user=(await CorrectUsersRefreshTokenExpiryTime(new List<User>() { user }))[0];
         _logger.LogInformation($"Successfully get user with id: {id}");
         return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
     }
@@ -87,7 +97,7 @@ public class UserService
         {
             return HandleError<User>($"User with username: {userName} not found", HttpStatusCode.NoContent);
         }
-
+        user=(await CorrectUsersRefreshTokenExpiryTime(new List<User>() { user }))[0];
         return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
     }
 
@@ -110,7 +120,7 @@ public class UserService
         {
             return HandleError<User>($"User with email: {email} not found", HttpStatusCode.NoContent);
         }
-
+        user=(await CorrectUsersRefreshTokenExpiryTime(new List<User>() { user }))[0];
         return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
     }
 
@@ -131,9 +141,7 @@ public class UserService
             StatusCode = HttpStatusCode.OK
         };
     }
-
-
-
+    
     public async Task<BaseResponse<List<User>>> GetAllAsync()
     {
         var users = await await _userRepository.GetAll();
@@ -141,7 +149,7 @@ public class UserService
         {
             return HandleError<List<User>>("Users are not found", HttpStatusCode.NoContent);
         }
-
+        users=await CorrectUsersRefreshTokenExpiryTime(users);
         return new BaseResponse<List<User>>() { Data = users, StatusCode = HttpStatusCode.OK };
     }
 }

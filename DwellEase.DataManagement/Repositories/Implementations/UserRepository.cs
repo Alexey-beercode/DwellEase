@@ -26,6 +26,7 @@ public class UserRepository:IBaseRepository<User>
 
     public Task Update(User model)
     {
+        var newRefreshTokenTime = model.RefreshTokenExpiryTime.ToLocalTime();
         var filter = Builders<User>.Filter.Eq(a => a.Id, model.Id);
         var update = Builders<User>.Update
             .Set(a => a.PhoneNumber, model.PhoneNumber)
@@ -35,7 +36,7 @@ public class UserRepository:IBaseRepository<User>
             .Set(a => a.PasswordHash, model.PasswordHash)
             .Set(a => a.UserName, model.UserName)
             .Set(a => a.NormalizedUserName, model.NormalizedUserName)
-            .Set(a => a.RefreshTokenExpiryTime, model.RefreshTokenExpiryTime);
+            .Set(a => a.RefreshTokenExpiryTime, newRefreshTokenTime);
         return _collection.FindOneAndUpdateAsync(filter, update);
     }
 

@@ -18,8 +18,7 @@ public class RegisterRequest
     [Required]
     [Display(Name = "Имя")]
     public string UserName { get; set; } = null!;
-
-    [Required] 
+    
     [Display(Name = "Роль")] 
     public string Role { get; set; } = null!;
     
