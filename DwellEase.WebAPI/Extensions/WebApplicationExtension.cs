@@ -11,6 +11,7 @@ public static class WebApplicationExtension
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
+        app.MapControllers();
     }
     public static void AddSignalRConfiguration(this WebApplication app)
     {

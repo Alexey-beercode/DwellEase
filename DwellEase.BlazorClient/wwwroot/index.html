@@ -1,25 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="utf-8" />
-    <title>DwellEase.BlazorClient</title>
-    <base href="/" />
-    <link href="css/app.css" rel="stylesheet" />
-    
-    <!-- If you add any scoped CSS files, uncomment the following to load them
-    <link href="DwellEase.BlazorClient.styles.css" rel="stylesheet" /> -->
+    <title>METANIT.COM</title>
 </head>
-
 <body>
-    <div id="app">Loading...</div>
+<div id="userInfo" style="display:none;">
+    <p>Добро пожаловать <span id="userName"></span>!</p>
+    <input type="button" value="Выйти" id="logOut" />
+</div>
+<div id="loginForm">
+    <h3>Вход на сайт</h3>
+    <p>
+        <label>Введите имя</label><br />
+        <input type="text" id="usernameId" />
+    </p>
+    <p>
+        <label>Введите пароль</label><br />
+        <input type="password" id="password" />
+    </p>
+    <input type="submit" id="submitLogin" value="Логин" />
+</div>
+<p>
+    <input type="submit" id="getData" value="Получить данные" />
+</p>
+<script>
+    var tokenKey = "accessToken";
+    // при нажатии на кнопку отправки формы идет запрос к /login для получения токена
+    document.getElementById("submitLogin").addEventListener("click", async e => {
+        e.preventDefault();
+        // отправляет запрос и получаем ответ
+        const response = await fetch("https://localhost:44300/Account/Login", {
+            method: "POST",
+            headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify({
+                UserName: document.getElementById("usernameId").value,
+                Password: document.getElementById("password").value
+            })
+        });
+        // если запрос прошел нормально
+        if (response.ok === true) {
+            // получаем данные
+            const data = await response.json();
+            // изменяем содержимое и видимость блоков на странице
+            document.getElementById("userName").innerText = data.username;
+            document.getElementById("userInfo").style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+            // сохраняем в хранилище sessionStorage токен доступа
+            sessionStorage.setItem(tokenKey, data.access_token);
+        }
+        else  // если произошла ошибка, получаем код статуса
+            console.log("Status: ", response.status);
+    });
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
+    // кнопка для обращения по пути "/data" для получения данных
+    document.getElementById("getData").addEventListener("click", async e => {
+        e.preventDefault();
+        // получаем токен из sessionStorage
+        const token = sessionStorage.getItem(tokenKey);
+        // отправляем запрос к "/data
+        const response = await fetch("/data", {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Authorization": "Bearer " + token  // передача токена в заголовке
+            }
+        });
+
+        if (response.ok === true) {
+            const data = await response.json();
+            alert(data.message);
+        }
+        else
+            console.log("Status: ", response.status);
+    });
+
+    // условный выход - просто удаляем токен и меняем видимость блоков
+    document.getElementById("logOut").addEventListener("click", e => {
+
+        e.preventDefault();
+        document.getElementById("userName").innerText = "";
+        document.getElementById("userInfo").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+        sessionStorage.removeItem(tokenKey);
+    });
+</script>
 </body>
-
 </html>

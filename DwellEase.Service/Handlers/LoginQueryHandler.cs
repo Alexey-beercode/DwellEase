@@ -1,28 +1,33 @@
 ﻿using System.Net;
+using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Models.Identity;
-using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
-using DwellEase.Service.Services.Interfaces;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Driver.Linq;
 
 namespace DwellEase.Service.Handlers
 {
-    public class LoginQueryHandler : IRequestHandler<LoginQuery, AuthResponse>
+    public class LoginQueryHandler : IRequestHandler<LoginQuery, LoginResponse>
     {
         private readonly UserService _userService;
         private readonly IConfiguration _configuration;
-        private readonly ITokenService _tokenService;
+        private readonly TokenService _tokenService;
+        private readonly UserRoleRepository _userRoleRepository;
+        private readonly RoleService _roleService;
 
-        public LoginQueryHandler(IConfiguration configuration, ITokenService tokenService, UserService userService)
+        public LoginQueryHandler(IConfiguration configuration, TokenService tokenService, UserService userService, UserRoleRepository userRoleRepository, RoleService roleService)
         {
             _configuration = configuration;
             _tokenService = tokenService;
             _userService = userService;
+            _userRoleRepository = userRoleRepository;
+            _roleService = roleService;
         }
 
-        public async Task<AuthResponse> Handle(LoginQuery request, CancellationToken cancellationToken)
+        public async Task<LoginResponse> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
             var response = await _userService.FindByNameAsync(request.UserName);
 
@@ -45,11 +50,19 @@ namespace DwellEase.Service.Handlers
                 throw new UnauthorizedAccessException();
             }
 
-            var accessToken = _tokenService.CreateToken(user);
-            user.RefreshToken = _configuration.GenerateRefreshToken();
-            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddHours(_configuration.GetSection("Jwt:TokenValidityInHours").Get<int>());
+            var roles =(await _roleService.GetAllAsync()).Data;
+            var rolesId = (await _userRoleRepository.GetAll())
+                .Where(a=>a.UserId==user.Id)
+                .Select(a=>a.RoleId)
+                .ToList();
+            var userRoles = roles.Where(role => rolesId.Contains(role.Id)).ToList();
+            var accessTokenClaims = _tokenService.CreateClaims(user,userRoles);
+            var accessToken = _tokenService.GenerateAccessToken(accessTokenClaims);
+            user.RefreshToken = _tokenService.GenerateRefreshToken();
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
             await _userService.UpdateAsync(user);
-            return new AuthResponse
+            
+            return new LoginResponse
             {
                 Username = user.UserName!,
                 Email = user.Email!,

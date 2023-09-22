@@ -19,73 +19,28 @@ namespace DwellEase.WebAPI.Controllers;
 public class AccountsController : ControllerBase
 {
     private readonly UserService _userService;
-    private readonly ApartmentPageService _apartmentPageService;
+    private readonly TokenService _tokenService;
     private readonly IConfiguration _configuration;
     private readonly ILogger<AccountsController> _logger;
     private readonly IMediator _mediator;
-    private readonly TokenService _tokenService;
 
-    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger, ApartmentPageService apartmentPageService, UserService userService,TokenService tokenService)
+    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger,  UserService userService,TokenService tokenService)
     {
         _configuration = configuration;
         _mediator = mediator;
         _logger = logger;
-        _apartmentPageService = apartmentPageService;
         _userService = userService;
         _tokenService = tokenService;
     }
-    
-    [HttpGet("log")]
-    public async Task<IActionResult> Log()
+    private IActionResult HandleResponse<T>(BaseResponse<T> response)
     {
-        var apartmentPage = new ApartmentPage()
-            {
-                Apartment = new Apartment()
-                {
-                    Address = new Address()
-                    {
-                        Building = "A",
-                        City = "Minsk",
-                        HouseNumber = 48,
-                        Street = "Yakubova"
-                    },
-                    ApartmentType = ApartmentType.Flat,
-                    Area = 95,
-                    Rooms = 3,
-                    Title = "Квартира в Минске"
-                },
-                DaylyPrice = 300,
-                IsAvailableForPurchase = true,
-                PhoneNumber = new PhoneNumber("+375445983720"),
-                Price = 90000
-            };
-        var operation = new ApartmentOperation()
+        if (response.StatusCode != HttpStatusCode.OK)
         {
-            ApartmentPageId = new Guid("da52082f-a3eb-4917-89bb-57a14bd41c98"),
-            StartDate = DateTime.Now,
-            EndDate = new DateTime(2023, 9, 19, 13, 17, 00).ToUniversalTime(),
-            OperationType = OperationType.Rent,
-            Price = apartmentPage.DaylyPrice
-        };
-        //await _apartmentPageService.EditApartmentPageAsync(apartmentPage);
-        //await _apartmentPageService.CreateApartmentPageAsync(apartmentPage, new Guid());
-        // await _apartmentOperationService.CreateRentOperationAsync(operation,new Guid());
-        //var response = await _apartmentOperationService.GetApartmenOperationsAsync();
-        var response =
-            await _apartmentPageService.GetByIdAsync(new Guid("da52082f-a3eb-4917-89bb-57a14bd41c98"));
-        if (response.StatusCode!=HttpStatusCode.OK)
-        {
-            _logger.LogError("Status code from service is not Ok");
-            return NotFound();
+            _logger.LogError($"Response from service status is not OK: {response.StatusCode}");
+            return StatusCode((int)response.StatusCode, response.Description);
         }
-        return Ok(response);
-    }
 
-    [HttpGet("lg")]
-    public async Task<IActionResult> LogG()
-    {
-        var user =await _userService.FindByNameAsync("Alexey");
-        return Ok(user.Data.RefreshTokenExpiryTime);
+        return Ok(response.Data);
     }
    
     [HttpPost("Login")]
@@ -97,8 +52,23 @@ public class AccountsController : ControllerBase
             Password = request.Password
         };
 
-        var authResponse = await _mediator.Send(query);
+        var loginResponse = await _mediator.Send(query);
+        
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true, 
+            Secure = true, 
+            SameSite = SameSiteMode.None, 
+            Expires = DateTime.UtcNow.AddDays(30) 
+        };
 
+        Response.Cookies.Append("refreshToken", loginResponse.RefreshToken, cookieOptions);
+        var authResponse = new AuthResponse()
+        {
+            Email = loginResponse.Email,
+            Username = loginResponse.Username,
+            Token = loginResponse.Token
+        };
         return Ok(authResponse);
     }
 
@@ -146,17 +116,13 @@ public class AccountsController : ControllerBase
 
     [HttpPost]
     [Route("Refresh-token")]
-    public async Task<IActionResult> RefreshToken(TokenModel? tokenModel)
+    public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
     {
         if (tokenModel is null)
         {
             return BadRequest("Invalid client request");
         }
-
-        var accessToken = tokenModel.AccessToken;
-        var refreshToken = tokenModel.RefreshToken;
-        var principal = _configuration.GetPrincipalFromExpiredToken(accessToken);
-
+        var principal = _configuration.GetPrincipalFromExpiredToken(tokenModel.AccessToken);
         if (principal == null)
         {
             return BadRequest("Invalid access token or refresh token");
@@ -170,27 +136,27 @@ public class AccountsController : ControllerBase
             return StatusCode((int)response.StatusCode, response.Description);
         }
         
-        if (response.Data.RefreshToken != refreshToken || response.Data.RefreshTokenExpiryTime <= DateTime.UtcNow)
+        if (response.Data.RefreshToken != tokenModel.RefreshToken || response.Data.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
             return BadRequest("Invalid access token or refresh token");
         }
 
-        var newAccessToken = _configuration.CreateToken(principal.Claims.ToList());
-        var newRefreshToken = _configuration.GenerateRefreshToken();
+        var newAccessToken = _tokenService.GenerateAccessToken(principal.Claims.ToList());
+        var newRefreshToken = _tokenService.GenerateRefreshToken();
 
         response.Data.RefreshToken = newRefreshToken;
+        response.Data.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
         await _userService.UpdateAsync(response.Data);
 
         return new ObjectResult(new
         {
-            accessToken = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
+            accessToken = newAccessToken,
             refreshToken = newRefreshToken
         });
     }
 
     [Authorize]
-    [HttpPost]
-    [Route("Revoke/{username}")]
+    [HttpPost("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
     {
         var response = await _userService.FindByNameAsync(username);
@@ -206,8 +172,7 @@ public class AccountsController : ControllerBase
     }
 
     [Authorize(Policy = "AdminArea")]
-    [HttpPost]
-    [Route("Revoke-all")]
+    [HttpPost("Revoke-all")]
     public async Task<IActionResult> RevokeAll()
     {
         var response =await _userService.GetAllAsync();

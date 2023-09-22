@@ -9,7 +9,7 @@ public class RoleDataSender
     public static void SeedData()
     {
         var mongoClient = new MongoClient("mongodb://localhost:27017");
-        var mongoDatabase = mongoClient.GetDatabase("DwellEaseApartmentsDB");
+        var mongoDatabase = mongoClient.GetDatabase("DwellEase");
         var roleCollection = mongoDatabase.GetCollection<Role>("Roles");
         if (!roleCollection.Find(_ => true).Any())
         {

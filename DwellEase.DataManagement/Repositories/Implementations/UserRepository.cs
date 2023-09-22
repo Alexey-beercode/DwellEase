@@ -30,7 +30,6 @@ public class UserRepository:IBaseRepository<User>
         var filter = Builders<User>.Filter.Eq(a => a.Id, model.Id);
         var update = Builders<User>.Update
             .Set(a => a.PhoneNumber, model.PhoneNumber)
-            .Set(a => a.Role, model.Role)
             .Set(a => a.Email, model.Email)
             .Set(a => a.RefreshToken, model.RefreshToken)
             .Set(a => a.PasswordHash, model.PasswordHash)

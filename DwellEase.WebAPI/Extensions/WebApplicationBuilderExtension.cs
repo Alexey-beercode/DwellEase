@@ -5,7 +5,6 @@ using DwellEase.Domain.Entity;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
-using DwellEase.Service.Services.Interfaces;
 using DwellEase.WebAPI.BackgroundTasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -22,11 +21,11 @@ public static class WebApplicationBuilderExtension
     {
         builder.Services.AddScoped<ApartmentPageRepository>();
         builder.Services.AddScoped<ApartmentOperationRepository>();
+        builder.Services.AddScoped<UserRoleRepository>();
         builder.Services.AddScoped<UserService>();
         builder.Services.AddScoped<RoleService>();
         builder.Services.AddScoped<UserRepository>();
         builder.Services.AddScoped<RoleRepository>();
-        builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<TokenService>();
         builder.Services.AddScoped<ApartmentPageService>();
         builder.Services.AddScoped<ApartmentOperationService>();
@@ -53,32 +52,39 @@ public static class WebApplicationBuilderExtension
         mongoDatabase.CreateCollectionAsync("Roles");
         mongoDatabase.CreateCollectionAsync("ApartmentPages");
         mongoDatabase.CreateCollectionAsync("ApartmentOperations");
+        mongoDatabase.CreateCollectionAsync("UserRole");
         builder.Services.AddSingleton(mongoDatabase);
         UserDataSeeder.SeedData();
         RoleDataSender.SeedData();
+        UserRoleDataSender.SeedData();
     }
 
     public static void AddAuthentication(this WebApplicationBuilder builder)
     {
-        builder.Services.AddAuthentication(opt =>
+        var jwtSettings = builder.Configuration.GetSection("Jwt");
+        
+        var key = Encoding.UTF8.GetBytes(jwtSettings["Secret"]);
+        var issuer = jwtSettings["Issuer"];
+        var audience = jwtSettings["Audience"];
+
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            options.RequireHttpsMetadata = false; 
+            options.SaveToken = true;
+            options.TokenValidationParameters = new TokenValidationParameters
             {
-                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"]!,
-                    ValidAudience = builder.Configuration["Jwt:Audience"]!,
-                    IssuerSigningKey =
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!))
-                };
-            });
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = issuer,
+                ValidAudience = audience,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+            };
+        });
         builder.Services.AddAuthorization(options => options.DefaultPolicy =
             new AuthorizationPolicyBuilder
                     (JwtBearerDefaults.AuthenticationScheme)
@@ -86,9 +92,19 @@ public static class WebApplicationBuilderExtension
                 .Build());
         builder.Services.AddAuthorization(options =>
         {
-            options.AddPolicy("AdminArea", policy => policy.RequireRole("Admin"));
-            options.AddPolicy("CreatorArea", policy => policy.RequireRole("Creator"));
+            options.AddPolicy("CreatorArea", policy =>
+            {
+                policy.RequireAuthenticatedUser();
+                policy.RequireRole("Creator");
+            });
+
+            options.AddPolicy("AdminArea", policy =>
+            {
+                policy.RequireAuthenticatedUser();
+                policy.RequireRole("Admin");
+            });
         });
+
 
     }
 

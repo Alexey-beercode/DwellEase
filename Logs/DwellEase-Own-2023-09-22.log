@@ -1,0 +1,817 @@
+2023-09-22 09:14:06.7138|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:14:06.8246|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:14:06.8246|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:14:06.8246|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:14:06.8517|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:14:16.2643|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Login|action: Authenticate|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 09:14:16.2775|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.AggregateException: User are not found|url: https://localhost/Account/Login|action: Authenticate|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 09:14:36.8578|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:14:41.8517|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 09:15:06.8714|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:15:36.8883|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:16:06.8995|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:16:36.9104|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:17:06.9216|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:17:36.9311|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:17:46.9620|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentNullException: IDX10000: The parameter 'token' cannot be a 'null' or an empty object.  (Parameter 'token')
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountsController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 168
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 09:17:57.1117|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountsController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 168
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 09:18:06.9454|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:18:36.9586|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:19:14.1353|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:19:14.2433|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:19:14.2433|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:19:14.2433|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:19:14.2433|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:19:44.2722|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:20:14.2798|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:20:21.7889|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountsController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 168
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 09:20:44.2885|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:20:57.3555|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 09:20:57.3555|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 09:21:07.6851|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:21:07.9242|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:21:07.9242|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:21:07.9242|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:21:07.9296|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:21:46.4304|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:21:46.6186|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:21:46.6186|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:21:46.6186|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:21:46.6186|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:22:16.6465|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:26:42.7194|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:26:42.8746|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:26:42.8930|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:26:42.8930|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:26:42.8930|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:27:12.8891|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:27:42.9222|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:28:21.1028|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:31:05.5719|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:31:05.6873|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:31:05.6873|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:31:05.6873|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:31:05.6971|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:31:35.7038|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:31:54.3908|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 09:31:54.3908|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 09:32:25.4675|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:32:25.6737|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:32:25.6737|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:32:25.6737|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:32:25.6737|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:44:22.6034|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:44:22.7841|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:44:22.7841|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:44:22.7841|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:44:22.7924|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:44:52.8253|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:45:22.8372|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:45:52.8427|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:46:22.8558|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:46:31.9038|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alex not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 09:46:52.8676|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:47:22.8824|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:47:52.8954|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:48:22.9029|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:48:52.9126|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:49:22.9278|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:49:52.9397|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:50:22.9495|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:50:52.9535|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:51:22.9676|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:51:49.4371|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: The AuthorizationPolicy named: 'CreatorArea' was not found.
+   at Microsoft.AspNetCore.Authorization.AuthorizationPolicy.CombineAsync(IAuthorizationPolicyProvider policyProvider, IEnumerable`1 authorizeData, IEnumerable`1 policies)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Revoke/Alex|action: Revoke|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 09:51:52.9799|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:52:22.9938|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:52:53.0127|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:53:23.0327|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:53:53.0490|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 09:59:30.8839|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 09:59:31.0630|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:59:31.0630|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 09:59:31.0630|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 09:59:31.0861|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:00:01.1049|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:00:31.1233|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:01:01.1379|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:01:31.1466|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:02:01.1591|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:12:58.9369|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 10:12:59.1435|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:12:59.1435|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:12:59.1435|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 10:12:59.1435|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:13:29.1628|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:13:51.6904|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at System.Security.Claims.Claim..ctor(String type, String value, String valueType, String issuer, String originalIssuer, ClaimsIdentity subject, String propertyKey, String propertyValue)
+   at System.Security.Claims.Claim..ctor(String type, String value)
+   at DwellEase.Service.Extensions.JwtTokenExtension.CreateClaims(User user, List`1 roles) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 17
+   at DwellEase.Service.Services.Implementations.TokenService.CreateToken(User user) in C:\AProject\DwellEase\DwellEase.Service\Services\Implementations\TokenService.cs:line 21
+   at DwellEase.Service.Handlers.LoginQueryHandler.Handle(LoginQuery request, CancellationToken cancellationToken) in C:\AProject\DwellEase\DwellEase.Service\Handlers\LoginQueryHandler.cs:line 48
+   at DwellEase.WebAPI.Controllers.AccountsController.Authenticate(AuthRequest request) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at lambda_method35(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Login|action: Authenticate|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 10:13:59.1873|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:14:29.1974|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:14:59.2163|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:15:29.2326|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:15:59.2350|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:16:09.7716|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 10:16:09.7727|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 10:16:25.4493|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 10:16:26.6629|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:16:26.6783|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:16:26.6783|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:16:26.6783|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 10:17:50.9192|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 10:17:51.1201|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:17:51.1201|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:17:51.1201|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 10:17:51.1490|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:17:53.4718|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Admin not found |url: https://localhost/Account/Login|action: Authenticate|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 10:17:53.5102|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.AggregateException: User are not found|url: https://localhost/Account/Login|action: Authenticate|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 10:18:21.1739|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:18:30.8130|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 10:18:30.8130|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 10:19:20.6533|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 10:19:20.9050|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:19:20.9050|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:19:20.9050|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 10:19:20.9150|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:19:50.9396|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:20:20.9554|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:20:50.9719|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:21:20.9772|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:21:50.9933|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:22:21.0161|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:55:46.9840|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 10:55:47.2090|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:55:47.2355|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:55:47.2355|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 10:55:47.2355|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 10:56:17.2290|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:56:47.2630|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:57:17.2670|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:57:44.1511|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 10:57:47.2819|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:58:17.2970|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:58:47.3043|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:59:17.3187|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:59:47.3320|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 10:59:53.7398|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 10:59:53.7441|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 11:02:51.3067|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:02:51.8859|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:02:52.1602|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:02:52.1602|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:02:52.1640|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:03:05.2113|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Login|action: Authenticate|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 11:03:31.3813|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:04:57.6079|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:07:21.2671|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:07:21.4169|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:07:21.4169|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:07:21.4169|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:07:21.4320|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:07:51.4500|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:08:21.4731|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:08:29.4500|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 90
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 11:08:51.4859|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:09:21.4963|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:09:51.5120|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:10:21.5214|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:10:51.5279|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:10:51.9059|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 11:10:51.9059|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 11:11:25.1549|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:11:25.3513|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:11:25.3513|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:11:25.3513|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:11:25.3513|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:11:45.1906|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 89
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 11:11:55.3754|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:12:25.4014|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:12:55.4169|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:13:25.4342|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:13:55.4480|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:14:25.4542|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:14:55.4755|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:15:25.4865|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:22:39.1653|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:22:39.4337|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:22:39.4337|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:22:39.4337|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:22:39.4337|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:23:09.4704|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:23:12.7211|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 11:23:12.7211|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 11:23:33.9581|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:23:34.1055|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:23:34.1055|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:23:34.1055|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:23:34.1245|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:24:04.1406|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:24:34.1580|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:25:00.6424|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 11:25:00.6424|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 11:25:14.7829|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:25:15.2071|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:25:15.2071|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:25:15.2071|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:25:15.2071|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:26:15.9459|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:27:28.0201|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:27:28.1628|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:27:28.1628|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:27:28.1628|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:27:28.1742|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:27:58.1888|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:28:45.0422|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:28:45.2911|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:28:45.2911|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:28:45.2911|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:28:45.3412|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:29:15.3593|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:29:45.3555|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:30:15.3615|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:30:45.3731|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:31:15.3778|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 11:31:43.2117|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 11:31:43.2117|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 11:32:01.0723|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 11:32:01.6333|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:32:01.6333|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 11:32:01.6333|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 11:32:01.6585|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:54:01.2021|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 12:54:01.3924|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:54:01.3924|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:54:01.3924|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 12:54:01.4064|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:54:31.4224|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:54:55.9685|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 12:54:56.1063|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:54:56.1063|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:54:56.1063|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 12:54:56.1063|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:55:20.0898|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 89
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 12:55:26.1136|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:55:56.1307|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:56:26.1520|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:56:56.1640|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:57:26.1676|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:57:56.1819|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:58:26.1947|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:58:56.2114|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:59:26.2217|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 12:59:30.6086|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 12:59:30.6086|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 12:59:42.8577|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 12:59:42.9979|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:59:43.0095|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 12:59:43.0095|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 12:59:43.0383|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:00:13.0473|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:00:42.3099|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 13:00:43.0766|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:06:00.6145|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:06:00.7808|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:06:00.7808|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:06:00.7808|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:06:00.8139|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:06:30.8300|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:07:00.8604|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:07:30.8753|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:08:15.8142|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:08:16.5205|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:08:16.5205|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:08:16.5205|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:08:16.5928|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:09:11.1471|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:09:43.3595|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:15:10.1107|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:15:10.2846|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:15:10.3035|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:15:10.3035|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:15:10.3035|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:24:26.3579|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:24:26.5582|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:24:26.5582|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:24:26.5582|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:24:26.5582|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:24:56.5980|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:25:26.6101|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:25:56.6188|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:26:26.6229|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:26:56.6353|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:27:06.3344|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 13:27:26.6473|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:27:56.6613|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:28:26.6791|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:28:56.6870|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:29:26.7086|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:29:56.7284|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:30:26.7364|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:30:55.2909|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 13:30:55.2909|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 13:39:28.2407|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:39:28.3722|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:39:28.3722|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:39:28.3722|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:39:28.4006|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:39:58.4214|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:40:15.5956|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'Null' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.Number'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '52', CurrentDepth: '1', BytesConsumed: '73'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.GetJwtSecurityTokenFromToken(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at DwellEase.Service.Extensions.JwtTokenExtension.GetPrincipalFromExpiredToken(IConfiguration configuration, String token) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 88
+   at DwellEase.WebAPI.Controllers.AccountController.RefreshToken(TokenModel tokenModel) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 110
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Refresh-Token|action: RefreshToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 13:40:19.1580|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 13:40:19.1691|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 13:41:17.2219|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 13:41:17.3540|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:41:17.3540|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 13:41:17.3540|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 13:41:17.3958|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:41:47.4043|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:42:17.4190|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:42:47.4314|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:43:17.4324|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 13:43:20.6398|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 13:43:20.6483|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 15:00:24.2626|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 15:00:24.3519|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 15:00:24.3519|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 15:00:24.3519|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 15:00:24.3682|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:00:54.3858|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:01:24.3956|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:01:54.4119|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:02:24.4179|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:02:54.4376|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:03:23.9343|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at DwellEase.Service.Extensions.JwtTokenExtension.CreateSigningCredentials(IConfiguration configuration) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 32
+   at DwellEase.Service.Extensions.JwtTokenExtension.CreateJwtToken(IEnumerable`1 claims, IConfiguration configuration) in C:\AProject\DwellEase\DwellEase.Service\Extensions\JwtTokenExtension.cs:line 40
+   at DwellEase.Service.Services.Implementations.TokenService.CreateToken(User user) in C:\AProject\DwellEase\DwellEase.Service\Services\Implementations\TokenService.cs:line 21
+   at DwellEase.WebAPI.Controllers.AccountController.Authenticate(AuthRequest request) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 62
+   at DwellEase.WebAPI.Controllers.AccountController.Register(RegisterRequest request) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 93
+   at lambda_method35(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Register|action: Register|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 15:03:24.4476|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:03:54.4568|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:04:24.4739|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 15:04:42.2699|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 15:04:42.2699|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 18:47:16.7480|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 18:47:16.9418|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:47:16.9418|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:47:16.9418|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 18:47:16.9418|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:47:46.9586|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:48:12.8456|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.FormatException: Element 'Role' does not match any field or property of class DwellEase.Domain.Entity.User.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.DeserializeClass(BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize[TValue](IBsonSerializer`1 serializer, BsonDeserializationContext context)
+   at MongoDB.Driver.Core.Operations.CursorBatchDeserializationHelper.DeserializeBatch[TDocument](RawBsonArray batch, IBsonSerializer`1 documentSerializer, MessageEncoderSettings messageEncoderSettings)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateFirstCursorBatch(BsonDocument cursorDocument)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.CreateCursor(IChannelSourceHandle channelSource, IChannelHandle channel, BsonDocument commandResult)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at DwellEase.DataManagement.Repositories.Implementations.UserRepository.GetAll() in C:\AProject\DwellEase\DwellEase.DataManagement\Repositories\Implementations\UserRepository.cs:line 45
+   at DwellEase.Service.Services.Implementations.UserService.FindByNameAsync(String userName) in C:\AProject\DwellEase\DwellEase.Service\Services\Implementations\UserService.cs:line 97
+   at DwellEase.WebAPI.Controllers.AccountsController.Register(RegisterRequest request) in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 89
+   at lambda_method35(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/Register|action: Register|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 18:48:16.9870|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:48:46.9885|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:49:17.0110|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages with not ended rent are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:49:46.8483|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 18:49:46.8531|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 18:50:34.7020|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 18:50:34.8246|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:50:34.8805|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:50:34.8805|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:50:34.8805|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 18:50:42.2849|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 18:51:04.8312|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:51:34.8506|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:51:37.2566|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 18:51:37.2578|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 18:51:48.8062|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 18:51:48.9221|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:51:48.9656|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:51:48.9656|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:51:48.9656|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 18:52:18.9353|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:52:32.5856|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 18:52:48.9386|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:53:10.0098|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alex not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 18:53:18.9513|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:53:48.9496|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:54:18.7661|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 18:54:18.7661|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 18:58:38.5620|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 18:58:38.6333|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:58:38.6789|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:58:38.6789|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 18:58:38.6789|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 18:58:52.3085|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Ale not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 18:59:08.6568|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 18:59:38.6772|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 19:00:08.6889|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 19:00:11.4521|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 19:00:11.4648|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 22:03:00.8134|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 22:03:01.2045|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:03:01.5725|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:03:01.5725|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:03:01.5725|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 22:03:20.1331|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexeusha not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 22:03:31.2255|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:03:56.8513|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 22:03:56.9278|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:03:56.9638|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:03:56.9638|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:03:56.9762|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 22:04:23.2578|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 22:04:23.2578|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 22:04:33.4871|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 22:04:33.6253|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:04:33.6964|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:04:33.6964|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 22:04:33.6964|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 22:04:52.5112|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexeusha not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 22:05:03.6484|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:05:33.6582|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:06:03.6658|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:06:33.6780|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:07:03.6846|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:07:33.6924|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:07:43.0264|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alex not found |url: https://localhost/Account/Login|action: Authenticate|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 22:07:43.0264|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.AggregateException: User are not found|url: https://localhost/Account/Login|action: Authenticate|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-09-22 22:08:03.6966|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:08:33.7158|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:08:50.5646|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexey not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-09-22 22:09:03.7292|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 22:09:22.3013|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-09-22 22:09:22.3100|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-09-22 23:38:47.8512|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-09-22 23:38:48.0202|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:38:48.1211|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 23:38:48.1211|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-09-22 23:38:48.1211|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-09-22 23:39:18.0485|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:39:48.0662|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:40:18.0995|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:40:48.1322|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:41:18.1397|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-09-22 23:41:48.1519|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 

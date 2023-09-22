@@ -12,7 +12,6 @@ public class User
     public string Email { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
     public PhoneNumber PhoneNumber { get; set; }
-    public Role Role { get; set; } = new Role(){RoleName = "Resident"};
     public string? RefreshToken { get; set; }
     public DateTime RefreshTokenExpiryTime { get; set; }
     public string PasswordSalt { get; set; }

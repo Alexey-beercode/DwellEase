@@ -9,14 +9,16 @@ namespace DwellEase.Service.Services.Implementations;
 public class UserService
 {
     private readonly UserRepository _userRepository;
+    private readonly UserRoleRepository _userRoleRepository;
     private readonly ILogger<UserService> _logger;
     private readonly RoleService _roleService;
 
-    public UserService(UserRepository userRepository, ILogger<UserService> logger, RoleService roleService)
+    public UserService(UserRepository userRepository, ILogger<UserService> logger, RoleService roleService, UserRoleRepository userRoleRepository)
     {
         _userRepository = userRepository;
         _logger = logger;
         _roleService = roleService;
+        _userRoleRepository = userRoleRepository;
     }
 
     private BaseResponse<T> HandleError<T>(string description, HttpStatusCode error)
@@ -59,8 +61,8 @@ public class UserService
         }
 
         var roles = (await _roleService.GetAllAsync()).Data;
-        user.Role = roles.FirstOrDefault(a => a.RoleName == role);
-        await _userRepository.Update(user);
+        var newRole = roles.FirstOrDefault(a => a.RoleName == role);
+        await _userRoleRepository.Create(new UserRole() { UserId = user.Id, RoleId = newRole.Id });
         return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
     }
 
