@@ -8,6 +8,12 @@ public static class WebApplicationExtension
     {
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        app.UseCors(builder =>
+        {
+            builder.WithOrigins("https://localhost:44315") // Укажите ваш источник
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        }); 
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();

@@ -13,11 +13,11 @@ public static class JwtBearerExtensions
     {
         var tokenValidationParameters = new TokenValidationParameters
         {
-            ValidateAudience = true,
-            ValidateIssuer = true,
+            ValidateAudience = false,
+            ValidateIssuer = false,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]!)),
-            ValidateLifetime = false
+            ValidateLifetime = true
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();

@@ -58,7 +58,8 @@ namespace DwellEase.Service.Handlers
             var userRoles = roles.Where(role => rolesId.Contains(role.Id)).ToList();
             var accessTokenClaims = _tokenService.CreateClaims(user,userRoles);
             var accessToken = _tokenService.GenerateAccessToken(accessTokenClaims);
-            user.RefreshToken = _tokenService.GenerateRefreshToken();
+            var refreshToken = _tokenService.GenerateRefreshToken();
+            user.RefreshToken = refreshToken;
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
             await _userService.UpdateAsync(user);
             
@@ -67,7 +68,7 @@ namespace DwellEase.Service.Handlers
                 Username = user.UserName!,
                 Email = user.Email!,
                 Token = accessToken,
-                RefreshToken = user.RefreshToken
+                RefreshToken = refreshToken
             };
         }
     }

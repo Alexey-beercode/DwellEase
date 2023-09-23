@@ -1,7 +1,4 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Net;
-using DwellEase.Domain.Entity;
-using DwellEase.Domain.Enum;
+﻿using System.Net;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Commands;
@@ -54,27 +51,19 @@ public class AccountsController : ControllerBase
 
         var loginResponse = await _mediator.Send(query);
         
-        var cookieOptions = new CookieOptions
-        {
-            HttpOnly = true, 
-            Secure = true, 
-            SameSite = SameSiteMode.None, 
-            Expires = DateTime.UtcNow.AddDays(30) 
-        };
-
-        Response.Cookies.Append("refreshToken", loginResponse.RefreshToken, cookieOptions);
+        _logger.LogInformation($"{loginResponse.Token}");
         var authResponse = new AuthResponse()
         {
-            Email = loginResponse.Email,
             Username = loginResponse.Username,
-            Token = loginResponse.Token
+            Token = loginResponse.Token,
+            Email = loginResponse.Email
         };
-        return Ok(authResponse);
+        return Ok(loginResponse);
     }
 
 
     [HttpPost("Register")]
-    public async Task<ActionResult<AuthResponse>> Register(RegisterRequest request)
+    public async Task<ActionResult<AuthResponse>> Register([FromBody]RegisterRequest request)
     {
         if (!ModelState.IsValid)
         {
@@ -115,7 +104,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost]
-    [Route("Refresh-token")]
+    [Route("Refresh-Token")]
     public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
     {
         if (tokenModel is null)
@@ -142,16 +131,13 @@ public class AccountsController : ControllerBase
         }
 
         var newAccessToken = _tokenService.GenerateAccessToken(principal.Claims.ToList());
-        var newRefreshToken = _tokenService.GenerateRefreshToken();
-
-        response.Data.RefreshToken = newRefreshToken;
+        
         response.Data.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
         await _userService.UpdateAsync(response.Data);
 
         return new ObjectResult(new
         {
             accessToken = newAccessToken,
-            refreshToken = newRefreshToken
         });
     }
 
@@ -172,7 +158,7 @@ public class AccountsController : ControllerBase
     }
 
     [Authorize(Policy = "AdminArea")]
-    [HttpPost("Revoke-all")]
+    [HttpPost("Revoke-All")]
     public async Task<IActionResult> RevokeAll()
     {
         var response =await _userService.GetAllAsync();
