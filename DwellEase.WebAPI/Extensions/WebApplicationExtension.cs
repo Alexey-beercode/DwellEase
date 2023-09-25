@@ -10,7 +10,7 @@ public static class WebApplicationExtension
         app.UseStaticFiles();
         app.UseCors(builder =>
         {
-            builder.WithOrigins("https://localhost:44315") // Укажите ваш источник
+            builder.WithOrigins("https://localhost:44315") 
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         }); 
