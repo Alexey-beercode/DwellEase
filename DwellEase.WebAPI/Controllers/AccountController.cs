@@ -29,16 +29,6 @@ public class AccountsController : ControllerBase
         _userService = userService;
         _tokenService = tokenService;
     }
-    private IActionResult HandleResponse<T>(BaseResponse<T> response)
-    {
-        if (response.StatusCode != HttpStatusCode.OK)
-        {
-            _logger.LogError($"Response from service status is not OK: {response.StatusCode}");
-            return StatusCode((int)response.StatusCode, response.Description);
-        }
-
-        return Ok(response.Data);
-    }
    
     [HttpPost("Login")]
     public async Task<ActionResult<AuthResponse>> Authenticate(AuthRequest request)

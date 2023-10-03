@@ -5,8 +5,8 @@ namespace DwellEase.WebAPI.Hubs;
 
 public class RentalHub : Hub
 {
-    public async Task SendRemainingTimeUpdate(ApartmentPageRentInfo apartmentPageRentInfo)
+    public async Task SendRemainingTimeUpdate(ApartmentPageRentResponse apartmentPageRentResponse)
     {
-        await Clients.User(apartmentPageRentInfo.UserId.ToString()).SendAsync("ReceiveRemainingTimeUpdate", apartmentPageRentInfo);
+        await Clients.User(apartmentPageRentResponse.UserId.ToString()).SendAsync("ReceiveRemainingTimeUpdate", apartmentPageRentResponse);
     }
 }

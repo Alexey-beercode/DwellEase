@@ -48,12 +48,10 @@
                 Email: document.getElementById("emailId").value,
                 Password: document.getElementById("passwordId").value,
                 UserName: document.getElementById("usernameId").value,
-                Role: document.getElementById("roleId").value,
-                PhoneNumber: document.getElementById("phoneNumberId").value
             };
 
             // Отправляем POST-запрос к серверу для регистрации
-            const response = await fetch("https://localhost:44300/Account/Register", {
+            const response = await fetch("https://localhost:44387/Account/Register", {
                 method: "POST",
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify(registrationData)

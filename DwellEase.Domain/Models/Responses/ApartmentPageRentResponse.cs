@@ -1,12 +1,12 @@
 ﻿namespace DwellEase.Domain.Models;
 
-public class ApartmentPageRentInfo
+public class ApartmentPageRentResponse
 {
     public Guid UserId { get; set; }
     public Guid ApartmentPageId { get; set; }
     public string TimeRemaining { get; set; }
 
-    public ApartmentPageRentInfo(Guid userId, Guid apartmentPageId, TimeSpan timeSpan)
+    public ApartmentPageRentResponse(Guid userId, Guid apartmentPageId, TimeSpan timeSpan)
     {
         UserId = userId;
         ApartmentPageId = apartmentPageId;

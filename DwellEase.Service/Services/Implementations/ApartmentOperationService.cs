@@ -10,10 +10,11 @@ namespace DwellEase.Service.Services.Implementations;
 public class ApartmentOperationService
 {
     private readonly ApartmentOperationRepository _apartmentOperationRepository;
-    private readonly ILogger<ApartmentOperationRepository> _logger;
+    private readonly ILogger<ApartmentOperationService> _logger;
     private readonly ApartmentPageService _apartmentPageService;
 
-    public ApartmentOperationService(ApartmentOperationRepository apartmentOperationRepository, ILogger<ApartmentOperationRepository> logger, ApartmentPageService apartmentPageService)
+    
+    public ApartmentOperationService(ApartmentOperationRepository apartmentOperationRepository, ILogger<ApartmentOperationService> logger, ApartmentPageService apartmentPageService)
     {
         _apartmentOperationRepository = apartmentOperationRepository;
         _logger = logger;
@@ -31,7 +32,7 @@ public class ApartmentOperationService
         return response;
     }
 
-    public async Task<BaseResponse<bool>> CreateAsync(ApartmentOperation apartmentOperation ,Guid userId)
+    public async Task<BaseResponse<bool>> CreateAsync(ApartmentOperation apartmentOperation)
     {
         var response = new BaseResponse<bool>();
         var apartmentPageResponse = await _apartmentPageService.GetByIdAsync(apartmentOperation.ApartmentPageId);
@@ -48,8 +49,8 @@ public class ApartmentOperationService
         {
             ApartmentPageId = apartmentOperation.ApartmentPageId,
             OperationType = OperationType.Purchase,
-            UserId = userId,
-            Price = apartmentOperation.Price
+            UserId = apartmentOperation.UserId,
+            Price = apartmentOperation.Price,
         };
 
         apartmentPageResponse.Data.Status = ApartmentStatus.Bought;
@@ -61,7 +62,7 @@ public class ApartmentOperationService
         return response;
     }
     
-    public async Task<BaseResponse<bool>> CreateRentOperationAsync(ApartmentOperation apartmentOperation ,Guid userId)
+    public async Task<BaseResponse<bool>> CreateRentOperationAsync(ApartmentOperation apartmentOperation )
     {
         var response = new BaseResponse<bool>();
         var apartmentPageResponse = await _apartmentPageService.GetByIdAsync(apartmentOperation.ApartmentPageId);
@@ -80,7 +81,7 @@ public class ApartmentOperationService
             OperationType = OperationType.Rent,
             StartDate = DateTime.Now,
             EndDate = apartmentOperation.EndDate,
-            UserId = userId,
+            UserId = apartmentOperation.UserId,
             Price = apartmentOperation.Price
         };
         apartmentPageResponse.Data.Status = ApartmentStatus.Rented;

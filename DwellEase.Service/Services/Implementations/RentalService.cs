@@ -19,10 +19,10 @@ public class RentalService
         _logger = logger;
     }
 
-    public async Task<BaseResponse<List<ApartmentPageRentInfo>>> CheckAndUpdateApartmentStatus()
+    public async Task<BaseResponse<List<ApartmentPageRentResponse>>> CheckAndUpdateApartmentStatus()
     {
-        var response = new BaseResponse<List<ApartmentPageRentInfo>>();
-        var list = new List<ApartmentPageRentInfo>();
+        var response = new BaseResponse<List<ApartmentPageRentResponse>>();
+        var list = new List<ApartmentPageRentResponse>();
         var apartmentPages =await await _apartmentPageRepository.GetAll();
         if (apartmentPages.Count==0)
         {
@@ -49,7 +49,7 @@ public class RentalService
                 await _apartmentPageRepository.Update(apartmentPage);
                 continue;
             }
-            list.Add(new ApartmentPageRentInfo(operation.UserId,apartmentPage.Id,timeRemaining));
+            list.Add(new ApartmentPageRentResponse(operation.UserId,apartmentPage.Id,timeRemaining));
         }
 
         if (list.Count==0)

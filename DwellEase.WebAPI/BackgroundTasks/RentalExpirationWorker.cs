@@ -47,8 +47,8 @@ public class RentalExpirationWorker : BackgroundService
             }
         }
     }
-    private async Task SendRemainingTimeUpdateToUser(ApartmentPageRentInfo rentInfo)
+    private async Task SendRemainingTimeUpdateToUser(ApartmentPageRentResponse rentResponse)
     {
-        await _hubContext.Clients.User(rentInfo.UserId.ToString()).SendAsync("ReceiveRemainingTimeUpdate",rentInfo);
+        await _hubContext.Clients.User(rentResponse.UserId.ToString()).SendAsync("ReceiveRemainingTimeUpdate",rentResponse);
     }
 }
