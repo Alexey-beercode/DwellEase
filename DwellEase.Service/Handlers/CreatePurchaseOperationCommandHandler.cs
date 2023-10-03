@@ -18,7 +18,6 @@ public class CreatePurchaseOperationCommandHandler:IRequestHandler<CreatePurchas
 
     public Task<Guid> Handle(CreatePurchaseOperationCommand request, CancellationToken cancellationToken)
     {
-        
     }
     
 }
