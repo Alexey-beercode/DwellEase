@@ -1,0 +1,78 @@
+2023-10-04 14:54:56.5557|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-10-04 14:54:56.7131|0|DEBUG|Microsoft.AspNetCore.SignalR.Internal.DefaultHubProtocolResolver|Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol. 
+2023-10-04 14:54:56.8561|0|TRACE|Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher|'RentalHub' hub method 'SendRemainingTimeUpdate' is bound. 
+2023-10-04 14:54:56.8561|0|INFO|Program|Program initial 
+2023-10-04 14:54:56.8794|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-10-04 14:54:56.9372|0|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-10-04 14:54:56.9767|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-201f091d-1492-40cf-8448-2970d8f8302a.xml'. 
+2023-10-04 14:54:56.9767|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:54:56.9947|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-36f42311-3483-4917-8846-1f1bdd7768ee.xml'. 
+2023-10-04 14:54:57.0139|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e.xml'. 
+2023-10-04 14:54:57.0335|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-fe0fd9ec-cbd2-45ba-94c2-4c4db8302271.xml'. 
+2023-10-04 14:54:57.0477|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {201f091d-1492-40cf-8448-2970d8f8302a}. 
+2023-10-04 14:54:57.0477|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {36f42311-3483-4917-8846-1f1bdd7768ee}. 
+2023-10-04 14:54:57.0477|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e}. 
+2023-10-04 14:54:57.0477|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {fe0fd9ec-cbd2-45ba-94c2-4c4db8302271}. 
+2023-10-04 14:54:57.0557|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {36f42311-3483-4917-8846-1f1bdd7768ee} with expiration date 2023-12-30 19:24:09Z as default key. 
+2023-10-04 14:54:57.0557|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-04 14:54:57.0557|0|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI. 
+2023-10-04 14:54:57.0557|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-10-04 14:54:57.0557|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2023-10-04 14:54:57.0717|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2023-10-04 14:54:57.0717|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {36f42311-3483-4917-8846-1f1bdd7768ee} as the default key. 
+2023-10-04 14:54:57.0717|0|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {36f42311-3483-4917-8846-1f1bdd7768ee} was loaded during application startup. 
+2023-10-04 14:54:57.1540|0|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly DwellEase.WebAPI 
+2023-10-04 14:54:57.1540|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-10-04 14:54:57.1540|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-10-04 14:54:57.1540|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI 
+2023-10-04 14:54:57.1540|0|TRACE|Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager|Starting connection heartbeat. 
+2023-10-04 14:54:57.1540|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-10-04 14:54:57.2003|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44300/ - - 
+2023-10-04 14:54:57.2003|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-10-04 14:54:57.2003|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-10-04 14:54:57.2003|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path / does not match a supported file type 
+2023-10-04 14:54:57.2256|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/' 
+2023-10-04 14:54:57.2281|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/' 
+2023-10-04 14:54:57.2281|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'Fallback {*path:nonfile}' 
+2023-10-04 14:54:57.3569|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-10-04 14:54:57.3569|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Fallback {*path:nonfile}' 
+2023-10-04 14:54:57.3569|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path /index.html does not match an existing file 
+2023-10-04 14:54:57.3569|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Fallback {*path:nonfile}' 
+2023-10-04 14:54:57.4190|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18374686506246733872" disconnecting. 
+2023-10-04 14:54:57.4190|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44300/ - - - 404 - - 222.2077ms 
+2023-10-04 14:55:26.9998|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:55:57.0093|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:56:27.0184|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:56:57.0440|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:57:27.0548|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:57:57.0655|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:58:27.0813|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:58:57.0855|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:59:27.0891|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 14:59:57.1069|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:00:27.1180|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:00:57.1362|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:01:27.1531|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:01:57.1570|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:02:27.1741|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:02:57.1889|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:03:27.1959|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:03:57.2154|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:04:27.2310|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:04:57.2498|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:05:27.2671|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:05:57.2753|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:06:27.2953|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:06:57.3143|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:07:27.3209|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:07:57.3290|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 15:08:27.3487|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 16:03:58.4866|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 16:04:28.4856|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 16:04:58.4967|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-10-04 16:05:08.3374|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... 
+2023-10-04 16:05:08.3374|0|TRACE|Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager|Ending connection heartbeat. 
+2023-10-04 16:05:08.3374|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping 
+2023-10-04 16:05:08.3528|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken) in C:\AProject\DwellEase\DwellEase.WebAPI\BackgroundTasks\RentalExpirationWorker.cs:line 42
+2023-10-04 16:05:08.5190|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped 

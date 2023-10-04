@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
@@ -10,17 +9,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Controllers;
 
+[Route("ApartmentOperation")]
 public class ApartmentOperationController:ControllerBase
 {
-    private readonly ApartmentOperationService _apartmentOperationService;
     private readonly ILogger<ApartmentOperationController> _logger;
     private readonly IMediator _mediator;
     private readonly ApartmentPageService _apartmentPageService;
     private readonly UserService _userService;
 
-    public ApartmentOperationController(ApartmentOperationService apartmentOperationService, ILogger<ApartmentOperationController> logger, IMediator mediator, ApartmentPageService apartmentPageService, UserService userService)
+    public ApartmentOperationController(ILogger<ApartmentOperationController> logger, IMediator mediator, ApartmentPageService apartmentPageService, UserService userService)
     {
-        _apartmentOperationService = apartmentOperationService;
         _logger = logger;
         _mediator = mediator;
         _apartmentPageService = apartmentPageService;
@@ -67,12 +65,13 @@ public class ApartmentOperationController:ControllerBase
 
         try
         {
-            var result = await _mediator.Send(new CreatePurchaseOperationCommand()
+            var result = await _mediator.Send(new CreateRentOperationCommand()
             {
                 UserId = userId,
                 ApartmentPageId = apartmentPageId,
                 Price = apartmentPageResponse.Data.Price,
-                OperationType = OperationType.Purchase
+                OperationType = OperationType.Purchase,
+                RentalPeriod = TimeSpan.Parse(request.RentalPeriod)
             });
             return Ok(result);
         }
@@ -87,10 +86,12 @@ public class ApartmentOperationController:ControllerBase
     {
         var isApartmentPageIdValid=Guid.TryParse(request.ApartmentPageId, out var apartmentPageId);
         var isUserIdValid=Guid.TryParse(request.UserId, out var userId);
+        
         if (!isUserIdValid)
         {
             return BadRequest("Invalid user ID format");
         }
+        
         if(!isApartmentPageIdValid)
         {
             return BadRequest("Invalid apartmentpage ID format");
@@ -111,14 +112,14 @@ public class ApartmentOperationController:ControllerBase
 
         try
         {
-            var result = await _mediator.Send(new CreatePurchaseOperationCommand()
+            await _mediator.Send(new CreatePurchaseOperationCommand()
             {
                 UserId = userId,
                 ApartmentPageId = apartmentPageId,
                 Price = apartmentPageResponse.Data.Price,
                 OperationType = OperationType.Purchase
-            });
-            return Ok(result);
+            }); 
+            return Ok();
         }
         catch (Exception e)
         {

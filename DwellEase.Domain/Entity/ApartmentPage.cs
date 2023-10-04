@@ -17,6 +17,6 @@ public class ApartmentPage
     public Apartment Apartment { get; set; } = null!;
     public PhoneNumber PhoneNumber { get; set; } = null!;
     public Guid OwnerId { get; set; }
-    public Image[] Images { get; set; } = null!;
+    public List<Image> Images { get; set; } = null!;
     public DateOnly Date { get; set; }
 }

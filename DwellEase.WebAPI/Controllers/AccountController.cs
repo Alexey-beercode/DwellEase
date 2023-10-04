@@ -68,7 +68,12 @@ public class AccountsController : ControllerBase
         var response = await _userService.FindByNameAsync(request.UserName);
         if (response.StatusCode==HttpStatusCode.OK)
         {
-            return Unauthorized("User with this username exists");
+            return BadRequest("User with this username exists");
+        }
+
+        if (request.Role!="Resident"||request.Role!="Creator")
+        {
+            return BadRequest("Incorrect role");
         }
 
         try

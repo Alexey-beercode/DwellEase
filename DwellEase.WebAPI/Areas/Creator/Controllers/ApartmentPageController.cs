@@ -1,4 +1,5 @@
-﻿using DwellEase.Service.Services.Implementations;
+﻿using DwellEase.Domain.Models.Requests;
+using DwellEase.Service.Services.Implementations;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
 [Area("Creator")]
-[Authorize(Policy = "CreatorArea")]
 public class ApartmentPageController:ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
@@ -18,5 +18,12 @@ public class ApartmentPageController:ControllerBase
         _logger = logger;
         _apartmentPageService = apartmentPageService;
         _mediator = mediator;
+    }
+    
+    [Authorize(Policy = "CreatorArea")]
+    [HttpPut("CreateApartmentPage")]
+    public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
+    {
+        
     }
 }

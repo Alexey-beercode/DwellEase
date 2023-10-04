@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DwellEase.Service.Commands;
 
-public class CreatePurchaseOperationCommand:IRequest<Guid>
+public class CreatePurchaseOperationCommand:IRequest<bool>
 {
     public OperationType OperationType { get; set; } = OperationType.Purchase;
     public Guid UserId { get; set; }
