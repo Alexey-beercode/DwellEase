@@ -2,6 +2,7 @@
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;

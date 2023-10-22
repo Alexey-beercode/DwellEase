@@ -36,7 +36,7 @@ public class ApartmentOperationController:ControllerBase
         return Ok(response.Data);
     }
     
-    [HttpPut("CreateRentOperation")]
+    [HttpPost("CreateRentOperation")]
     public async Task<IActionResult> CreateRentOperation([FromBody] RentRequest request)
     {
         var isApartmentPageIdValid=Guid.TryParse(request.ApartmentPageId, out var apartmentPageId);
@@ -81,7 +81,7 @@ public class ApartmentOperationController:ControllerBase
         }
     }
 
-    [HttpPut("CreatePurchaseOperation")]
+    [HttpPost("CreatePurchaseOperation")]
     public async Task<IActionResult> CreatePurchaseOperation([FromBody] PurchaseRequest request)
     {
         var isApartmentPageIdValid=Guid.TryParse(request.ApartmentPageId, out var apartmentPageId);

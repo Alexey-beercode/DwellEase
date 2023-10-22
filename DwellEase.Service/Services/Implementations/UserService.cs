@@ -55,7 +55,7 @@ public class UserService
 
     public async Task<BaseResponse<bool>> AddToRoleAsync(User user, string role)
     {
-        if (!(role == "Admin" || role == "Creator" || role == "Resident"))
+        if (!(role == "Creator" || role == "Resident"))
         {
             HandleError<bool>("Role are not contains right role type", HttpStatusCode.BadRequest);
         }
@@ -133,8 +133,7 @@ public class UserService
         {
             return HandleError<bool>($"User with id: {user.Id} not found", HttpStatusCode.NoContent);
         }
-
-        // Используйте соль из базы данных при проверке пароля
+        
         var isPasswordValid = BCrypt.Net.BCrypt.Verify(password, findUser.PasswordHash);
 
         return new BaseResponse<bool>()

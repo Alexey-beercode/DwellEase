@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.WebAPI.Hubs;
 using Microsoft.AspNetCore.SignalR;

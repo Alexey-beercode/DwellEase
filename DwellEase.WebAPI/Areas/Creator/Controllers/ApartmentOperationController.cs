@@ -7,6 +7,7 @@ namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
 [Area("Creator")]
 [Authorize(Policy = "CreatorArea")]
+[Route("ApartmentOperation")]
 public class ApartmentOperationController:ControllerBase
 {
     private readonly ILogger<ApartmentOperationController> _logger;

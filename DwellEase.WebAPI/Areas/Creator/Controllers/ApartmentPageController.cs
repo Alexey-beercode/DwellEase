@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
 [Area("Creator")]
+[Route("ApartmentPage")]
 public class ApartmentPageController:ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
@@ -21,7 +22,7 @@ public class ApartmentPageController:ControllerBase
     }
     
     [Authorize(Policy = "CreatorArea")]
-    [HttpPut("CreateApartmentPage")]
+    [HttpPost("CreateApartmentPage")]
     public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
     {
         

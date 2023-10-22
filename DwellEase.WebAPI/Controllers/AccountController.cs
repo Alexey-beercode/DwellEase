@@ -71,7 +71,7 @@ public class AccountsController : ControllerBase
             return BadRequest("User with this username exists");
         }
 
-        if (request.Role!="Resident"||request.Role!="Creator")
+        if (request.Role.ToUpper()!="RESIDENT"||request.Role.ToUpper()!="CREATOR")
         {
             return BadRequest("Incorrect role");
         }
@@ -97,9 +97,8 @@ public class AccountsController : ControllerBase
             return BadRequest(e.Message);
         }
     }
-
-    [HttpPost]
-    [Route("Refresh-Token")]
+    
+    [HttpPost("Refresh-Token")]
     public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
     {
         if (tokenModel is null)

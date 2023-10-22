@@ -1,4 +1,4 @@
-﻿namespace DwellEase.Domain.Models;
+﻿namespace DwellEase.Domain.Models.Responses;
 
 public class ApartmentPageRentResponse
 {

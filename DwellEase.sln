@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.WebAPI", "DwellEa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.SharedLibrary", "DwellEase.SharedLibrary\DwellEase.SharedLibrary.csproj", "{360FCE77-F90C-4782-ABA5-54C40A9BED1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.DesktopClient", "DwellEase.DesktopClient\DwellEase.DesktopClient.csproj", "{0A1BC1CE-3E50-4DC8-B14B-7083D7662EA7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.BlazorClient", "DwellEase.BlazorClient\DwellEase.BlazorClient.csproj", "{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}"
 EndProject
 Global
@@ -49,10 +47,6 @@ Global
 		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360FCE77-F90C-4782-ABA5-54C40A9BED1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A1BC1CE-3E50-4DC8-B14B-7083D7662EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A1BC1CE-3E50-4DC8-B14B-7083D7662EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A1BC1CE-3E50-4DC8-B14B-7083D7662EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A1BC1CE-3E50-4DC8-B14B-7083D7662EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
