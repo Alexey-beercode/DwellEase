@@ -25,6 +25,5 @@ public class ApartmentPageController:ControllerBase
     [HttpPost("CreateApartmentPage")]
     public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
     {
-        
     }
 }
