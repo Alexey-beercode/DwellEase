@@ -31,7 +31,7 @@ public class ApartmentPageService
         return response;
     }
     
-    public async Task<BaseResponse<bool>> CreateAsync(ApartmentPage apartmentPageModel,Guid ownerId)
+    public async Task<BaseResponse<bool>> CreateAsync(ApartmentPage apartmentPageModel)
     {
         var response = new BaseResponse<bool>();
         var apartmentPage = new ApartmentPage()
@@ -42,7 +42,7 @@ public class ApartmentPageService
             DaylyPrice = apartmentPageModel.DaylyPrice,
             Images = apartmentPageModel.Images,
             IsAvailableForPurchase = apartmentPageModel.IsAvailableForPurchase,
-            OwnerId = ownerId,
+            OwnerId = apartmentPageModel.OwnerId,
             PhoneNumber = apartmentPageModel.PhoneNumber,
             Price = apartmentPageModel.Price
         };

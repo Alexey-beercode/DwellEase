@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Commands;
@@ -21,7 +22,8 @@ public class AccountsController : ControllerBase
     private readonly ILogger<AccountsController> _logger;
     private readonly IMediator _mediator;
 
-    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger,  UserService userService,TokenService tokenService)
+    public AccountsController(IConfiguration configuration, IMediator mediator, ILogger<AccountsController> logger,
+        UserService userService, TokenService tokenService)
     {
         _configuration = configuration;
         _mediator = mediator;
@@ -29,7 +31,22 @@ public class AccountsController : ControllerBase
         _userService = userService;
         _tokenService = tokenService;
     }
-   
+
+    [HttpGet("GetUser")]
+    public async Task<IActionResult> TestGetUserByToken()
+    {
+        var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+        string userId = jsonToken.Claims.First(claim => claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+        string userName = jsonToken.Claims.First(claim => claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name").Value;
+        string userEmail = jsonToken.Claims.First(claim => claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress").Value;
+        string role = jsonToken.Claims.First(claim => claim.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value;
+        return Ok($"{userId}\n{userName}\n{userEmail}\n{role}");
+    }
+
+
     [HttpPost("Login")]
     public async Task<ActionResult<AuthResponse>> Authenticate(AuthRequest request)
     {
@@ -40,7 +57,7 @@ public class AccountsController : ControllerBase
         };
 
         var loginResponse = await _mediator.Send(query);
-        
+
         _logger.LogInformation($"{loginResponse.Token}");
         var authResponse = new AuthResponse()
         {
@@ -53,7 +70,7 @@ public class AccountsController : ControllerBase
 
 
     [HttpPost("Register")]
-    public async Task<ActionResult<AuthResponse>> Register([FromBody]RegisterRequest request)
+    public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
     {
         if (!ModelState.IsValid)
         {
@@ -64,14 +81,14 @@ public class AccountsController : ControllerBase
         {
             return BadRequest("Phone number is not valid");
         }
-        
+
         var response = await _userService.FindByNameAsync(request.UserName);
-        if (response.StatusCode==HttpStatusCode.OK)
+        if (response.StatusCode == HttpStatusCode.OK)
         {
             return BadRequest("User with this username exists");
         }
 
-        if (request.Role.ToUpper()!="RESIDENT"||request.Role.ToUpper()!="CREATOR")
+        if (request.Role.ToUpper() != "RESIDENT" && request.Role.ToUpper() != "CREATOR")
         {
             return BadRequest("Incorrect role");
         }
@@ -84,7 +101,7 @@ public class AccountsController : ControllerBase
                 Email = request.Email,
                 Password = request.Password,
                 UserName = request.UserName,
-                PhoneNumber=new PhoneNumber(request.PhoneNumber)
+                PhoneNumber = new PhoneNumber(request.PhoneNumber)
             });
             return await Authenticate(new AuthRequest
             {
@@ -93,11 +110,11 @@ public class AccountsController : ControllerBase
             });
         }
         catch (Exception e)
-        { 
+        {
             return BadRequest(e.Message);
         }
     }
-    
+
     [HttpPost("Refresh-Token")]
     public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
     {
@@ -105,6 +122,7 @@ public class AccountsController : ControllerBase
         {
             return BadRequest("Invalid client request");
         }
+
         var principal = _configuration.GetPrincipalFromExpiredToken(tokenModel.AccessToken);
         if (principal == null)
         {
@@ -113,20 +131,22 @@ public class AccountsController : ControllerBase
 
         var username = principal.Identity!.Name;
         var response = await _userService.FindByNameAsync(username!);
-        
+
         if (response.StatusCode != HttpStatusCode.OK)
         {
             return StatusCode((int)response.StatusCode, response.Description);
         }
-        
-        if (response.Data.RefreshToken != tokenModel.RefreshToken || response.Data.RefreshTokenExpiryTime <= DateTime.UtcNow)
+
+        if (response.Data.RefreshToken != tokenModel.RefreshToken ||
+            response.Data.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
             return BadRequest("Invalid access token or refresh token");
         }
 
         var newAccessToken = _tokenService.GenerateAccessToken(principal.Claims.ToList());
-        
-        response.Data.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
+
+        response.Data.RefreshTokenExpiryTime =
+            DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
         await _userService.UpdateAsync(response.Data);
 
         return new ObjectResult(new
@@ -155,7 +175,7 @@ public class AccountsController : ControllerBase
     [HttpPost("Revoke-All")]
     public async Task<IActionResult> RevokeAll()
     {
-        var response =await _userService.GetAllAsync();
+        var response = await _userService.GetAllAsync();
         if (response.StatusCode != HttpStatusCode.OK)
         {
             return StatusCode((int)response.StatusCode, response.Description);

@@ -1,121 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Create Apartment Page</title>
 </head>
 <body>
-<h1>Регистрация</h1>
-<form id="registrationForm">
-    <label for="emailId">Email:</label>
-    <input type="text" id="emailId" required><br>
+<h1>Create Apartment Page</h1>
+<form id="apartmentForm">
+    <label for="daylyPrice">Daily Price:</label>
+    <input type="number" name="daylyPrice" required><br><br>
 
-    <label for="passwordId">Пароль:</label>
-    <input type="password" id="passwordId" required><br>
+    <label for="price">Price:</label>
+    <input type="number" name="price" required><br><br>
 
-    <label for="usernameId">Имя:</label>
-    <input type="text" id="usernameId" required><br>
+    <label for="isAvailable">Available for Purchase:</label>
+    <input type="checkbox" name="isAvailable" value="true"><br><br>
 
-    <label for="roleId">Роль:</label>
-    <input type="text" id="roleId" required><br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" name="phoneNumber" required><br><br>
 
-    <label for="phoneNumberId">Номер телефона:</label>
-    <input type="text" id="phoneNumberId" required><br>
+    <label for="ownerId">Owner Id:</label>
+    <input type="text" name="ownerId" required><br><br>
 
-    <button type="button" id="submitRegistration">Зарегистрироваться</button>
+    <label for="title">Title:</label>
+    <input type="text" name="title" required><br><br>
+
+    <label for="rooms">Rooms:</label>
+    <input type="number" name="rooms" required><br><br>
+
+    <label for="area">Area:</label>
+    <input type="number" name="area" required><br><br>
+
+    <label for="street">Street:</label>
+    <input type="text" name="street" required><br><br>
+
+    <label for="houseNumber">House Number:</label>
+    <input type="number" name="houseNumber" required><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" name="city" required><br><br>
+
+    <label for="building">Building:</label>
+    <input type="text" name="building" required><br><br>
+
+    <label for="apartmentType">Apartment Type:</label>
+    <select name="apartmentType">
+        <option value="Cottege">Cottage</option>
+        <option value="Room">Room</option>
+        <option value="Flat">Flat</option>
+    </select><br><br>
+
+    <label for="images">Images:</label>
+    <input type="file" name="images" multiple><br><br>
+
+    <button type="submit">Create Apartment Page</button>
 </form>
 
-<div id="tokenInfo" style="display: none;">
-    <h2>Access Token:</h2>
-    <p id="accessToken"></p>
-    <h2>Данные из токена:</h2>
-    <p>Роль: <span id="roleInfo"></span></p>
-    <p>Имя: <span id="nameInfo"></span></p>
-</div>
-<div id="tokenExpirationInfo" style="display: none;">
-    <h2>Срок действия токена:</h2>
-    <p id="expirationTime"></p>
-</div>
-
-
 <script>
-    // Функция для отправки запроса на регистрацию
-    async function registerUser() {
-        try {
-            // Создаем объект с данными для регистрации
-            const registrationData = {
-                Email: document.getElementById("emailId").value,
-                Password: document.getElementById("passwordId").value,
-                UserName: document.getElementById("usernameId").value,
-            };
+    document.getElementById('apartmentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
 
-            // Отправляем POST-запрос к серверу для регистрации
-            const response = await fetch("https://localhost:44387/Account/Register", {
-                method: "POST",
-                headers: { "Accept": "application/json", "Content-Type": "application/json" },
-                body: JSON.stringify(registrationData)
+        fetch('https://localhost:44300/Creator/ApartmentPage/CreateApartmentPage', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Apartment Page created successfully.');
+                    location.reload();
+                } else {
+                    response.text().then(errorMsg => alert('Error: ' + errorMsg));
+                }
+            })
+            .catch(error => {
+                alert('An error occurred: ' + error);
             });
-
-            // Если запрос прошел нормально
-            if (response.ok === true) {
-                // Получаем данные, если есть
-                const data = await response.json();
-                // Ваши действия после успешной регистрации (например, перенаправление пользователя)
-                console.log("Регистрация прошла успешно:", data);
-
-                // Отображаем полученный Access Token
-                document.getElementById("tokenInfo").style.display = "block";
-                document.getElementById("accessToken").innerText = data.token;
-
-                // Декодируем токен, чтобы получить информацию из него
-                const tokenData = decodeToken(data.token);
-                // Выводим информацию о роли и имени из декодированного токена
-                document.getElementById("roleInfo").innerText = tokenData["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-                document.getElementById("nameInfo").innerText = tokenData["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
-
-                // Выводим оставшееся время до истечения срока действия токена
-                const expirationTimeInSeconds = tokenData.exp;
-
-                // Получаем текущее время (время в секундах с 1970 года)
-                const currentTimeInSeconds = Math.floor(Date.now() / 1000);
-
-                // Вычисляем оставшееся время (в секундах) до истечения срока действия
-                const timeUntilExpirationInSeconds = expirationTimeInSeconds - currentTimeInSeconds;
-
-                // Преобразуем время в формат "ЧЧ:ММ:СС"
-                const hours = Math.floor(timeUntilExpirationInSeconds / 3600);
-                const minutes = Math.floor((timeUntilExpirationInSeconds % 3600) / 60);
-                const seconds = Math.floor(timeUntilExpirationInSeconds % 60);
-
-                // Выводим оставшееся время
-                document.getElementById("tokenExpirationInfo").style.display = "block";
-                document.getElementById("expirationTime").innerText = `Срок действия: ${hours} часов ${minutes} минут ${seconds} секунд`;
-            } else {
-                // Если произошла ошибка, получаем код статуса и текст ошибки
-                const errorData = await response.json();
-                console.error("Ошибка при регистрации:", errorData);
-            }
-        } catch (error) {
-            // Обработка других ошибок
-            console.error("Ошибка при регистрации:", error);
-        }
-    }
-
-    // Обработчик нажатия кнопки "Зарегистрироваться"
-    document.getElementById("submitRegistration").addEventListener("click", async () => {
-        await registerUser();
     });
-
-    // Функция для декодирования JWT-токена
-    function decodeToken(token) {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        return JSON.parse(jsonPayload);
-    }
 </script>
 </body>
 </html>

@@ -26,7 +26,6 @@ public class TokenService
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, string.Join(" ", roles.Select(x => x.RoleName))),
         };
-
         return claims;
     }
 
@@ -53,7 +52,6 @@ public class TokenService
             expires: DateTime.UtcNow.AddMinutes(int.Parse(_configuration["Jwt:Expire"])),
             signingCredentials: credentials
         );
-
         var tokenHandler = new JwtSecurityTokenHandler();
         return tokenHandler.WriteToken(jwtToken);
     }

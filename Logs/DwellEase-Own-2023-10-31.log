@@ -4,3 +4,340 @@
 2023-10-31 16:33:49.8328|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
 2023-10-31 16:33:49.8328|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
 2023-10-31 16:34:19.7061|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:35:30.5694|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 22:35:30.6987|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:35:30.8541|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:35:30.8541|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:35:30.8541|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 22:36:00.7111|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:36:17.3159|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alex not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-10-31 22:36:30.7289|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:36:59.6885|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alex not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-10-31 22:37:00.4897|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRhNzAyNWY0LTdmMzQtNDU4Yy05NDJiLTI4NTBkY2U4YTFlZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGFwYXB1c0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDcmVhdG9yIiwiZXhwIjoxNjk4NzgyODIwLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIn0.Yz1wpy_E0G1bmI4Y9r1cjKooWyw72Pvdzr4rsi4MA-I |url: https://localhost/Account/Register|action: Register|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 22:37:00.7386|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:37:30.7485|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:38:00.7628|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:38:30.7655|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:39:00.7772|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:39:30.7755|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:40:00.7794|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:40:30.7865|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:41:00.7995|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:41:30.8124|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:42:00.8193|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:42:30.8342|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:43:00.8424|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:43:30.8479|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:44:00.8477|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:44:30.8639|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:45:00.8742|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:45:30.8791|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:46:00.8968|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:46:30.9031|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:47:00.9175|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:47:30.9326|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:48:00.9430|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:48:30.9510|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:49:00.9569|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:49:30.9731|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:50:00.9837|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:50:30.9971|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:50:59.6869|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-10-31 22:50:59.6869|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-10-31 22:55:09.0310|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 22:55:09.0804|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:55:09.1198|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:55:09.1198|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:55:09.1198|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 22:55:39.1005|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:55:58.2423|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRhNzAyNWY0LTdmMzQtNDU4Yy05NDJiLTI4NTBkY2U4YTFlZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGFwYXB1c0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDcmVhdG9yIiwiZXhwIjoxNjk4NzgzOTU4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIn0.9RQYdz-99jPAgYzYkvvdTx7mFnSbekK25xXMnmZXDP0 |url: https://localhost/Account/Login|action: Authenticate|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 22:56:09.1071|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:56:39.1137|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:57:09.1289|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:57:14.1933|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRhNzAyNWY0LTdmMzQtNDU4Yy05NDJiLTI4NTBkY2U4YTFlZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGFwYXB1c0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDcmVhdG9yIiwiZXhwIjoxNjk4Nzg0MDM0LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIn0.3wRND0xuj87ZhIo2w5ixqFvZ4WYQUU3_o-xJKEm1UDo |url: https://localhost/Account/Login|action: Authenticate|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 22:57:39.1350|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:58:09.1450|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:58:39.1481|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:59:09.1520|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:59:39.1575|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:59:46.0120|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-10-31 22:59:46.0120|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-10-31 22:59:53.8016|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 22:59:53.8756|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 22:59:53.9047|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:59:53.9047|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 22:59:53.9047|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 23:00:23.8773|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:00:53.8860|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:00:56.6998|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:01:23.8960|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:01:53.9083|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:02:23.9129|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:02:53.9195|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:03:23.9231|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:03:53.9350|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:04:23.9422|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:04:53.9602|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:05:23.9664|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:05:53.9661|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:06:05.1506|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:06:22.2147|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:06:23.9764|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:06:53.9802|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:07:23.9921|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:07:51.6944|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:07:54.0052|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:07:55.4350|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:07:57.2836|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-10-31 23:07:57.2836|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-10-31 23:08:04.8466|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 23:08:04.9014|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:08:04.9366|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:08:04.9366|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:08:04.9366|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 23:08:34.9149|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:09:04.9299|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:09:34.9285|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:09:55.5632|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRhNzAyNWY0LTdmMzQtNDU4Yy05NDJiLTI4NTBkY2U4YTFlZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGFwYXB1c0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDcmVhdG9yIiwiZXhwIjoxNjk4Nzg0Nzk1LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIn0.TsDLwxkgQDYwoSs5I4lqg7r2QV8EzV9RITX9Y_cuRRM |url: https://localhost/Account/Login|action: Authenticate|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 23:10:04.9313|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:10:34.9373|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:11:04.9459|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:11:34.9605|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:11:46.0445|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken (DwellEase.WebAPI)
+Fallback {*path:nonfile}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/User|action: |Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:12:03.3304|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: TestGetUserByToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:12:04.9741|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:12:34.9825|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:12:45.3691|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-10-31 23:12:45.3691|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-10-31 23:13:07.4822|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 23:13:07.5354|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:13:07.5576|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:13:07.5576|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:13:07.5576|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 23:13:10.5839|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken() in C:\AProject\DwellEase\DwellEase.WebAPI\Controllers\AccountController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: TestGetUserByToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:13:37.5506|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:14:02.7855|0|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at DwellEase.WebAPI.Controllers.AccountsController.TestGetUserByToken()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)|url: https://localhost/Account/GetUser|action: TestGetUserByToken|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke| body: 
+2023-10-31 23:14:07.5617|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:14:37.5665|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:15:07.5725|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:15:37.5823|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:16:07.5891|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:16:37.5920|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:17:07.5994|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:17:37.6043|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:18:07.6128|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:18:37.6216|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:19:07.6313|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:19:37.6347|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:20:07.6396|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:20:37.6469|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:20:58.6431|0|INFO|Microsoft.Hosting.Lifetime|Application is shutting down... |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication| body: 
+2023-10-31 23:20:58.6431|0|ERROR|DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker|An error occurred during rental expiration check. System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync(CancellationToken stoppingToken)|url: |action: |DwellEase.WebAPI.BackgroundTasks.RentalExpirationWorker.ExecuteAsync| body: 
+2023-10-31 23:21:06.9813|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 23:21:07.0478|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:21:07.0897|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:21:07.0897|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 23:21:07.0897|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 23:21:37.9957|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:22:08.0081|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:22:38.0146|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:23:08.0306|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:23:38.0407|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:24:08.0561|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:24:38.0650|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:25:30.4620|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:26:00.4711|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:26:30.4738|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:27:00.4773|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:27:30.4825|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:28:00.4850|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:28:30.4997|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:29:00.5009|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:29:30.5138|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:30:00.5324|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:30:30.5424|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:31:00.5506|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:31:30.5573|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:32:00.5654|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:32:30.5765|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:33:00.5907|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:33:30.6026|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:34:00.6111|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:34:30.6239|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:35:00.6381|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:35:30.6556|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:36:00.6618|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:36:30.6751|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:37:00.6833|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:37:30.6922|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:38:00.6995|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:38:30.7178|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:39:00.7222|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:39:30.7400|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:40:00.7562|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:40:30.7661|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:41:00.7781|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:41:30.7813|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:42:00.7965|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:42:30.8067|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:43:00.8112|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:43:30.8146|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:44:00.8217|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:44:30.8384|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:45:00.8478|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:45:30.8540|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:46:00.8690|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:46:30.8809|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:47:00.8977|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:47:30.9110|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:48:00.9294|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:48:29.8581|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Alexis not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-10-31 23:48:30.9416|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:48:32.4565|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjY0ZWMwYmZmLWE0NzAtNDM5Yy1iOGQwLWIxZTczZjI5YThiYyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4aXMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwYXBhcHVzQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNyZWF0b3IiLCJleHAiOjE2OTg3ODcxMTIsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDAifQ._V5aFgBbsUJvqnk5K8zlzqVoxArTwXcCrvPHIPta7ak |url: https://localhost/Account/Register|action: Register|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 23:48:49.2290|0|ERROR|DwellEase.Service.Services.Implementations.UserService|User with username: Andrew not found |url: https://localhost/Account/Register|action: Register|DwellEase.Service.Services.Implementations.UserService.HandleError| body: 
+2023-10-31 23:48:50.7412|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImVlOGRhZjQ3LTQ0ZWEtNGQ4MC1iZDU0LWFiMTFkMjg4MzY1NSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbmRyZXciLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwYXBhcHVzQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNyZWF0b3IiLCJleHAiOjE2OTg3ODcxMzAsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDAifQ.ImWLQZrMwIGlkZVE4dRhAQLvEDcE21M6EO9fSoUvOGY |url: https://localhost/Account/Register|action: Register|DwellEase.WebAPI.Controllers.AccountsController.Authenticate| body: 
+2023-10-31 23:49:00.9487|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:49:30.9530|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:50:00.9666|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:50:30.9829|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:51:00.9991|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:51:31.0218|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:52:01.0260|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:52:31.0349|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:53:01.0499|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:53:31.0616|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:54:01.0690|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:54:31.0816|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:55:01.0898|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:55:31.1036|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:56:01.1091|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:56:31.1201|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:57:01.1340|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:57:31.1467|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:58:01.1589|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:58:31.1732|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:59:01.1781|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 23:59:31.1904|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 

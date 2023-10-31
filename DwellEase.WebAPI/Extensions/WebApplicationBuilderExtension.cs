@@ -32,6 +32,8 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<ApartmentOperationService>();
         builder.Services.AddScoped<RentalService>();
         builder.Services.AddScoped<IImageService,ImageService>();
+        builder.Services.AddScoped<IImageService>();
+        builder.Services.AddScoped<ImageService>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
         builder.Services.AddHostedService<RentalExpirationWorker>();
