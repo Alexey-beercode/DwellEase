@@ -25,7 +25,6 @@
       <Folder Include="Handlers\Creator\" />
       <Folder Include="Queries\Admin\" />
       <Folder Include="Queries\Creator\" />
-      <Folder Include="Services\Interfaces\" />
     </ItemGroup>
 
 </Project>
