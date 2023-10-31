@@ -5,6 +5,7 @@ using DwellEase.Domain.Entity;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.Service.Services.Interfaces;
 using DwellEase.WebAPI.BackgroundTasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -30,6 +31,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<ApartmentPageService>();
         builder.Services.AddScoped<ApartmentOperationService>();
         builder.Services.AddScoped<RentalService>();
+        builder.Services.AddScoped<IImageService,ImageService>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
         builder.Services.AddHostedService<RentalExpirationWorker>();

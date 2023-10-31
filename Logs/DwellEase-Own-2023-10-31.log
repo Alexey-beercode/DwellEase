@@ -1,0 +1,6 @@
+2023-10-31 16:33:49.5128|0|INFO|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-10-31 16:33:49.6912|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 
+2023-10-31 16:33:49.8328|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 16:33:49.8328|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted| body: 
+2023-10-31 16:33:49.8328|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI |url: |action: |Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted| body: 
+2023-10-31 16:34:19.7061|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 

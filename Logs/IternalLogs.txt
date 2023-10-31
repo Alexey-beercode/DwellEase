@@ -2209,3 +2209,11 @@
 2023-10-04 14:54:56.0159 Info Validating config: TargetNames=allfile, console, ownFile-web, ConfigItems=69, FilePath=C:\AProject\DwellEase\DwellEase.WebAPI\nlog.config
 2023-10-04 14:54:56.0309 Info Configuration initialized.
 2023-10-04 14:54:56.3032 Info Validating config: TargetNames=allfile, console, ownFile-web, ConfigItems=69, FilePath=C:\AProject\DwellEase\DwellEase.WebAPI\nlog.config
+2023-10-31 16:33:48.6921 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-10-31 16:33:48.6992 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-10-31 16:33:48.6992 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2023-10-31 16:33:48.6992 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lifetimeConsole' not found for logging rule: Microsoft.Hosting.Lifetime.
+2023-10-31 16:33:48.7393 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
+2023-10-31 16:33:48.7480 Info Validating config: TargetNames=allfile, console, ownFile-web, ConfigItems=69, FilePath=C:\AProject\DwellEase\DwellEase.WebAPI\nlog.config
+2023-10-31 16:33:48.7620 Info Configuration initialized.
+2023-10-31 16:33:48.8996 Info Validating config: TargetNames=allfile, console, ownFile-web, ConfigItems=69, FilePath=C:\AProject\DwellEase\DwellEase.WebAPI\nlog.config
