@@ -19,14 +19,12 @@ public class ApartmentPageController:ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
     private readonly ApartmentPageService _apartmentPageService;
-    private readonly IMediator _mediator;
     private readonly IImageService _imageService;
 
     public ApartmentPageController(ILogger<ApartmentPageController> logger, ApartmentPageService apartmentPageService, IMediator mediator, IImageService imageService)
     {
         _logger = logger;
         _apartmentPageService = apartmentPageService;
-        _mediator = mediator;
         _imageService = imageService;
     }
     

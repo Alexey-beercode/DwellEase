@@ -18,5 +18,5 @@ var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentCla
 var app = builder.Build();
 app.AddApplicationMiddleware();
 app.AddSignalRConfiguration();
-logger.Log(LogLevel.Info,"Program initial");
+logger.Log(LogLevel.Error,"Program initial");
 app.Run();

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create Apartment Page</h1>
-<form id="apartmentForm">
+<form id="apartmentForm" method="POST">
     <label for="daylyPrice">Daily Price:</label>
     <input type="number" name="daylyPrice" required><br><br>
 
@@ -51,6 +51,9 @@
 
     <label for="images">Images:</label>
     <input type="file" name="images" multiple><br><br>
+    
+    <label for="token">Token:</label>
+    <input type="text" name="token" required><br><br>
 
     <button type="submit">Create Apartment Page</button>
 </form>
@@ -59,10 +62,16 @@
     document.getElementById('apartmentForm').addEventListener('submit', function (event) {
         event.preventDefault();
         var formData = new FormData(this);
+        var token = formData.get('token');
+        formData.delete('token');
 
+        var headers = new Headers({
+            'Authorization': 'Bearer ' + token
+        });
         fetch('https://localhost:44300/Creator/ApartmentPage/CreateApartmentPage', {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: headers
         })
             .then(response => {
                 if (response.ok) {
