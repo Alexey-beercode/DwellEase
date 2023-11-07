@@ -51,7 +51,7 @@
 
     <label for="images">Images:</label>
     <input type="file" name="images" multiple><br><br>
-    
+
     <label for="token">Token:</label>
     <input type="text" name="token" required><br><br>
 
@@ -61,14 +61,23 @@
 <script>
     document.getElementById('apartmentForm').addEventListener('submit', function (event) {
         event.preventDefault();
+        var imageInputs = document.querySelectorAll('input[name="images[]"]');
         var formData = new FormData(this);
+        imageInputs.forEach(function (input) {
+            if (input.files.length > 0) {
+                Array.from(input.files).forEach(function (file) {
+                    formData.append('images', file);
+                });
+            }
+        });
+
         var token = formData.get('token');
         formData.delete('token');
 
         var headers = new Headers({
             'Authorization': 'Bearer ' + token
         });
-        fetch('https://localhost:44300/Creator/ApartmentPage/CreateApartmentPage', {
+        fetch('https://localhost:44300/Creator/ApartmentPage/CreateA', {
             method: 'POST',
             body: formData,
             headers: headers

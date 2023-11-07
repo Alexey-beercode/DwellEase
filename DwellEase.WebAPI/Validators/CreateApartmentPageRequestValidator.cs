@@ -1,5 +1,4 @@
-﻿using System.Data;
-using DwellEase.Domain.Models;
+﻿using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
 using FluentValidation;
 

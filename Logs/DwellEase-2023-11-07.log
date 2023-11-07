@@ -1,0 +1,197 @@
+2023-11-07 21:00:56.7011|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider 
+2023-11-07 21:00:56.9011|0|DEBUG|Microsoft.AspNetCore.SignalR.Internal.DefaultHubProtocolResolver|Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol. 
+2023-11-07 21:00:56.9866|0|TRACE|Microsoft.AspNetCore.SignalR.Internal.DefaultHubDispatcher|'RentalHub' hub method 'SendRemainingTimeUpdate' is bound. 
+2023-11-07 21:00:56.9953|0|ERROR|Program|Program initial 
+2023-11-07 21:00:56.9953|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting 
+2023-11-07 21:00:57.0882|0|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-11-07 21:00:57.1238|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-201f091d-1492-40cf-8448-2970d8f8302a.xml'. 
+2023-11-07 21:00:57.1238|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:00:57.1238|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-36f42311-3483-4917-8846-1f1bdd7768ee.xml'. 
+2023-11-07 21:00:57.1510|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e.xml'. 
+2023-11-07 21:00:57.1510|0|DEBUG|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|Reading data from file 'C:\Users\Алексей\AppData\Local\ASP.NET\DataProtection-Keys\key-fe0fd9ec-cbd2-45ba-94c2-4c4db8302271.xml'. 
+2023-11-07 21:00:57.1776|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {201f091d-1492-40cf-8448-2970d8f8302a}. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {36f42311-3483-4917-8846-1f1bdd7768ee}. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {8c2d20ac-a7d5-4fe4-b7a0-731f36d4f54e}. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|Found key {fe0fd9ec-cbd2-45ba-94c2-4c4db8302271}. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|Considering key {36f42311-3483-4917-8846-1f1bdd7768ee} with expiration date 2023-12-30 19:24:09Z as default key. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|Decrypting secret element using Windows DPAPI. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|Using key {36f42311-3483-4917-8846-1f1bdd7768ee} as the default key. 
+2023-11-07 21:00:57.1823|0|DEBUG|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|Key ring with default key {36f42311-3483-4917-8846-1f1bdd7768ee} was loaded during application startup. 
+2023-11-07 21:00:57.2381|0|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly DwellEase.WebAPI 
+2023-11-07 21:00:57.2381|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-11-07 21:00:57.2381|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-11-07 21:00:57.2381|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\AProject\DwellEase\DwellEase.WebAPI 
+2023-11-07 21:00:57.2450|0|TRACE|Microsoft.AspNetCore.Http.Connections.Internal.HttpConnectionManager|Starting connection heartbeat. 
+2023-11-07 21:00:57.2450|0|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started 
+2023-11-07 21:00:57.2450|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44300/ - - 
+2023-11-07 21:00:57.2771|0|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed. 
+2023-11-07 21:00:57.2771|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:00:57.2771|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path / does not match a supported file type 
+2023-11-07 21:00:57.3055|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/' 
+2023-11-07 21:00:57.3092|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/' 
+2023-11-07 21:00:57.3092|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:57.5229|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-11-07 21:00:57.5272|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:57.5272|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path /index.html does not match an existing file 
+2023-11-07 21:00:57.5272|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:57.5679|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18158513698363146258" disconnecting. 
+2023-11-07 21:00:57.5679|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44300/ - - - 404 - - 297.4606ms 
+2023-11-07 21:00:59.5168|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:44300/ - - 
+2023-11-07 21:00:59.5168|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path / does not match a supported file type 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/' 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/' 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-11-07 21:00:59.5168|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|The request path /index.html does not match an existing file 
+2023-11-07 21:00:59.5168|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Fallback {*path:nonfile}' 
+2023-11-07 21:00:59.5168|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18230571313875910727" disconnecting. 
+2023-11-07 21:00:59.5168|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:44300/ - - - 404 - - 5.4970ms 
+2023-11-07 21:01:05.3242|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 POST https://localhost:44300/Account/Login application/json 54 
+2023-11-07 21:01:05.3242|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:01:05.3242|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|POST requests are not supported 
+2023-11-07 21:01:05.3242|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/Account/Login' 
+2023-11-07 21:01:05.3242|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login' 
+2023-11-07 21:01:05.3242|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI)' 
+2023-11-07 21:01:05.3242|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was not authenticated. 
+2023-11-07 21:01:05.3242|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI)' 
+2023-11-07 21:01:05.3521|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Authenticate", controller = "Accounts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DwellEase.Domain.Models.Identity.AuthResponse]] Authenticate(DwellEase.Domain.Models.Identity.AuthRequest) on controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI). 
+2023-11-07 21:01:05.3521|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None 
+2023-11-07 21:01:05.3521|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None 
+2023-11-07 21:01:05.3521|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) 
+2023-11-07 21:01:05.3521|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None 
+2023-11-07 21:01:05.3521|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) 
+2023-11-07 21:01:05.3555|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI) 
+2023-11-07 21:01:05.3555|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller DwellEase.WebAPI.Controllers.AccountsController (DwellEase.WebAPI) 
+2023-11-07 21:01:05.3555|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to bind parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest' ... 
+2023-11-07 21:01:05.3555|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Attempting to bind parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest' using the name '' in request data ... 
+2023-11-07 21:01:05.3555|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'. 
+2023-11-07 21:01:05.5023|0|DEBUG|Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter|JSON input formatter succeeded, deserializing to type 'DwellEase.Domain.Models.Identity.AuthRequest' 
+2023-11-07 21:01:05.5023|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|Done attempting to bind parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest'. 
+2023-11-07 21:01:05.5023|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to bind parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest'. 
+2023-11-07 21:01:05.5023|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Attempting to validate the bound parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest' ... 
+2023-11-07 21:01:05.5164|0|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|Done attempting to validate the bound parameter 'request' of type 'DwellEase.Domain.Models.Identity.AuthRequest'. 
+2023-11-07 21:01:05.5164|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-11-07 21:01:05.5164|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-11-07 21:01:05.5164|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-11-07 21:01:05.5164|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-11-07 21:01:05.5268|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI) - Validation state: Valid 
+2023-11-07 21:01:05.5268|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI) with arguments (DwellEase.Domain.Models.Identity.AuthRequest) 
+2023-11-07 21:01:06.5690|0|INFO|DwellEase.WebAPI.Controllers.AccountsController|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRhNzAyNWY0LTdmMzQtNDU4Yy05NDJiLTI4NTBkY2U4YTFlZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbGV4IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGFwYXB1c0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDcmVhdG9yIiwiZXhwIjoxNjk5MzgxODY2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwMCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzAwIn0.tQyWqkmUrK4G2LwxZv5aXUlRwMkYuD7UTBxKELRYheo 
+2023-11-07 21:01:06.5729|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1047.8537ms. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-11-07 21:01:06.5729|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-11-07 21:01:06.5729|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter 
+2023-11-07 21:01:06.5729|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|No information found on request to perform content negotiation. 
+2023-11-07 21:01:06.5729|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response. 
+2023-11-07 21:01:06.5729|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select the first formatter in the output formatters list which can write the result. 
+2023-11-07 21:01:06.5729|0|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response. 
+2023-11-07 21:01:06.5729|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'DwellEase.Domain.Models.Identity.LoginResponse'. 
+2023-11-07 21:01:06.6163|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult. 
+2023-11-07 21:01:06.6163|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-11-07 21:01:06.6163|0|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter. 
+2023-11-07 21:01:06.6223|0|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI) in 1263.6211ms 
+2023-11-07 21:01:06.6223|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'DwellEase.WebAPI.Controllers.AccountsController.Authenticate (DwellEase.WebAPI)' 
+2023-11-07 21:01:06.6223|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 POST https://localhost:44300/Account/Login application/json 54 - 200 - application/json;+charset=utf-8 1301.3603ms 
+2023-11-07 21:01:27.1387|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:01:30.3787|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 OPTIONS https://localhost:44300/Creator/ApartmentPage/CreateA - - 
+2023-11-07 21:01:30.3787|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:01:30.3787|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|OPTIONS requests are not supported 
+2023-11-07 21:01:30.3787|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request has an origin header: 'https://localhost:44315'. 
+2023-11-07 21:01:30.3787|0|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful. 
+2023-11-07 21:01:30.3787|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request is a preflight request. 
+2023-11-07 21:01:30.3787|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 OPTIONS https://localhost:44300/Creator/ApartmentPage/CreateA - - - 204 - - 5.5016ms 
+2023-11-07 21:01:30.3787|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18158513702658113627" disconnecting. 
+2023-11-07 21:01:30.3872|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:44300/Creator/ApartmentPage/CreateA multipart/form-data;+boundary=----WebKitFormBoundary5PHz7nqxzw6LiMVw 492975 
+2023-11-07 21:01:30.3872|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:01:30.3872|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|POST requests are not supported 
+2023-11-07 21:01:30.3872|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request has an origin header: 'https://localhost:44315'. 
+2023-11-07 21:01:30.3872|0|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful. 
+2023-11-07 21:01:30.3872|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/Creator/ApartmentPage/CreateA' 
+2023-11-07 21:01:30.3872|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:01:30.4344|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2023-11-07 21:01:30.4344|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was successfully authenticated. 
+2023-11-07 21:01:30.4344|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:01:30.4344|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:01:30.4344|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:44300/Creator/ApartmentPage/CreateA multipart/form-data;+boundary=----WebKitFormBoundary5PHz7nqxzw6LiMVw 492975 - 405 - - 50.3694ms 
+2023-11-07 21:01:57.1400|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:02:27.1441|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:02:57.1558|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:03:27.1856|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:03:57.1879|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:04:27.1880|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:04:57.1928|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:05:27.2190|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 OPTIONS https://localhost:44300/Creator/ApartmentPage/CreateA - - 
+2023-11-07 21:05:30.8913|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|OPTIONS requests are not supported 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request has an origin header: 'https://localhost:44315'. 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful. 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request is a preflight request. 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 OPTIONS https://localhost:44300/Creator/ApartmentPage/CreateA - - - 204 - - 1.8541ms 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:44300/Creator/ApartmentPage/CreateA multipart/form-data;+boundary=----WebKitFormBoundarys9IF79eGnxyWdOSF 492975 
+2023-11-07 21:05:30.8913|0|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed. 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|POST requests are not supported 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|The request has an origin header: 'https://localhost:44315'. 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution successful. 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/Creator/ApartmentPage/CreateA' 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|Successfully validated the token. 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|AuthenticationScheme: Bearer was successfully authenticated. 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '405 HTTP Method Not Supported' 
+2023-11-07 21:05:30.8913|0|DEBUG|Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer|Connection ID "18230571309580943418" disconnecting. 
+2023-11-07 21:05:30.8913|0|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:44300/Creator/ApartmentPage/CreateA multipart/form-data;+boundary=----WebKitFormBoundarys9IF79eGnxyWdOSF 492975 - 405 - - 2.6250ms 
+2023-11-07 21:05:57.2247|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:06:27.2359|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:06:57.2444|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:07:27.2697|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:07:57.2942|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:08:27.3140|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:08:57.3364|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:09:27.3579|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:09:57.3844|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:10:27.4125|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:10:57.4155|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:11:27.4655|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:11:57.4747|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:12:27.4785|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:12:57.4833|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:13:27.4843|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:13:57.5246|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:14:27.5416|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:14:57.5460|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:15:27.5475|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:15:57.5513|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:16:27.5592|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:16:57.5618|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:17:27.5710|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:17:57.5733|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:18:27.5788|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:18:57.5814|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:19:27.6290|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:19:57.6668|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:20:27.7094|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:20:57.7302|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:21:27.7762|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:21:57.7934|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:22:27.8423|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:22:57.8746|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:23:27.8848|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:23:57.9014|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:24:27.9044|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:24:57.9058|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:25:27.9103|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:25:57.9145|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:26:27.9205|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
+2023-11-07 21:26:57.9179|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found 
