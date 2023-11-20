@@ -115,17 +115,6 @@ public class UserService
         return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
     }
 
-    public async Task<BaseResponse<User>> FindByEmailAsync(string email)
-    {
-        var user = (await await _userRepository.GetAll()).FirstOrDefault(a => a.Email == email);
-        if (user == null)
-        {
-            return HandleError<User>($"User with email: {email} not found", HttpStatusCode.NoContent);
-        }
-        user=(await CorrectUsersRefreshTokenExpiryTime(new List<User>() { user }))[0];
-        return new BaseResponse<User>() { Data = user, StatusCode = HttpStatusCode.OK };
-    }
-
     public async Task<BaseResponse<bool>> CheckPasswordAsync(User user, string password)
     {
         var findUser =await await _userRepository.GetById(user.Id);
