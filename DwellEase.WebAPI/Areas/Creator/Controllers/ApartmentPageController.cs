@@ -43,7 +43,7 @@ public class ApartmentPageController:ControllerBase
         var imageServiceResponse = _imageService.UploadImage(request.Images);
         if (imageServiceResponse.StatusCode!=HttpStatusCode.OK)
         {
-            return BadRequest(imageServiceResponse.Description);
+            return StatusCode((int)imageServiceResponse.StatusCode, imageServiceResponse.Description);
         }
 
         if (!Guid.TryParse(request.OwnerId,out Guid ownerGuidId))
@@ -69,8 +69,9 @@ public class ApartmentPageController:ControllerBase
                 ApartmentType = apartmentType,
                 Area = request.Area,
                 Rooms = request.Rooms,
-                Title = request.Title
+                
             },
+            Title = request.Title,
             DaylyPrice = request.DailyPrice,
             Price = request.Price,
             Images = imageServiceResponse.Data,
@@ -80,6 +81,49 @@ public class ApartmentPageController:ControllerBase
         };
         await _apartmentPageService.CreateAsync(apartmentPage);
         _logger.LogInformation("Successfully create Apartment page");
+        return Ok();
+    }
+
+    [Authorize(Policy = "CreatorArea")]
+    [HttpPut("UpdateApartmentPage")]
+    public async Task<IActionResult> UpdateApartmentPage([FromBody]UpdateApartmentPageRequest request)
+    {
+        UpdateApartmentPageRequestValidator validator = new UpdateApartmentPageRequestValidator();
+        var validateResult = validator.ValidateAsync(request).Result;
+        if (!validateResult.IsValid)
+        {
+            var errors =new StringBuilder();
+            validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
+            return BadRequest(errors);
+        }
+        if (!Guid.TryParse(request.PageId,out Guid guidId))
+        {
+            return BadRequest("OwnerId is not valid");
+        }
+
+        var response = await _apartmentPageService.GetByIdAsync(guidId);
+        if (response.StatusCode!=HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
+
+        var newApartmentPage = new ApartmentPage()
+        {
+            Apartment = response.Data.Apartment,
+            ApprovalStatus = response.Data.ApprovalStatus,
+            Date = response.Data.Date,
+            DaylyPrice = request.DailyPrice,
+            Price = request.Price,
+            Title = request.Title,
+            Id = response.Data.Id,
+            OwnerId = response.Data.OwnerId,
+            Images = response.Data.Images,
+            IsAvailableForPurchase = request.IsAvailableForPurchase,
+            Status = response.Data.Status,
+            PriorityType = response.Data.PriorityType,
+            PhoneNumber = new PhoneNumber(request.PhoneNumber)
+        };
+        await _apartmentPageService.EditAsync(newApartmentPage);
         return Ok();
     }
 }

@@ -2,7 +2,6 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
-using Microsoft.IdentityModel.Abstractions;
 using MongoDB.Driver;
 
 namespace DwellEase.DataManagement.Repositories.Implementations;
