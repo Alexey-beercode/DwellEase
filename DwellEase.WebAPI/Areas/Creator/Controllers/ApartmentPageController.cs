@@ -126,4 +126,24 @@ public class ApartmentPageController:ControllerBase
         await _apartmentPageService.EditAsync(newApartmentPage);
         return Ok();
     }
+
+    [Authorize(Policy = "CreatorArea")]
+    [HttpDelete("DeleteApartmentPage")]
+    public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
+    {
+        if (!Guid.TryParse(id,out Guid guidId))
+        {
+            return BadRequest("OwnerId is not valid");
+        }
+
+        var response = await _apartmentPageService.GetByIdAsync(guidId);
+        if (response.StatusCode!=HttpStatusCode.OK)
+        {
+            return StatusCode((int)response.StatusCode, response.Description);
+        }
+
+        await _apartmentPageService.DeleteAsync(guidId);
+        return Ok();
+    }
+    
 }

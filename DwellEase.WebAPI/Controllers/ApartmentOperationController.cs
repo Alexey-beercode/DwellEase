@@ -3,6 +3,7 @@ using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Commands;
+using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -120,6 +121,20 @@ public class ApartmentOperationController:ControllerBase
                 OperationType = OperationType.Purchase
             }); 
             return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("GetAllOperations/{id}")]
+    public async Task<IActionResult> GetAllApartmentPageOperations(string id)
+    {
+        try
+        {
+            var operations = await _mediator.Send(new GetAllApartmentOperationsQuery() { Id = id });
+            return Ok(operations);
         }
         catch (Exception e)
         {
