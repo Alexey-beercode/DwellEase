@@ -2,6 +2,7 @@
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Requests;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
@@ -41,15 +42,19 @@ public class UserService
         }).ToList());
     }
 
-    public async Task<BaseResponse<bool>> CreateAsync(User user, string password)
+    private string HashPassword(string password,string salt)
+    {
+        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
+        return (hashedPassword);
+    }
+
+    public async Task CreateAsync(User user, string password)
     {
         var workFactor = 12;
         var salt = BCrypt.Net.BCrypt.GenerateSalt(workFactor);
-        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
         user.PasswordSalt = salt;
-        user.PasswordHash = hashedPassword;
+        user.PasswordHash = HashPassword(password, salt);
         await _userRepository.Create(user);
-        return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
     }
 
 
@@ -57,7 +62,7 @@ public class UserService
     {
         if (!(role == "Creator" || role == "Resident"))
         {
-            HandleError<bool>("Role are not contains right role type", HttpStatusCode.BadRequest);
+            return HandleError<bool>("Role are not contains right role type", HttpStatusCode.BadRequest);
         }
 
         var roles = (await _roleService.GetAllAsync()).Data;
@@ -114,25 +119,29 @@ public class UserService
         await _userRepository.Update(user);
         return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
     }
+    
+    public async Task<BaseResponse<bool>> UpdateCridentialsAsync(UpdateUserRequest user)
+        {
+            var findUser = await await _userRepository.GetById(Guid.Parse(user.UserId));
+            if (findUser == null)
+            {
+                return HandleError<bool>($"User with id: {Guid.Parse(user.UserId)} not found", HttpStatusCode.NoContent);
+            }
+    
+            await _userRepository.UpdateCridentials(user,HashPassword(user.Password,findUser.PasswordSalt));
+            return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
+        }
+    
 
-    public async Task<BaseResponse<bool>> CheckPasswordAsync(User user, string password)
+    public async Task<bool> CheckPasswordAsync(User user, string password)
     {
         var findUser =await await _userRepository.GetById(user.Id);
         if (findUser == null)
         {
-            return HandleError<bool>($"User with id: {user.Id} not found", HttpStatusCode.NoContent);
+            throw new Exception($"User with id: {user.Id} not found");
         }
-        
-        var isPasswordValid = BCrypt.Net.BCrypt.Verify(password, findUser.PasswordHash);
-        if (!isPasswordValid)
-        {
-            return new BaseResponse<bool>() { StatusCode = HttpStatusCode.BadRequest, Description = "Wrong password" };
-        }
-        return new BaseResponse<bool>()
-        {
-            Data = isPasswordValid,
-            StatusCode = HttpStatusCode.OK
-        };
+
+        return BCrypt.Net.BCrypt.Verify(password, findUser.PasswordHash);
     }
     
     public async Task<BaseResponse<List<User>>> GetAllAsync()
