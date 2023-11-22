@@ -7,13 +7,6 @@ namespace DwellEase.Service.Services.Implementations;
 
 public class ImageService : IImageService
 {
-    private readonly ApartmentPageService _apartmentPageService;
-
-    public ImageService(ApartmentPageService apartmentPageService)
-    {
-        _apartmentPageService = apartmentPageService;
-    }
-
     public BaseResponse<List<Image>> UploadImage(List<IFormFile> files)
     {
         foreach (var file in files)
@@ -21,7 +14,6 @@ public class ImageService : IImageService
             if (file == null || file.Length == 0) return new BaseResponse<List<Image>>(){StatusCode = HttpStatusCode.BadRequest,Description = $"Файл пуст:{file.FileName}"};
         }
         
-
         using (var memoryStream = new MemoryStream())
         {
             var images = new List<Image>();

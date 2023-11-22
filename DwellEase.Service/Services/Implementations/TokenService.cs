@@ -25,6 +25,7 @@ public class TokenService
             new Claim(ClaimTypes.Name, user.UserName),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, string.Join(" ", roles.Select(x => x.RoleName))),
+            new Claim(ClaimTypes.MobilePhone,user.PhoneNumber.Number)
         };
         return claims;
     }

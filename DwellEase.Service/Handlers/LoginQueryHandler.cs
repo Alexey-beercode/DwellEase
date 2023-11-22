@@ -36,7 +36,7 @@ namespace DwellEase.Service.Handlers
                 throw new AggregateException("User are not found");
             }
 
-            var isPasswordValid = (await _userService.CheckPasswordAsync(response.Data, request.Password)).Data;
+            var isPasswordValid = await _userService.CheckPasswordAsync(response.Data, request.Password);
 
             if (!isPasswordValid)
             {

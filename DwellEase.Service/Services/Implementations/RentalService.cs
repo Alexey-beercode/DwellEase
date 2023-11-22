@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using DwellEase.DataManagement.Repositories.Implementations;
+using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Responses;
@@ -20,19 +21,9 @@ public class RentalService
         _logger = logger;
     }
 
-    public async Task<BaseResponse<List<ApartmentPageRentResponse>>> CheckAndUpdateApartmentStatus()
+    private async Task<List<ApartmentPageRentResponse>> FindExpiredApartmentPages(List<ApartmentPage> apartmentPages)
     {
-        var response = new BaseResponse<List<ApartmentPageRentResponse>>();
         var list = new List<ApartmentPageRentResponse>();
-        var apartmentPages =await await _apartmentPageRepository.GetAll();
-        if (apartmentPages.Count==0)
-        {
-            response.StatusCode = HttpStatusCode.NoContent;
-            response.Description = "Apartmentpages are not found";
-            _logger.LogError("Apartmentpages are not found");
-            return response;
-        }
-
         foreach (var apartmentPage in apartmentPages)
         {
             var operation =
@@ -53,7 +44,23 @@ public class RentalService
             list.Add(new ApartmentPageRentResponse(operation.UserId,apartmentPage.Id,timeRemaining));
         }
 
-        if (list.Count==0)
+        return list;
+    }
+
+    public async Task<BaseResponse<List<ApartmentPageRentResponse>>> CheckAndUpdateApartmentStatus()
+    {
+        var response = new BaseResponse<List<ApartmentPageRentResponse>>();
+        var apartmentPages =await await _apartmentPageRepository.GetAll();
+        if (apartmentPages.Count==0)
+        {
+            response.StatusCode = HttpStatusCode.NoContent;
+            response.Description = "Apartmentpages are not found";
+            _logger.LogError("Apartmentpages are not found");
+            return response;
+        }
+
+        var expiredPages =await FindExpiredApartmentPages(apartmentPages);
+        if (expiredPages.Count==0)
         {
             response.StatusCode = HttpStatusCode.NoContent;
             response.Description = "Apartmentpages with not ended rent are not found";
@@ -61,7 +68,7 @@ public class RentalService
             return response;   
         }
         response.StatusCode = HttpStatusCode.OK;
-        response.Data = list;
+        response.Data = expiredPages;
         _logger.LogInformation("Successfully check and update apartmentpages status");
         return response;
     }

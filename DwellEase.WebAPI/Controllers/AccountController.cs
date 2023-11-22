@@ -1,11 +1,14 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Text;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
+using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Extensions;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.WebAPI.Validators;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -113,6 +116,42 @@ public class AccountsController : ControllerBase
         {
             return BadRequest(e.Message);
         }
+    }
+
+    [Authorize]
+    [HttpPut("UpdateUser")]
+    public async Task<IActionResult> UpdateUser([FromBody] UpdateUserRequest request)
+    {
+        UpdateUserRequestValidator validator = new UpdateUserRequestValidator();
+        var validateResult = validator.ValidateAsync(request).Result;
+        if (!validateResult.IsValid)
+        {
+            var errors =new StringBuilder();
+            validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
+            return BadRequest(errors);
+        }
+        var idValid=Guid.TryParse(request.UserId, out var userId);
+        if(!idValid)
+        {
+            return BadRequest("Invalid user ID format");
+        }
+
+        var userResponse=await _userService.GetByIdAsync(userId);
+        if (userResponse.StatusCode!=HttpStatusCode.OK)
+        {
+            return BadRequest("User not found");
+        }
+        try
+        {
+            await _userService.CheckPasswordAsync(userResponse.Data, request.Password);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+
+        await _userService.UpdateCridentialsAsync(request);
+        return Ok();
     }
 
     [HttpPost("Refresh-Token")]
