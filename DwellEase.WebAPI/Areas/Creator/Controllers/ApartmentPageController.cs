@@ -31,7 +31,6 @@ public class ApartmentPageController:ControllerBase
         _imageService = imageService;
     }
     
-    [Authorize(Policy = "CreatorArea")]
     [HttpPost("CreateApartmentPage")]
     public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
     {
@@ -86,8 +85,7 @@ public class ApartmentPageController:ControllerBase
         _logger.LogInformation("Successfully create Apartment page");
         return Ok();
     }
-
-    [Authorize(Policy = "CreatorArea")]
+    
     [HttpPut("UpdateApartmentPage")]
     public async Task<IActionResult> UpdateApartmentPage([FromBody]UpdateApartmentPageRequest request)
     {
@@ -129,8 +127,7 @@ public class ApartmentPageController:ControllerBase
         await _apartmentPageService.EditAsync(newApartmentPage);
         return Ok();
     }
-
-    [Authorize(Policy = "CreatorArea")]
+    
     [HttpDelete("DeleteApartmentPage")]
     public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
     {
@@ -147,8 +144,7 @@ public class ApartmentPageController:ControllerBase
         await _apartmentPageService.DeleteAsync(guidId);
         return Ok();
     }
-
-    [Authorize(Policy = "CreatorArea")]
+    
     [HttpGet("GetApartmentPagesByOwner/{id}")]
     public async Task<IActionResult> GetApartmentPagesByOwner(string id)
     {
@@ -162,6 +158,4 @@ public class ApartmentPageController:ControllerBase
             return BadRequest(e.Message);
         }
     }
-    
-    
 }

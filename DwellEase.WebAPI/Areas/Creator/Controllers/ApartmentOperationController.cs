@@ -16,8 +16,7 @@ public class ApartmentOperationController:ControllerBase
     {
         _mediator = mediator;
     }
-
-    [Authorize(Policy = "CreatorArea")]
+    
     [HttpGet("GetOperationsByPagesOwner")]
     public async Task<IActionResult> GetOperationsByPagesOwner(string id)
     {
