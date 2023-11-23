@@ -1,15 +1,8 @@
-﻿using System.Net;
-using System.Text;
-using DwellEase.Domain.Entity;
-using DwellEase.Domain.Enum;
-using DwellEase.Domain.Models;
+﻿using System.Text;
 using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Queries.Creator;
-using DwellEase.Service.Services.Implementations;
-using DwellEase.Service.Services.Interfaces;
 using DwellEase.WebAPI.Validators;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
@@ -19,16 +12,12 @@ namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 public class ApartmentPageController:ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
-    private readonly ApartmentPageService _apartmentPageService;
-    private readonly IImageService _imageService;
     private readonly IMediator _mediator;
 
-    public ApartmentPageController(ILogger<ApartmentPageController> logger, ApartmentPageService apartmentPageService, IMediator mediator, IImageService imageService)
+    public ApartmentPageController(ILogger<ApartmentPageController> logger, IMediator mediator)
     {
         _logger = logger;
-        _apartmentPageService = apartmentPageService;
         _mediator = mediator;
-        _imageService = imageService;
     }
     
     [HttpPost("CreateApartmentPage")]
@@ -42,46 +31,15 @@ public class ApartmentPageController:ControllerBase
             validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
             return BadRequest(errors);
         }
-        var imageServiceResponse = _imageService.UploadImage(request.Images);
-        if (imageServiceResponse.StatusCode!=HttpStatusCode.OK)
-        {
-            return StatusCode((int)imageServiceResponse.StatusCode, imageServiceResponse.Description);
-        }
 
-        if (!Guid.TryParse(request.OwnerId,out Guid ownerGuidId))
+        try
         {
-            return BadRequest("OwnerId is not valid");
+            await _mediator.Send(request);
         }
-        if (!ApartmentType.TryParse(request.ApartmentType, out ApartmentType apartmentType))
+        catch (Exception e)
         {
-            return BadRequest("Apartment type is not valid");
+            return BadRequest(e.Message);
         }
-
-        ApartmentPage apartmentPage = new ApartmentPage()
-        {
-            Apartment = new Apartment()
-            {
-                Address = new Address()
-                {
-                    Building = request.Building,
-                    City = request.City,
-                    HouseNumber = request.HouseNumber,
-                    Street = request.Street
-                },
-                ApartmentType = apartmentType,
-                Area = request.Area,
-                Rooms = request.Rooms,
-                
-            },
-            Title = request.Title,
-            DaylyPrice = request.DailyPrice,
-            Price = request.Price,
-            Images = imageServiceResponse.Data,
-            IsAvailableForPurchase = request.IsAvailableForPurchase,
-            OwnerId = ownerGuidId,
-            PhoneNumber = new PhoneNumber(request.PhoneNumber)
-        };
-        await _apartmentPageService.CreateAsync(apartmentPage);
         _logger.LogInformation("Successfully create Apartment page");
         return Ok();
     }
@@ -97,51 +55,29 @@ public class ApartmentPageController:ControllerBase
             validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
             return BadRequest(errors);
         }
-        if (!Guid.TryParse(request.PageId,out Guid guidId))
+        
+        try
         {
-            return BadRequest("OwnerId is not valid");
+            await _mediator.Send(request);
         }
-
-        var response = await _apartmentPageService.GetByIdAsync(guidId);
-        if (response.StatusCode!=HttpStatusCode.OK)
+        catch (Exception e)
         {
-            return StatusCode((int)response.StatusCode, response.Description);
+            return BadRequest(e.Message);
         }
-
-        var newApartmentPage = new ApartmentPage()
-        {
-            Apartment = response.Data.Apartment,
-            ApprovalStatus = response.Data.ApprovalStatus,
-            Date = response.Data.Date,
-            DaylyPrice = request.DailyPrice,
-            Price = request.Price,
-            Title = request.Title,
-            Id = response.Data.Id,
-            OwnerId = response.Data.OwnerId,
-            Images = response.Data.Images,
-            IsAvailableForPurchase = request.IsAvailableForPurchase,
-            Status = response.Data.Status,
-            PriorityType = response.Data.PriorityType,
-            PhoneNumber = new PhoneNumber(request.PhoneNumber)
-        };
-        await _apartmentPageService.EditAsync(newApartmentPage);
         return Ok();
     }
     
     [HttpDelete("DeleteApartmentPage")]
     public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
     {
-        if (!Guid.TryParse(id,out Guid guidId))
+        try
         {
-            return BadRequest("OwnerId is not valid");
+            await _mediator.Send(new DeleteApartmentPageCommand() { Id = id });
         }
-
-        var response = await _apartmentPageService.GetByIdAsync(guidId);
-        if (response.StatusCode!=HttpStatusCode.OK)
+        catch (Exception e)
         {
-            return StatusCode((int)response.StatusCode, response.Description);
+            return BadRequest(e.Message);
         }
-        await _apartmentPageService.DeleteAsync(guidId);
         return Ok();
     }
     

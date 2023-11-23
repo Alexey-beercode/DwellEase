@@ -1,6 +1,8 @@
-﻿namespace DwellEase.Domain.Models.Requests;
+﻿using MediatR;
 
-public class UpdateUserRequest
+namespace DwellEase.Domain.Models.Requests;
+
+public class UpdateUserRequest:IRequest<bool>
 {
   public string UserId { get; set; }
   public string Email { get; set; }

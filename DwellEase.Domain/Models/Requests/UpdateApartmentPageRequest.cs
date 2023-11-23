@@ -1,8 +1,9 @@
 ﻿using System.Runtime.InteropServices;
+using MediatR;
 
 namespace DwellEase.Domain.Models.Requests;
 
-public class UpdateApartmentPageRequest
+public class UpdateApartmentPageRequest:IRequest<bool>
 {
     public string PageId { get; set; }
     public decimal DailyPrice { get; set; }
