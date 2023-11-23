@@ -4,6 +4,7 @@ using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
+using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;
 using DwellEase.WebAPI.Validators;
@@ -20,11 +21,13 @@ public class ApartmentPageController:ControllerBase
     private readonly ILogger<ApartmentPageController> _logger;
     private readonly ApartmentPageService _apartmentPageService;
     private readonly IImageService _imageService;
+    private readonly IMediator _mediator;
 
     public ApartmentPageController(ILogger<ApartmentPageController> logger, ApartmentPageService apartmentPageService, IMediator mediator, IImageService imageService)
     {
         _logger = logger;
         _apartmentPageService = apartmentPageService;
+        _mediator = mediator;
         _imageService = imageService;
     }
     
@@ -141,9 +144,24 @@ public class ApartmentPageController:ControllerBase
         {
             return StatusCode((int)response.StatusCode, response.Description);
         }
-
         await _apartmentPageService.DeleteAsync(guidId);
         return Ok();
     }
+
+    [Authorize(Policy = "CreatorArea")]
+    [HttpGet("GetApartmentPagesByOwner/{id}")]
+    public async Task<IActionResult> GetApartmentPagesByOwner(string id)
+    {
+        try
+        {
+            var pages = await _mediator.Send(new GetApartmentPagesByOwnerQuery() { Id = id });
+            return Ok(pages);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+    
     
 }
