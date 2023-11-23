@@ -2,7 +2,6 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
-using Microsoft.IdentityModel.Abstractions;
 using MongoDB.Driver;
 
 namespace DwellEase.DataManagement.Repositories.Implementations;
@@ -41,16 +40,6 @@ public class UserRepository:IBaseRepository<User>
         return _collection.FindOneAndUpdateAsync(filter, update);
     }
 
-    public Task UpdateCridentials(UpdateUserRequest model,string hashedPassword)
-    {
-        var filter = Builders<User>.Filter.Eq<>(a => a.Id, model.UserId);
-        var update = Builders<User>.Update
-            .Set(a => a.PhoneNumber,new PhoneNumber(model.PhoneNumber))
-            .Set(a => a.Email, model.Email)
-            .Set(a => a.UserName, model.UserName)
-            .Set(a => a.PasswordHash, hashedPassword);
-        return _collection.FindOneAndUpdateAsync(filter, update);
-    }
 
     public async Task<Task<List<User>>> GetAll()
     {

@@ -1,4 +1,4 @@
-﻿using DwellEase.Service.Services.Implementations;
+﻿using DwellEase.Service.Queries.Creator;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +10,25 @@ namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 [Route("ApartmentOperation")]
 public class ApartmentOperationController:ControllerBase
 {
-    private readonly ILogger<ApartmentOperationController> _logger;
-    private readonly ApartmentOperationService _apartmentOperationService;
     private readonly IMediator _mediator;
-    private readonly ApartmentPageService _apartmentPageService;
 
-    public ApartmentOperationController(ILogger<ApartmentOperationController> logger, ApartmentOperationService apartmentOperationService, IMediator mediator, ApartmentPageService apartmentPageService)
+    public ApartmentOperationController(IMediator mediator)
     {
-        _logger = logger;
-        _apartmentOperationService = apartmentOperationService;
         _mediator = mediator;
-        _apartmentPageService = apartmentPageService;
+    }
+    
+    [HttpGet("GetOperationsByPagesOwner")]
+    public async Task<IActionResult> GetOperationsByPagesOwner(string id)
+    {
+        try
+        {
+            var operations = await _mediator.Send(new GetOperationsByPagesOwnerQuery() { Id = id });
+            return Ok(operations);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
     
 }

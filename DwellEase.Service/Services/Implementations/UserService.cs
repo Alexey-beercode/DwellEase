@@ -127,8 +127,13 @@ public class UserService
             {
                 return HandleError<bool>($"User with id: {Guid.Parse(user.UserId)} not found", HttpStatusCode.NoContent);
             }
-    
-            await _userRepository.UpdateCridentials(user,HashPassword(user.Password,findUser.PasswordSalt));
+
+            findUser.UserName = user.UserName;
+            findUser.PasswordHash = HashPassword(user.Password, findUser.PasswordSalt);
+            findUser.NormalizedUserName = user.UserName.ToUpper();
+            findUser.PhoneNumber = new PhoneNumber(user.PhoneNumber);
+            findUser.Email = user.Email;
+            await _userRepository.Update(findUser);
             return new BaseResponse<bool>() { StatusCode = HttpStatusCode.OK };
         }
     
