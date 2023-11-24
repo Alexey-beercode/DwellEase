@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace DwellEase.Service.Queries.Creator;
+namespace DwellEase.Service.Commands;
 
 public class DeleteApartmentPageCommand:IRequest<bool>
 {

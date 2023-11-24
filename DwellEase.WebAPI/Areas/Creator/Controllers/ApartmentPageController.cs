@@ -1,8 +1,11 @@
 ﻿using System.Text;
 using DwellEase.Domain.Models.Requests;
+using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.WebAPI.Validators;
+using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
@@ -19,19 +22,27 @@ public class ApartmentPageController:ControllerBase
         _logger = logger;
         _mediator = mediator;
     }
-    
-    [HttpPost("CreateApartmentPage")]
-    public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
+
+    private StringBuilder Validate<T>(AbstractValidator<T> validator, T model)
     {
-        CreateApartmentPageRequestValidator validator = new CreateApartmentPageRequestValidator();
-        var validateResult = validator.ValidateAsync(request).Result;
+        var validateResult = validator.ValidateAsync(model).Result;
         if (!validateResult.IsValid)
         {
             var errors =new StringBuilder();
             validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
-            return BadRequest(errors);
+            return errors;
         }
-
+        return new StringBuilder();
+    }
+    
+    [HttpPost("CreateApartmentPage")]
+    public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
+    {
+        var validateResult = Validate(new CreateApartmentPageRequestValidator(), request);
+        if (validateResult.Length!=0)
+        {
+            return BadRequest(validateResult);
+        }
         try
         {
             await _mediator.Send(request);
@@ -47,15 +58,11 @@ public class ApartmentPageController:ControllerBase
     [HttpPut("UpdateApartmentPage")]
     public async Task<IActionResult> UpdateApartmentPage([FromBody]UpdateApartmentPageRequest request)
     {
-        UpdateApartmentPageRequestValidator validator = new UpdateApartmentPageRequestValidator();
-        var validateResult = validator.ValidateAsync(request).Result;
-        if (!validateResult.IsValid)
+        var validateResult = Validate(new UpdateApartmentPageRequestValidator(), request);
+        if (validateResult.Length!=0)
         {
-            var errors =new StringBuilder();
-            validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
-            return BadRequest(errors);
+            return BadRequest(validateResult);
         }
-        
         try
         {
             await _mediator.Send(request);
