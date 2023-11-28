@@ -1,0 +1,2 @@
+2023-11-25 00:05:21.4193|0|ERROR|Program|Program initial |url: |action: |Program.<Main>$| body: 
+2023-11-25 00:05:21.5259|0|ERROR|DwellEase.Service.Services.Implementations.RentalService|Apartmentpages are not found |url: |action: |DwellEase.Service.Services.Implementations.RentalService.CheckAndUpdateApartmentStatus| body: 

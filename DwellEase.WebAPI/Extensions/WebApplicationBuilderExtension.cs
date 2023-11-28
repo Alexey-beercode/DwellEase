@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
+using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Queries;
@@ -31,7 +32,9 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<ApartmentPageService>();
         builder.Services.AddScoped<ApartmentOperationService>();
         builder.Services.AddScoped<RentalService>();
+        builder.Services.AddScoped<SwitchPriorityRequestService>();
         builder.Services.AddScoped<IImageService,ImageService>();
+        builder.Services.AddScoped<IBaseRepository<SwitchPriorityRequest>,SwitchPriorityRequestRepository>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
         builder.Services.AddHostedService<RentalExpirationWorker>();
@@ -55,6 +58,7 @@ public static class WebApplicationBuilderExtension
         mongoDatabase.CreateCollectionAsync("ApartmentPages");
         mongoDatabase.CreateCollectionAsync("ApartmentOperations");
         mongoDatabase.CreateCollectionAsync("UserRole");
+        mongoDatabase.CreateCollectionAsync("SwitchPriorityRequests");
         builder.Services.AddSingleton(mongoDatabase);
         UserDataSeeder.SeedData();
         RoleDataSender.SeedData();

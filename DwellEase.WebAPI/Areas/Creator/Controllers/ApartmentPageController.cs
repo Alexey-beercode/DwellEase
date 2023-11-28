@@ -5,13 +5,14 @@ using DwellEase.Service.Queries.Creator;
 using DwellEase.WebAPI.Validators;
 using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
 [Area("Creator")]
 [Route("ApartmentPage")]
+[Authorize(Policy = "CreatorArea")]
 public class ApartmentPageController:ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
