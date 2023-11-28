@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Controllers;
 
+[ApiController]
 [Route("ApartmentOperation")]
 public class ApartmentOperationController:ControllerBase
 {

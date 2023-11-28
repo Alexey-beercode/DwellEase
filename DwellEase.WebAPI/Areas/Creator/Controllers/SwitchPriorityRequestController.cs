@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
+[ApiController]
 [Area("Creator")]
-[Route("SwitchPriorityRequest")]
+[Route("{area}/SwitchPriorityRequest")]
 [Authorize(Policy = "CreatorArea")]
 public class SwitchPriorityRequestController:ControllerBase
 {

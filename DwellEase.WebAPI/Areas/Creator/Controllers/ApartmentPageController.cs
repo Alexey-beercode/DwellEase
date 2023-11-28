@@ -10,8 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
+[ApiController]
 [Area("Creator")]
-[Route("ApartmentPage")]
+[Route("{area}/ApartmentPage")]
 [Authorize(Policy = "CreatorArea")]
 public class ApartmentPageController:ControllerBase
 {

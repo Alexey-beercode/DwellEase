@@ -1,4 +1,5 @@
 ﻿using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models;
 using MongoDB.Driver;
 
 namespace DwellEase.DataManagement.DataSenders;
@@ -21,7 +22,8 @@ public class UserDataSeeder
                 NormalizedUserName = "ADMIN",
                 Email = "alsemkovbn@gmail.com",
                 PasswordSalt = salt,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("1025556478955466Admin445", salt)
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword("1025556478955466Admin445", salt),
+                PhoneNumber = new PhoneNumber("+375445983720")
             };
             userCollection.InsertOneAsync(user);
         }
