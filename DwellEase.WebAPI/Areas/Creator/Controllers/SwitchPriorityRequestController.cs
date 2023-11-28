@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DwellEase.Domain.Models.Requests;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,18 @@ public class SwitchPriorityRequestController:ControllerBase
         _logger = logger;
         _mediator = mediator;
     }
-    
+
     [HttpPost("CreateRequest")]
-    public async Task<IActionResult> CreateSwitchPriorityRequest()
+    public async Task<IActionResult> CreateSwitchPriorityRequest(PriorityModificationRequest request)
+    {
+        try
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
