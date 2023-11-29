@@ -36,7 +36,6 @@ public class ApartmentPageController : ControllerBase
         {
             return BadRequest(validateResult);
         }
-
         try
         {
             await _mediator.Send(request);
