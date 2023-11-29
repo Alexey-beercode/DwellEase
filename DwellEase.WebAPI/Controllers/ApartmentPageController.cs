@@ -36,8 +36,15 @@ namespace DwellEase.WebAPI.Controllers
                 return BadRequest("Invalid ID format");
             }
 
-            BaseResponse<ApartmentPage> response = await _mediator.Send(new GetApartmentPageByIdQuery(guid));
-            return HandleResponse(response);
+            try
+            {
+                var page = await _mediator.Send(new GetApartmentPageByIdQuery(guid));
+                return Ok(page);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            } 
         }
 
         private IActionResult HandleResponse<T>(BaseResponse<T> response)

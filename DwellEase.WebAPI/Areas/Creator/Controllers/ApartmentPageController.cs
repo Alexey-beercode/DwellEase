@@ -2,6 +2,7 @@
 using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
+using DwellEase.Shared.Validators;
 using DwellEase.WebAPI.Validators;
 using FluentValidation;
 using MediatR;
@@ -14,7 +15,7 @@ namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 [Area("Creator")]
 [Route("{area}/ApartmentPage")]
 [Authorize(Policy = "CreatorArea")]
-public class ApartmentPageController:ControllerBase
+public class ApartmentPageController : ControllerBase
 {
     private readonly ILogger<ApartmentPageController> _logger;
     private readonly IMediator _mediator;
@@ -25,26 +26,17 @@ public class ApartmentPageController:ControllerBase
         _mediator = mediator;
     }
 
-    private StringBuilder Validate<T>(AbstractValidator<T> validator, T model)
-    {
-        var validateResult = validator.ValidateAsync(model).Result;
-        if (!validateResult.IsValid)
-        {
-            var errors =new StringBuilder();
-            validateResult.Errors.ForEach(a => errors.Append(a.ErrorMessage).Append("\n"));
-            return errors;
-        }
-        return new StringBuilder();
-    }
-    
+
     [HttpPost("CreateApartmentPage")]
-    public async Task<IActionResult> CreateApartmentPage([FromBody]CreateApartmentPageRequest request)
+    public async Task<IActionResult> CreateApartmentPage([FromBody] CreateApartmentPageRequest request)
     {
-        var validateResult = Validate(new CreateApartmentPageRequestValidator(), request);
-        if (validateResult.Length!=0)
+        var validateResult =
+            Validator<CreateApartmentPageRequestValidator>.Validate(new CreateApartmentPageRequestValidator(), request);
+        if (validateResult.Length != 0)
         {
             return BadRequest(validateResult);
         }
+
         try
         {
             await _mediator.Send(request);
@@ -53,18 +45,20 @@ public class ApartmentPageController:ControllerBase
         {
             return BadRequest(e.Message);
         }
+
         _logger.LogInformation("Successfully create Apartment page");
         return Ok();
     }
-    
+
     [HttpPut("UpdateApartmentPage")]
-    public async Task<IActionResult> UpdateApartmentPage([FromBody]UpdateApartmentPageRequest request)
+    public async Task<IActionResult> UpdateApartmentPage([FromBody] UpdateApartmentPageRequest request)
     {
-        var validateResult = Validate(new UpdateApartmentPageRequestValidator(), request);
-        if (validateResult.Length!=0)
+        var validateResult = Validator<UpdateApartmentPageRequestValidator>.Validate(new UpdateApartmentPageRequestValidator(), request);
+        if (validateResult.Length != 0)
         {
             return BadRequest(validateResult);
         }
+
         try
         {
             await _mediator.Send(request);
@@ -73,9 +67,10 @@ public class ApartmentPageController:ControllerBase
         {
             return BadRequest(e.Message);
         }
+
         return Ok();
     }
-    
+
     [HttpDelete("DeleteApartmentPage")]
     public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
     {
@@ -87,9 +82,10 @@ public class ApartmentPageController:ControllerBase
         {
             return BadRequest(e.Message);
         }
+
         return Ok();
     }
-    
+
     [HttpGet("GetApartmentPagesByOwner/{id}")]
     public async Task<IActionResult> GetApartmentPagesByOwner(string id)
     {

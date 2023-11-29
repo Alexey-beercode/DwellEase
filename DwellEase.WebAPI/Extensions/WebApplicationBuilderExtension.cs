@@ -38,6 +38,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<IImageService,ImageService>();
         builder.Services.AddScoped<IBaseRepository<SwitchPriorityRequest>,SwitchPriorityRequestRepository>();
         builder.Services.AddScoped<PriorityModificationToSwitchMapper>();
+        builder.Services.AddScoped<CreatePageRequestToApartmentPageMapper>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
         builder.Services.AddHostedService<RentalExpirationWorker>();

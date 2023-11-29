@@ -5,6 +5,7 @@ using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;
+using DwellEase.Shared.Mappers;
 using MediatR;
 
 namespace DwellEase.Service.Handlers.Creator;
@@ -13,11 +14,13 @@ public class CreateApartmentPageRequestHandler:IRequestHandler<CreateApartmentPa
 {
     private readonly ApartmentPageService _apartmentPageService;
     private readonly IImageService _imageService;
+    private readonly CreatePageRequestToApartmentPageMapper _mapper;
 
-    public CreateApartmentPageRequestHandler(IImageService imageService, ApartmentPageService apartmentPageService)
+    public CreateApartmentPageRequestHandler(IImageService imageService, ApartmentPageService apartmentPageService, CreatePageRequestToApartmentPageMapper mapper)
     {
         _imageService = imageService;
         _apartmentPageService = apartmentPageService;
+        _mapper = mapper;
     }
 
     public async Task<bool> Handle(CreateApartmentPageRequest request, CancellationToken cancellationToken)
@@ -37,30 +40,7 @@ public class CreateApartmentPageRequestHandler:IRequestHandler<CreateApartmentPa
             throw new Exception("Apartment type is not valid");
         }
 
-        ApartmentPage apartmentPage = new ApartmentPage()
-        {
-            Apartment = new Apartment()
-            {
-                Address = new Address()
-                {
-                    Building = request.Building,
-                    City = request.City,
-                    HouseNumber = request.HouseNumber,
-                    Street = request.Street
-                },
-                ApartmentType = apartmentType,
-                Area = request.Area,
-                Rooms = request.Rooms,
-                
-            },
-            Title = request.Title,
-            DaylyPrice = request.DailyPrice,
-            Price = request.Price,
-            Images = imageServiceResponse.Data,
-            IsAvailableForPurchase = request.IsAvailableForPurchase,
-            OwnerId = ownerGuidId,
-            PhoneNumber = new PhoneNumber(request.PhoneNumber)
-        };
+        var apartmentPage = _mapper.MapTo(request, imageServiceResponse.Data, ownerGuidId, apartmentType);
         await _apartmentPageService.CreateAsync(apartmentPage);
         return true;
     }
