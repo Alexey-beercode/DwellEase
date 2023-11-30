@@ -149,7 +149,7 @@ public class AccountsController : ControllerBase
         {
             return BadRequest(e.Message);
         }
-
+        
         await _userService.UpdateCridentialsAsync(request);
         return Ok();
     }

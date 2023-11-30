@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using DwellEase.Domain.Entity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace DwellEase.Service.Services.Implementations;
@@ -11,10 +12,12 @@ namespace DwellEase.Service.Services.Implementations;
 public class TokenService
 {
     private readonly IConfiguration _configuration;
+    private readonly ILogger<TokenService> _logger;
 
-    public TokenService(IConfiguration configuration)
+    public TokenService(IConfiguration configuration, ILogger<TokenService> logger)
     {
         _configuration = configuration;
+        _logger = logger;
     }
 
     public List<Claim> CreateClaims(User user, List<Role> roles)
@@ -27,6 +30,7 @@ public class TokenService
             new Claim(ClaimTypes.Role, string.Join(" ", roles.Select(x => x.RoleName))),
             new Claim(ClaimTypes.MobilePhone,user.PhoneNumber.Number)
         };
+        _logger.LogInformation("Create claims");
         return claims;
     }
 
@@ -54,6 +58,7 @@ public class TokenService
             signingCredentials: credentials
         );
         var tokenHandler = new JwtSecurityTokenHandler();
+        _logger.LogInformation("Generated access token");
         return tokenHandler.WriteToken(jwtToken);
     }
 }

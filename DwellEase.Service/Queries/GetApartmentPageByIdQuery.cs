@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DwellEase.Service.Queries;
 
-public class GetApartmentPageByIdQuery:IRequest<BaseResponse<ApartmentPage>>
+public class GetApartmentPageByIdQuery:IRequest<BaseResponse<ApartmentPage>>, IRequest<ApartmentPage>
 {
     public Guid Id { get; set; }
     public GetApartmentPageByIdQuery(Guid result)

@@ -54,8 +54,8 @@ public class RentalService
         if (apartmentPages.Count==0)
         {
             response.StatusCode = HttpStatusCode.NoContent;
-            response.Description = "Apartmentpages are not found";
-            _logger.LogError("Apartmentpages are not found");
+            response.Description = "Apartment pages are not found";
+            _logger.LogError("Apartment pages are not found");
             return response;
         }
 
@@ -63,13 +63,13 @@ public class RentalService
         if (expiredPages.Count==0)
         {
             response.StatusCode = HttpStatusCode.NoContent;
-            response.Description = "Apartmentpages with not ended rent are not found";
-            _logger.LogError("Apartmentpages with not ended rent are not found");
+            response.Description = "Apartment pages with not ended rent are not found";
+            _logger.LogError("Apartment pages with not ended rent are not found");
             return response;   
         }
         response.StatusCode = HttpStatusCode.OK;
         response.Data = expiredPages;
-        _logger.LogInformation("Successfully check and update apartmentpages status");
+        _logger.LogInformation("Successfully check and update apartment pages status");
         return response;
     }
 }

@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
+[ApiController]
 [Area("Creator")]
 [Authorize(Policy = "CreatorArea")]
-[Route("ApartmentOperation")]
+[Route("{area}/ApartmentOperation")]
 public class ApartmentOperationController:ControllerBase
 {
     private readonly IMediator _mediator;

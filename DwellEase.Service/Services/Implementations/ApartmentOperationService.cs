@@ -58,7 +58,7 @@ public class ApartmentOperationService
         await _apartmentOperationRepository.Create(newApartmentOperation);
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
-        _logger.LogInformation("Successfully create aprtmentoperation");
+        _logger.LogInformation("Successfully create aprtment operation");
         return response;
     }
     
@@ -68,12 +68,12 @@ public class ApartmentOperationService
         var apartmentPageResponse = await _apartmentPageService.GetByIdAsync(apartmentOperation.ApartmentPageId);
         if (apartmentOperation.OperationType!=OperationType.Rent)
         {
-            return HandleNotFound<bool>("Operationtype of model is not rent");
+            return HandleNotFound<bool>("Operation type of model is not rent");
         }
 
         if(apartmentPageResponse.StatusCode!=HttpStatusCode.OK)
         {
-            return HandleNotFound<bool>($"Apartmentpage with id: {apartmentOperation.ApartmentPageId} not found");
+            return HandleNotFound<bool>($"Apartment page with id: {apartmentOperation.ApartmentPageId} not found");
         }
         var newApartmentOperation = new ApartmentOperation()
         {
@@ -102,7 +102,7 @@ public class ApartmentOperationService
         }
         apartmentOperation.EndDate = newEndDate;
         await _apartmentOperationRepository.Update(apartmentOperation);
-        _logger.LogInformation($"Successfully edit aprtmentoperation enddate with {id} to {newEndDate} ");
+        _logger.LogInformation($"Successfully edit aprtment operation end date with {id} to {newEndDate} ");
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
         return response;
@@ -114,11 +114,11 @@ public class ApartmentOperationService
         var apartmentOperations = await await _apartmentOperationRepository.GetAll();
         if (apartmentOperations.Count==0)
         {
-            return HandleNotFound<List<ApartmentOperation>>("Apartmentoperations are not found");
+            return HandleNotFound<List<ApartmentOperation>>("Apartment operations are not found");
         }
         response.Data = apartmentOperations;
         response.StatusCode = HttpStatusCode.OK;
-        _logger.LogInformation("Successfully get aprtmentoperations ");
+        _logger.LogInformation("Successfully get aprtment operations ");
         return response;
     }
 
@@ -128,7 +128,7 @@ public class ApartmentOperationService
         var operation = await await _apartmentOperationRepository.GetById(apartmentOperation.Id);
         if (operation==null)
         {
-            return HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
+            return HandleNotFound<bool>($"Apartment operation with id: {apartmentOperation.Id} not found");
         }
 
         operation.OperationType = apartmentOperation.OperationType;
@@ -148,7 +148,7 @@ public class ApartmentOperationService
         var apartmentOperation = await await _apartmentOperationRepository.GetById(id);
         if (apartmentOperation==null)
         {
-            return HandleNotFound<bool>($"Apartmentoperation with id: {apartmentOperation.Id} not found");
+            return HandleNotFound<bool>($"Apartment operation with id: {apartmentOperation.Id} not found");
         }
 
         await _apartmentOperationRepository.Delete(id);

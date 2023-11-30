@@ -4,20 +4,20 @@ using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.Shared.Mappers;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers.Creator;
 
 public class UpdateApartmentPageRequestHandler:IRequestHandler<UpdateApartmentPageRequest,bool>
 {
-    private readonly ILogger<UpdateApartmentPageRequestHandler> _logger;
     private readonly ApartmentPageService _apartmentPageService;
+    private readonly UpdateApartmentPageRequestToApartmentPageMapper _mapper;
 
-    public UpdateApartmentPageRequestHandler(ILogger<UpdateApartmentPageRequestHandler> logger, ApartmentPageService apartmentPageService)
+    public UpdateApartmentPageRequestHandler(ApartmentPageService apartmentPageService, UpdateApartmentPageRequestToApartmentPageMapper mapper)
     {
-        _logger = logger;
         _apartmentPageService = apartmentPageService;
+        _mapper = mapper;
     }
 
     public async Task<bool> Handle(UpdateApartmentPageRequest request, CancellationToken cancellationToken)
@@ -33,23 +33,8 @@ public class UpdateApartmentPageRequestHandler:IRequestHandler<UpdateApartmentPa
             throw new Exception(response.Description);
         }
 
-        var newApartmentPage = new ApartmentPage()
-        {
-            Apartment = response.Data.Apartment,
-            ApprovalStatus = response.Data.ApprovalStatus,
-            Date = response.Data.Date,
-            DaylyPrice = request.DailyPrice,
-            Price = request.Price,
-            Title = request.Title,
-            Id = response.Data.Id,
-            OwnerId = response.Data.OwnerId,
-            Images = response.Data.Images,
-            IsAvailableForPurchase = request.IsAvailableForPurchase,
-            Status = response.Data.Status,
-            PriorityType = response.Data.PriorityType,
-            PhoneNumber = new PhoneNumber(request.PhoneNumber)
-        };
-        await _apartmentPageService.EditAsync(newApartmentPage);
+        var apartmentPage = _mapper.MapTo(request, response);
+        await _apartmentPageService.EditAsync(apartmentPage);
         return true;
     }
 }

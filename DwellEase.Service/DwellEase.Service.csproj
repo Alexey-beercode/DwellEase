@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\DwellEase.DataManagement\DwellEase.DataManagement.csproj" />
       <ProjectReference Include="..\DwellEase.Domain\DwellEase.Domain.csproj" />
+      <ProjectReference Include="..\DwellEase.Shared\DwellEase.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -21,7 +22,6 @@
 
 
     <ItemGroup>
-      <Folder Include="Handlers\Admin\" />
       <Folder Include="Queries\Admin\" />
     </ItemGroup>
 
