@@ -1,10 +1,8 @@
-﻿using System.Text;
-using DwellEase.Domain.Models.Requests;
+﻿using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
-using DwellEase.Shared.Validators;
+using DwellEase.Shared;
 using DwellEase.WebAPI.Validators;
-using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +29,7 @@ public class ApartmentPageController : ControllerBase
     public async Task<IActionResult> CreateApartmentPage([FromBody] CreateApartmentPageRequest request)
     {
         var validateResult =
-            Validator<CreateApartmentPageRequestValidator>.Validate(new CreateApartmentPageRequestValidator(), request);
+            GeneralValidator.Validate(new CreateApartmentPageRequestValidator(), request);
         if (validateResult.Length != 0)
         {
             return BadRequest(validateResult);
@@ -52,7 +50,7 @@ public class ApartmentPageController : ControllerBase
     [HttpPut("UpdateApartmentPage")]
     public async Task<IActionResult> UpdateApartmentPage([FromBody] UpdateApartmentPageRequest request)
     {
-        var validateResult = Validator<UpdateApartmentPageRequestValidator>.Validate(new UpdateApartmentPageRequestValidator(), request);
+        var validateResult = GeneralValidator.Validate(new UpdateApartmentPageRequestValidator(), request);
         if (validateResult.Length != 0)
         {
             return BadRequest(validateResult);

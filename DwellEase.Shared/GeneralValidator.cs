@@ -1,9 +1,9 @@
 ﻿using System.Text;
 using FluentValidation;
 
-namespace DwellEase.Shared.Validators;
+namespace DwellEase.Shared;
 
-public static class Validator<T>
+public static class GeneralValidator
 {
     public static StringBuilder Validate<T>(AbstractValidator<T> validator, T model)
     {

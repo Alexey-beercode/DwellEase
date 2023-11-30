@@ -6,19 +6,16 @@ using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Shared.Mappers;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers.Creator;
 
 public class UpdateApartmentPageRequestHandler:IRequestHandler<UpdateApartmentPageRequest,bool>
 {
-    private readonly ILogger<UpdateApartmentPageRequestHandler> _logger;
     private readonly ApartmentPageService _apartmentPageService;
     private readonly UpdateApartmentPageRequestToApartmentPageMapper _mapper;
 
-    public UpdateApartmentPageRequestHandler(ILogger<UpdateApartmentPageRequestHandler> logger, ApartmentPageService apartmentPageService, UpdateApartmentPageRequestToApartmentPageMapper mapper)
+    public UpdateApartmentPageRequestHandler(ApartmentPageService apartmentPageService, UpdateApartmentPageRequestToApartmentPageMapper mapper)
     {
-        _logger = logger;
         _apartmentPageService = apartmentPageService;
         _mapper = mapper;
     }

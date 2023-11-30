@@ -11,12 +11,10 @@ namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 [Authorize(Policy = "CreatorArea")]
 public class SwitchPriorityRequestController:ControllerBase
 {
-    private readonly ILogger<SwitchPriorityRequestController> _logger;
     private readonly IMediator _mediator;
 
     public SwitchPriorityRequestController(ILogger<SwitchPriorityRequestController> logger, IMediator mediator)
     {
-        _logger = logger;
         _mediator = mediator;
     }
 

@@ -13,6 +13,7 @@ using DwellEase.WebAPI.BackgroundTasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using NLog.Web;
@@ -40,6 +41,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<PriorityModificationToSwitchMapper>();
         builder.Services.AddScoped<CreatePageRequestToApartmentPageMapper>();
         builder.Services.AddScoped<UpdateApartmentPageRequestToApartmentPageMapper>();
+        builder.Services.AddScoped<StringToGuidMapper>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
         builder.Services.AddHostedService<RentalExpirationWorker>();

@@ -13,13 +13,11 @@ namespace DwellEase.WebAPI.Areas.Admin.Controllers;
 public class ApartmentPageController:ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly ILogger<ApartmentPageController> _logger;
     private readonly ApartmentPageService _apartmentPageService;
 
-    public ApartmentPageController(IMediator mediator, ILogger<ApartmentPageController> logger, ApartmentPageService apartmentPageService)
+    public ApartmentPageController(IMediator mediator, ApartmentPageService apartmentPageService)
     {
         _mediator = mediator;
-        _logger = logger;
         _apartmentPageService = apartmentPageService;
     }
 
