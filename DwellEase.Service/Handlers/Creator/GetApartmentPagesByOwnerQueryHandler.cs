@@ -1,31 +1,31 @@
 ﻿using System.Net;
 using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Shared.Mappers;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers.Creator;
 
-public class GetApartmentPagesByOwnerQueryHandler:IRequestHandler<GetApartmentPagesByOwnerQuery, List<ApartmentPage>>
+public class GetApartmentPagesByOwnerQueryHandler:IRequestHandler<GetApartmentPagesByOwnerQuery, List<ApartmentPageResponse>>
 {
     private readonly ApartmentPageService _apartmentPageService;
-    private readonly ILogger<GetOperationsByPagesOwnerQueryHandler> _logger;
     private readonly UserService _userService;
-    private readonly StringToGuidMapper _mapper;
+    private readonly StringToGuidMapper _guidMapper;
+    private readonly ApartmentPageToAprtmentPageResponseMapper _pageResponseMapper;
 
-    public GetApartmentPagesByOwnerQueryHandler(ApartmentPageService apartmentPageService, ILogger<GetOperationsByPagesOwnerQueryHandler> logger, UserService userService, StringToGuidMapper mapper)
+    public GetApartmentPagesByOwnerQueryHandler(ApartmentPageService apartmentPageService, UserService userService, StringToGuidMapper mapper, ApartmentPageToAprtmentPageResponseMapper pageResponseMapper)
     {
         _apartmentPageService = apartmentPageService;
-        _logger = logger;
         _userService = userService;
-        _mapper = mapper;
+        _guidMapper = mapper;
+        _pageResponseMapper = pageResponseMapper;
     }
 
-    public async Task<List<ApartmentPage>> Handle(GetApartmentPagesByOwnerQuery request, CancellationToken cancellationToken)
+    public async Task<List<ApartmentPageResponse>> Handle(GetApartmentPagesByOwnerQuery request, CancellationToken cancellationToken)
     {
-        var guidUserId = _mapper.MapTo(request.Id);
+        var guidUserId = _guidMapper.MapTo(request.Id);
         var userResponse = await _userService.GetByIdAsync(guidUserId);
         if (userResponse.StatusCode!=HttpStatusCode.OK)
         {
@@ -38,6 +38,9 @@ public class GetApartmentPagesByOwnerQueryHandler:IRequestHandler<GetApartmentPa
             throw new Exception(pagesResponse.Description);
         }
 
-        return pagesResponse.Data;
+        var responses = new List<ApartmentPageResponse>();
+        pagesResponse.Data.ForEach(a => responses.Add(_pageResponseMapper.MapTo(a)));
+        return responses;
+
     }
 }

@@ -3,6 +3,7 @@ using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Mappers;
 using DwellEase.Service.Queries;
@@ -41,6 +42,7 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<UpdateApartmentPageRequestToApartmentPageMapper>();
         builder.Services.AddScoped<CreateRentOperationCommandToOperationMapper>();
         builder.Services.AddScoped<CreatePurchaseOperationCommandToOperationMapper>();
+        builder.Services.AddScoped<ApartmentPageToAprtmentPageResponseMapper>();
         builder.Services.AddScoped<StringToGuidMapper>();
         builder.Services.AddControllers();
         builder.Services.AddSignalR();
