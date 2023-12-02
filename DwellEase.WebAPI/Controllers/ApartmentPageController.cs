@@ -2,9 +2,9 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Service.Queries;
-using DwellEase.Service.Services.Implementations;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Controllers
 {
@@ -28,6 +28,7 @@ namespace DwellEase.WebAPI.Controllers
             return HandleResponse(response);
         }
 
+        [SwaggerResponse(statusCode: 200, type: typeof(ApartmentPage))]
         [HttpGet("Get-ById/{id}")]
         public async Task<IActionResult> GetApartmentPageById(string id)
         {
@@ -44,7 +45,7 @@ namespace DwellEase.WebAPI.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-            } 
+            }
         }
 
         private IActionResult HandleResponse<T>(BaseResponse<T> response)

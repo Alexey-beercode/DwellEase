@@ -3,7 +3,6 @@ using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.Domain.Entity;
-using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
@@ -12,8 +11,6 @@ using DwellEase.Shared.Mappers;
 using DwellEase.WebAPI.BackgroundTasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using NLog.Web;
@@ -36,8 +33,8 @@ public static class WebApplicationBuilderExtension
         builder.Services.AddScoped<ApartmentOperationService>();
         builder.Services.AddScoped<RentalService>();
         builder.Services.AddScoped<SwitchPriorityRequestService>();
-        builder.Services.AddScoped<IImageService,ImageService>();
-        builder.Services.AddScoped<IBaseRepository<SwitchPriorityRequest>,SwitchPriorityRequestRepository>();
+        builder.Services.AddScoped<IImageService, ImageService>();
+        builder.Services.AddScoped<IBaseRepository<SwitchPriorityRequest>, SwitchPriorityRequestRepository>();
         builder.Services.AddScoped<PriorityModificationToSwitchMapper>();
         builder.Services.AddScoped<CreatePageRequestToApartmentPageMapper>();
         builder.Services.AddScoped<UpdateApartmentPageRequestToApartmentPageMapper>();
@@ -75,7 +72,7 @@ public static class WebApplicationBuilderExtension
     public static void AddAuthentication(this WebApplicationBuilder builder)
     {
         var jwtSettings = builder.Configuration.GetSection("Jwt");
-        
+
         var key = Encoding.UTF8.GetBytes(jwtSettings["Secret"]);
         var issuer = jwtSettings["Issuer"];
         var audience = jwtSettings["Audience"];
@@ -86,7 +83,7 @@ public static class WebApplicationBuilderExtension
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         }).AddJwtBearer(options =>
         {
-            options.RequireHttpsMetadata = false; 
+            options.RequireHttpsMetadata = false;
             options.SaveToken = true;
             options.TokenValidationParameters = new TokenValidationParameters
             {
@@ -123,5 +120,11 @@ public static class WebApplicationBuilderExtension
     {
         builder.Logging.ClearProviders();
         builder.Host.UseNLog();
+    }
+
+    public static void AddSwaggerDocumentation(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
     }
 }
