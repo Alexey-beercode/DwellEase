@@ -2,22 +2,22 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.Shared.Mappers;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers.Creator;
 
 public class GetOperationsByPagesOwnerQueryHandler:IRequestHandler<GetOperationsByPagesOwnerQuery, List<ApartmentOperation>>
 {
-    private readonly ILogger<GetOperationsByPagesOwnerQueryHandler> _logger;
     private readonly ApartmentOperationService _apartmentOperationService;
     private readonly ApartmentPageService _apartmentPageService;
+    private readonly StringToGuidMapper _mapper;
 
-    public GetOperationsByPagesOwnerQueryHandler(ILogger<GetOperationsByPagesOwnerQueryHandler> logger, ApartmentOperationService apartmentOperationService, ApartmentPageService apartmentPageService)
+    public GetOperationsByPagesOwnerQueryHandler(ApartmentOperationService apartmentOperationService, ApartmentPageService apartmentPageService, StringToGuidMapper mapper)
     {
-        _logger = logger;
         _apartmentOperationService = apartmentOperationService;
         _apartmentPageService = apartmentPageService;
+        _mapper = mapper;
     }
 
     public async Task<List<ApartmentOperation>> Handle(GetOperationsByPagesOwnerQuery request, CancellationToken cancellationToken)
@@ -27,8 +27,8 @@ public class GetOperationsByPagesOwnerQueryHandler:IRequestHandler<GetOperations
         {
             throw new Exception(response.Description);
         }
-
-        var ownerPagesResponse = await _apartmentPageService.GetByOwnerAsync(new Guid(request.Id));
+        
+        var ownerPagesResponse = await _apartmentPageService.GetByOwnerAsync(_mapper.MapTo(request.Id));
         if (ownerPagesResponse.StatusCode!=HttpStatusCode.OK)
         {
             throw new Exception(ownerPagesResponse.Description);

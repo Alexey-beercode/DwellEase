@@ -12,28 +12,27 @@ namespace DwellEase.Service.Handlers.Creator;
 public class UpdateApartmentPageRequestHandler:IRequestHandler<UpdateApartmentPageRequest,bool>
 {
     private readonly ApartmentPageService _apartmentPageService;
-    private readonly UpdateApartmentPageRequestToApartmentPageMapper _mapper;
+    private readonly UpdateApartmentPageRequestToApartmentPageMapper _pageMapper;
+    private readonly StringToGuidMapper _guidMapper;
 
-    public UpdateApartmentPageRequestHandler(ApartmentPageService apartmentPageService, UpdateApartmentPageRequestToApartmentPageMapper mapper)
+    public UpdateApartmentPageRequestHandler(ApartmentPageService apartmentPageService, UpdateApartmentPageRequestToApartmentPageMapper mapper, StringToGuidMapper guidMapper)
     {
         _apartmentPageService = apartmentPageService;
-        _mapper = mapper;
+        _pageMapper = mapper;
+        _guidMapper = guidMapper;
     }
 
     public async Task<bool> Handle(UpdateApartmentPageRequest request, CancellationToken cancellationToken)
     {
-        if (!Guid.TryParse(request.PageId,out Guid guidId))
-        { 
-            throw new Exception("OwnerId is not valid");
-        }
 
+        var guidId = _guidMapper.MapTo(request.PageId);
         var response = await _apartmentPageService.GetByIdAsync(guidId);
         if (response.StatusCode!=HttpStatusCode.OK)
         {
             throw new Exception(response.Description);
         }
 
-        var apartmentPage = _mapper.MapTo(request, response);
+        var apartmentPage = _pageMapper.MapTo(request, response);
         await _apartmentPageService.EditAsync(apartmentPage);
         return true;
     }
