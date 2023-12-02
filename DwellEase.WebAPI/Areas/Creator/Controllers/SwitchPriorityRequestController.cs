@@ -1,7 +1,9 @@
-﻿using DwellEase.Domain.Models.Requests;
+﻿using DwellEase.Domain.Models.Identity;
+using DwellEase.Domain.Models.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
@@ -18,6 +20,9 @@ public class SwitchPriorityRequestController:ControllerBase
         _mediator = mediator;
     }
 
+    [SwaggerOperation("Create switchpriority request")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [HttpPost("CreateRequest")]
     public async Task<IActionResult> CreateSwitchPriorityRequest(PriorityModificationRequest request)
     {

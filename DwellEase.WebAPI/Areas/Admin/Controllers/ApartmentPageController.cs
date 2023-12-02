@@ -1,8 +1,9 @@
 ﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Service.Services.Implementations;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Areas.Admin.Controllers;
 
@@ -12,15 +13,16 @@ namespace DwellEase.WebAPI.Areas.Admin.Controllers;
 [Route("{area}/ApartmentPage")]
 public class ApartmentPageController:ControllerBase
 {
-    private readonly IMediator _mediator;
     private readonly ApartmentPageService _apartmentPageService;
 
-    public ApartmentPageController(IMediator mediator, ApartmentPageService apartmentPageService)
+    public ApartmentPageController(ApartmentPageService apartmentPageService)
     {
-        _mediator = mediator;
         _apartmentPageService = apartmentPageService;
     }
 
+    [SwaggerOperation("Gets a list of apartment pages")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentPage>))]
     [HttpGet("GetAllPages")]
     public async Task<IActionResult> GetAllPages()
     {
@@ -33,6 +35,9 @@ public class ApartmentPageController:ControllerBase
         return Ok(response.Data);
     }
 
+    [SwaggerOperation("Delete apartment page by id")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [HttpDelete("DeletePage")]
     public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
     {

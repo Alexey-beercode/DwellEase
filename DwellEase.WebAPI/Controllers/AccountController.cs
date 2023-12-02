@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Text;
+using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Identity;
 using DwellEase.Domain.Models.Requests;
@@ -11,7 +12,9 @@ using DwellEase.Service.Services.Implementations;
 using DwellEase.WebAPI.Validators;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Controllers;
 
@@ -35,6 +38,7 @@ public class AccountsController : ControllerBase
         _tokenService = tokenService;
     }
 
+    
     [HttpGet("GetUser")]
     public async Task<IActionResult> TestGetUserByToken()
     {
@@ -48,8 +52,10 @@ public class AccountsController : ControllerBase
         string role = jsonToken.Claims.First(claim => claim.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value;
         return Ok($"{userId}\n{userName}\n{userEmail}\n{role}");
     }
-
-
+    
+    [SwaggerOperation("Authorize user")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(LoginResponse))]
     [HttpPost("Login")]
     public async Task<ActionResult<AuthResponse>> Authenticate(AuthRequest request)
     {
@@ -62,16 +68,12 @@ public class AccountsController : ControllerBase
         var loginResponse = await _mediator.Send(query);
 
         _logger.LogInformation($"{loginResponse.Token}");
-        var authResponse = new AuthResponse()
-        {
-            Username = loginResponse.Username,
-            Token = loginResponse.Token,
-            Email = loginResponse.Email
-        };
         return Ok(loginResponse);
     }
 
-
+    [SwaggerOperation("Register user")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(LoginResponse))]
     [HttpPost("Register")]
     public async Task<ActionResult<AuthResponse>> Register([FromBody] RegisterRequest request)
     {
@@ -117,7 +119,10 @@ public class AccountsController : ControllerBase
             return BadRequest(e.Message);
         }
     }
-
+    
+    [SwaggerOperation("Update user")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [Authorize]
     [HttpPut("UpdateUser")]
     public async Task<IActionResult> UpdateUser([FromBody] UpdateUserRequest request)
@@ -154,6 +159,9 @@ public class AccountsController : ControllerBase
         return Ok();
     }
 
+    [SwaggerOperation("Refresh token")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(string))]
     [HttpPost("Refresh-Token")]
     public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
     {
@@ -188,12 +196,12 @@ public class AccountsController : ControllerBase
             DateTime.UtcNow.AddDays(_configuration.GetSection("Jwt:RefreshTokenExpirationDays").Get<int>());
         await _userService.UpdateAsync(response.Data);
 
-        return new ObjectResult(new
-        {
-            accessToken = newAccessToken,
-        });
+        return Ok(newAccessToken);
     }
 
+    [SwaggerOperation("Delete user refresh token")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [Authorize]
     [HttpPost("Revoke/{username}")]
     public async Task<IActionResult> Revoke(string username)
@@ -210,6 +218,9 @@ public class AccountsController : ControllerBase
         return Ok();
     }
 
+    [SwaggerOperation("Delete all users refresh tokens")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [Authorize(Policy = "AdminArea")]
     [HttpPost("Revoke-All")]
     public async Task<IActionResult> RevokeAll()

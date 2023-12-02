@@ -21,13 +21,18 @@ namespace DwellEase.WebAPI.Controllers
             _logger = logger;
         }
 
+        [SwaggerOperation("Gets a list of apartment pages")]
         [HttpGet("Get-All")]
+        [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+        [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentPage>))]
         public async Task<IActionResult> GetAllApartmentPages()
         {
             BaseResponse<List<ApartmentPage>> response = await _mediator.Send(new GetAllApartmentPagesQuery());
             return HandleResponse(response);
         }
-
+        
+        [SwaggerOperation("Gets a apartment page by id")]
+        [SwaggerResponse(statusCode: 400, description: "Invalid request")]
         [SwaggerResponse(statusCode: 200, type: typeof(ApartmentPage))]
         [HttpGet("Get-ById/{id}")]
         public async Task<IActionResult> GetApartmentPageById(string id)

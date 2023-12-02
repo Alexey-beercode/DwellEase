@@ -1,7 +1,9 @@
 ﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Service.Services.Implementations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Areas.Admin.Controllers;
 
@@ -20,6 +22,9 @@ public class ApartmentOperationController:ControllerBase
         _apartmentOperationService = apartmentOperationService;
     }
 
+    [SwaggerOperation("Gets a list of apartment operations")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentOperation>))]
     [HttpGet("GetAllOperations")]
     public async Task<IActionResult> GetAllApartmentOperations()
     {

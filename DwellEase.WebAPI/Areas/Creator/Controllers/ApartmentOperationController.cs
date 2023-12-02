@@ -1,7 +1,10 @@
-﻿using DwellEase.Service.Queries.Creator;
+﻿using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models.Identity;
+using DwellEase.Service.Queries.Creator;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
@@ -18,6 +21,9 @@ public class ApartmentOperationController:ControllerBase
         _mediator = mediator;
     }
     
+    [SwaggerOperation("Gets a list of apartment operations by owner id")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentOperation>))]
     [HttpGet("GetOperationsByPagesOwner")]
     public async Task<IActionResult> GetOperationsByPagesOwner(string id)
     {
