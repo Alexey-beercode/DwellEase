@@ -24,4 +24,10 @@ public static class WebApplicationExtension
         app.MapHub<RentalHub>("/rentalhub");
         app.MapFallbackToFile("index.html");
     }
+
+    public static void AddSwagger(this WebApplication app)
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 }

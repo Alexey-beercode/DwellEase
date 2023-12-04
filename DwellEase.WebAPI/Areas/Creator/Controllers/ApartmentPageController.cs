@@ -1,4 +1,5 @@
-﻿using DwellEase.Domain.Models.Requests;
+﻿using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Shared;
@@ -6,6 +7,7 @@ using DwellEase.WebAPI.Validators;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.WebAPI.Areas.Creator.Controllers;
 
@@ -24,7 +26,9 @@ public class ApartmentPageController : ControllerBase
         _mediator = mediator;
     }
 
-
+    [SwaggerOperation("Create apartment page")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [HttpPost("CreateApartmentPage")]
     public async Task<IActionResult> CreateApartmentPage([FromBody] CreateApartmentPageRequest request)
     {
@@ -47,6 +51,9 @@ public class ApartmentPageController : ControllerBase
         return Ok();
     }
 
+    [SwaggerOperation("Update apartment page")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [HttpPut("UpdateApartmentPage")]
     public async Task<IActionResult> UpdateApartmentPage([FromBody] UpdateApartmentPageRequest request)
     {
@@ -68,6 +75,9 @@ public class ApartmentPageController : ControllerBase
         return Ok();
     }
 
+    [SwaggerOperation("Delete aprtment page by id")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
     [HttpDelete("DeleteApartmentPage")]
     public async Task<IActionResult> DeleteApartmentPage([FromBody] string id)
     {
@@ -83,6 +93,9 @@ public class ApartmentPageController : ControllerBase
         return Ok();
     }
 
+    [SwaggerOperation("Gets a list of apartment pages by owener id")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentPage>))]
     [HttpGet("GetApartmentPagesByOwner/{id}")]
     public async Task<IActionResult> GetApartmentPagesByOwner(string id)
     {

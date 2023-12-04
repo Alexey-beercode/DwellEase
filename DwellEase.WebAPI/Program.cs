@@ -8,10 +8,13 @@ builder.AddDatabase();
 builder.AddServices();
 builder.AddAuthentication();
 builder.AddLogging();
+builder.AddSwaggerDocumentation();
+builder.AddMediatRHandlers();
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 var app = builder.Build();
 app.AddApplicationMiddleware();
 app.AddSignalRConfiguration();
+app.AddSwagger();
 logger.Log(LogLevel.Error,"Program initial");
 app.Run();

@@ -2,29 +2,25 @@
 using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;
+using DwellEase.Shared.Mappers;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers.Creator;
 
 public class DeleteApartmentPageCommandHandler:IRequestHandler<DeleteApartmentPageCommand,bool>
 {
-    private readonly ILogger<DeleteApartmentPageCommandHandler> _logger;
     private readonly ApartmentPageService _apartmentPageService;
+    private readonly StringToGuidMapper _mapper;
 
-    public DeleteApartmentPageCommandHandler(ApartmentPageService apartmentPageService, ILogger<DeleteApartmentPageCommandHandler> logger)
+    public DeleteApartmentPageCommandHandler(ApartmentPageService apartmentPageService, StringToGuidMapper mapper)
     {
         _apartmentPageService = apartmentPageService;
-        _logger = logger;
+        _mapper = mapper;
     }
 
     public async Task<bool> Handle(DeleteApartmentPageCommand request, CancellationToken cancellationToken)
     {
-        if (!Guid.TryParse(request.Id,out Guid guidId))
-        {
-            throw new ("OwnerId is not valid");
-        }
-
+        var guidId = _mapper.MapTo(request.Id);
         var response = await _apartmentPageService.GetByIdAsync(guidId);
         if (response.StatusCode!=HttpStatusCode.OK)
         {

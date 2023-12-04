@@ -1,31 +1,32 @@
-﻿using DwellEase.Domain.Entity;
+﻿using System.Net;
+using DwellEase.Domain.Entity;
 using DwellEase.Service.Commands;
+using DwellEase.Service.Mappers;
 using DwellEase.Service.Services.Implementations;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Handlers;
 
 public class CreateRentOperationCommandHandler:IRequestHandler<CreateRentOperationCommand, bool>
 {
     private readonly ApartmentOperationService _apartmentOperationService;
+    private readonly CreateRentOperationCommandToOperationMapper _mapper;
+    private readonly ApartmentPageService _apartmentPageService;
 
-    public CreateRentOperationCommandHandler(ILogger<CreateRentOperationCommandHandler> logger, ApartmentOperationService apartmentOperationService)
+    public CreateRentOperationCommandHandler(ApartmentOperationService apartmentOperationService, CreateRentOperationCommandToOperationMapper mapper, ApartmentPageService apartmentPageService)
     {
         _apartmentOperationService = apartmentOperationService;
+        _mapper = mapper;
+        _apartmentPageService = apartmentPageService;
     }
     public async Task<bool> Handle(CreateRentOperationCommand request, CancellationToken cancellationToken)
     {
-        var operation = new ApartmentOperation()
+        var response = await _apartmentPageService.GetByIdAsync(request.ApartmentPageId);
+        if (response.StatusCode!=HttpStatusCode.OK)
         {
-            Price = request.Price,
-            ApartmentPageId = request.ApartmentPageId,
-            StartDate = DateTime.UtcNow,
-            EndDate = DateTime.UtcNow + request.RentalPeriod,
-            UserId = request.UserId,
-            OperationType = request.OperationType
-        };
-        await _apartmentOperationService.CreateRentOperationAsync(operation);
+            throw new Exception(response.Description);
+        }
+        await _apartmentOperationService.CreateRentOperationAsync(_mapper.MapTo(request));
         return true;
     }
 }

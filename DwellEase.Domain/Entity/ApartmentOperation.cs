@@ -1,7 +1,9 @@
 ﻿using System.Net.NetworkInformation;
 using DwellEase.Domain.Enum;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.Domain.Entity;
+
 
 public class ApartmentOperation
 {
