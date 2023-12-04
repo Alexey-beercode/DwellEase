@@ -1,5 +1,4 @@
 ﻿using DwellEase.Domain.Entity;
-using DwellEase.Domain.Models.Identity;
 using DwellEase.Service.Queries.Creator;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

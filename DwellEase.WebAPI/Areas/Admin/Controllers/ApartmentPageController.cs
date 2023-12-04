@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models.Requests;
 using DwellEase.Service.Services.Implementations;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -14,10 +16,12 @@ namespace DwellEase.WebAPI.Areas.Admin.Controllers;
 public class ApartmentPageController:ControllerBase
 {
     private readonly ApartmentPageService _apartmentPageService;
+    private readonly IMediator _mediator;
 
-    public ApartmentPageController(ApartmentPageService apartmentPageService)
+    public ApartmentPageController(ApartmentPageService apartmentPageService, IMediator mediator)
     {
         _apartmentPageService = apartmentPageService;
+        _mediator = mediator;
     }
 
     [SwaggerOperation("Gets a list of apartment pages")]
@@ -53,5 +57,22 @@ public class ApartmentPageController:ControllerBase
         }
 
         return Ok();
+    }
+
+    [SwaggerOperation("Change approval status by id")]
+    [SwaggerResponse(statusCode: 400, description: "Invalid request")]
+    [SwaggerResponse(statusCode: 200)]
+    [HttpPut("UpdateApprovalStatus")]
+    public async Task<IActionResult> UpdateApprovalStatus([FromBody] UpdateApprovalStatusRequest request)
+    {
+        try
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 }

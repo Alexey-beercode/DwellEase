@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DwellEase.Domain.Enum;
 
+[SwaggerSchema(description:"Enum : 0 - Pending, 1 - Approved, 2 - Rejected")]
 public enum ListingApprovalStatus
 {
     [Display(Name = "В обработке")]
