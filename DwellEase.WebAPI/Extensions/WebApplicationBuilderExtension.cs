@@ -3,6 +3,7 @@ using DwellEase.DataManagement.DataSenders;
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.Domain.Entity;
+using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Mappers;
@@ -11,6 +12,7 @@ using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;
 using DwellEase.Shared.Mappers;
 using DwellEase.WebAPI.BackgroundTasks;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
@@ -52,6 +54,11 @@ public static class WebApplicationBuilderExtension
             typeof(GetAllApartmentPagesQueryHandler).Assembly,
             typeof(GetAllApartmentPagesQuery).Assembly
         ));
+    }
+
+    public static void AddMediatRHandlers(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddTransient<IRequestHandler<GetAllApartmentPagesQuery,List<ApartmentPageResponse>>, GetAllApartmentPagesQueryHandler>();
     }
 
     public static void AddDatabase(this WebApplicationBuilder builder)

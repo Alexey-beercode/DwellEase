@@ -122,7 +122,7 @@ public class ApartmentOperationController : ControllerBase
             return BadRequest(e.Message);
         }
     }
-
+    
     [SwaggerOperation("Gets a list of apartment operations")]
     [SwaggerResponse(statusCode: 400, description: "Invalid request")]
     [SwaggerResponse(statusCode: 200, type: typeof(List<ApartmentOperation>))]

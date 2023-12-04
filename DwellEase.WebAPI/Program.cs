@@ -9,6 +9,7 @@ builder.AddServices();
 builder.AddAuthentication();
 builder.AddLogging();
 builder.AddSwaggerDocumentation();
+builder.AddMediatRHandlers();
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 var app = builder.Build();

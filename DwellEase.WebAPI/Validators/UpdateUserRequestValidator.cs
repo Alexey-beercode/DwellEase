@@ -14,6 +14,6 @@ public class UpdateUserRequestValidator: AbstractValidator<UpdateUserRequest>
         RuleFor(request => request.NewPassword).NotNull().MinimumLength(5)
             .WithMessage("New password is null or smaller than 5");
         RuleFor(request => PhoneNumber.IsPhoneValid(request.PhoneNumber).ToString()).NotEqual("false")
-            .WithMessage("PhoneNu,number is not valid.");
+            .WithMessage("Phonenumber is not valid.");
     }
 }

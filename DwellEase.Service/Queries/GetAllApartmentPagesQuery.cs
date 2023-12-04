@@ -5,6 +5,6 @@ using MediatR;
 
 namespace DwellEase.Service.Queries;
 
-public class GetAllApartmentPagesQuery : IRequest<BaseResponse<List<ApartmentPageRentResponse>>>, IRequest<List<ApartmentPageRentResponse>>, IRequest<List<ApartmentPageResponse>>
+public class GetAllApartmentPagesQuery : IRequest<BaseResponse<List<ApartmentPageRentResponse>>>, IRequest<List<ApartmentPageResponse>>, IRequest<BaseResponse<List<ApartmentPageResponse>>>
 {
 }
