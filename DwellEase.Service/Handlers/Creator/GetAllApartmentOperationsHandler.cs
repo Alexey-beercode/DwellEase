@@ -10,12 +10,10 @@ namespace DwellEase.Service.Handlers.Creator;
 
 public class GetAllApartmentOperationsQueryHandler:IRequestHandler<GetAllApartmentOperationsQuery, List<ApartmentOperation>>
 {
-    private readonly ILogger<GetAllApartmentOperationsQueryHandler> _logger;
     private readonly ApartmentOperationService _apartmentOperationService;
     
     public GetAllApartmentOperationsQueryHandler(ILogger<GetAllApartmentOperationsQueryHandler> logger, ApartmentOperationService apartmentOperationService)
     {
-        _logger = logger;
         _apartmentOperationService = apartmentOperationService;
     }
 

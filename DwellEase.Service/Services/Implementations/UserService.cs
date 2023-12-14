@@ -3,11 +3,13 @@ using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
+using DwellEase.Domain.Models.Responses;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
 
-public class UserService
+public class UserService:IService<User>
 {
     private readonly UserRepository _userRepository;
     private readonly UserRoleRepository _userRoleRepository;

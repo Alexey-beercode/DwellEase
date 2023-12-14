@@ -2,11 +2,13 @@
 using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
 
-public class RoleService
+public class RoleService:IService<Role>
 {
     private readonly RoleRepository _roleRepository;
     private readonly ILogger<RoleService> _logger;

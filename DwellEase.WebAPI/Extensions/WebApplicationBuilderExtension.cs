@@ -7,6 +7,7 @@ using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Handlers;
 using DwellEase.Service.Mappers;
+using DwellEase.Service.Mappers.Implementations;
 using DwellEase.Service.Queries;
 using DwellEase.Service.Services.Implementations;
 using DwellEase.Service.Services.Interfaces;

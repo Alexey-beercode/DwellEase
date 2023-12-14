@@ -3,6 +3,7 @@ using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
+using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Queries.Creator;
 using DwellEase.Service.Services.Implementations;

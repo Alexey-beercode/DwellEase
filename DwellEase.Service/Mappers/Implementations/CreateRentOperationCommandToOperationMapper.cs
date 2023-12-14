@@ -1,9 +1,10 @@
 ﻿using DwellEase.Domain.Entity;
 using DwellEase.Service.Commands;
+using DwellEase.Service.Mappers.Interfaces;
 
-namespace DwellEase.Service.Mappers;
+namespace DwellEase.Service.Mappers.Implementations;
 
-public class CreateRentOperationCommandToOperationMapper
+public class CreateRentOperationCommandToOperationMapper:IMapper<ApartmentOperation,CreateRentOperationCommand>
 {
     public ApartmentOperation MapTo(CreateRentOperationCommand command)
     {

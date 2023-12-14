@@ -2,11 +2,13 @@
 using DwellEase.DataManagement.Repositories.Interfaces;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
 
-public class SwitchPriorityRequestService
+public class SwitchPriorityRequestService:IService<SwitchPriorityRequest>
 {
     private readonly ILogger<SwitchPriorityRequestService> _logger;
     private readonly IBaseRepository<SwitchPriorityRequest> _repository;
@@ -29,6 +31,42 @@ public class SwitchPriorityRequestService
         _logger.LogError(description);
         return response;
     }
+
+    public async Task<BaseResponse<SwitchPriorityRequest>> GetByIdAsync(Guid id)
+    {
+        var request = await await _repository.GetById(id);
+        if (request==null)
+        {
+            return HandleError<SwitchPriorityRequest>("Request not found", HttpStatusCode.NoContent);
+        }
+
+        return new BaseResponse<SwitchPriorityRequest>() { Data = request, StatusCode = HttpStatusCode.OK };
+    }
+
+    public async Task<BaseResponse<bool>> DeleteAsync(Guid id)
+    {
+        var request = await await _repository.GetById(id);
+        if (request==null)
+        {
+            return HandleError<bool>("Request not found", HttpStatusCode.NoContent);
+        }
+
+        await _repository.Delete(id);
+        return new BaseResponse<bool>() {StatusCode = HttpStatusCode.OK };
+    }
+
+    public async Task<BaseResponse<bool>> UpdateAsync(SwitchPriorityRequest entity)
+    {
+        var request = await await _repository.GetById(entity.Id);
+        if (request==null)
+        {
+            return HandleError<bool>("Request not found", HttpStatusCode.NoContent);
+        }
+
+        await _repository.Delete(entity.Id);
+        return new BaseResponse<bool>() {StatusCode = HttpStatusCode.OK };
+    }
+
     public async Task<BaseResponse<List<SwitchPriorityRequest>>> GetAllAsync()
     {
         var switchPriorityRequests = await await _repository.GetAll();

@@ -1,6 +1,7 @@
 ﻿using DwellEase.Domain.Entity;
 using DwellEase.Domain.Models;
 using DwellEase.Domain.Models.Requests;
+using DwellEase.Domain.Models.Responses;
 
 namespace DwellEase.Shared.Mappers;
 

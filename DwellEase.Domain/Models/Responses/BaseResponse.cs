@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace DwellEase.Domain.Models;
+namespace DwellEase.Domain.Models.Responses;
 
 public class BaseResponse<T> 
 {

@@ -4,12 +4,14 @@ using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
 
-public class ApartmentPageService
+public class ApartmentPageService:IService<ApartmentPage>
 {
     private readonly ApartmentPageRepository _apartmentPageRepository;
     private readonly ILogger<ApartmentPageService> _logger;

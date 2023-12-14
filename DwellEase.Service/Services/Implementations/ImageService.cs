@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
 using DwellEase.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 

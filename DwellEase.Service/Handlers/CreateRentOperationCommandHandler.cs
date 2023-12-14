@@ -2,6 +2,7 @@
 using DwellEase.Domain.Entity;
 using DwellEase.Service.Commands;
 using DwellEase.Service.Mappers;
+using DwellEase.Service.Mappers.Implementations;
 using DwellEase.Service.Services.Implementations;
 using MediatR;
 

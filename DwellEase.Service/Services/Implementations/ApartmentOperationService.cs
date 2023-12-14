@@ -3,11 +3,13 @@ using DwellEase.DataManagement.Repositories.Implementations;
 using DwellEase.Domain.Entity;
 using DwellEase.Domain.Enum;
 using DwellEase.Domain.Models;
+using DwellEase.Domain.Models.Responses;
+using DwellEase.Service.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace DwellEase.Service.Services.Implementations;
 
-public class ApartmentOperationService
+public class ApartmentOperationService:IService<ApartmentOperation>
 {
     private readonly ApartmentOperationRepository _apartmentOperationRepository;
     private readonly ILogger<ApartmentOperationService> _logger;
@@ -106,6 +108,17 @@ public class ApartmentOperationService
         response.Data = true;
         response.StatusCode = HttpStatusCode.OK;
         return response;
+    }
+
+    public async Task<BaseResponse<ApartmentOperation>> GetByIdAsync(Guid id)
+    {
+        var operation = await await _apartmentOperationRepository.GetById(id);
+        if (operation==null)
+        {
+            return HandleNotFound<ApartmentOperation>("Apartment operation not found");
+        }
+
+        return new BaseResponse<ApartmentOperation>() { Data = operation, StatusCode = HttpStatusCode.OK };
     }
 
     public async Task<BaseResponse<List<ApartmentOperation>>> GetAllAsync()

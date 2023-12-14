@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.Domain", "DwellEa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.DataManagement", "DwellEase.DataManagement\DwellEase.DataManagement.csproj", "{23C9FFAF-C29B-47D2-A83A-777319651773}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.Tests", "DwellEase.Tests\DwellEase.Tests.csproj", "{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.WebAPI", "DwellEase.WebAPI\DwellEase.WebAPI.csproj", "{E6C552B3-DF89-4A71-9C04-C033D17DFA28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.BlazorClient", "DwellEase.BlazorClient\DwellEase.BlazorClient.csproj", "{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.BlazorClient", "DwellEase.BlazorClient\DwellEase.BlazorClient.csproj", "{07C36582-AB9B-4E21-84E4-5EAFFDD5DFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.Shared", "DwellEase.Shared\DwellEase.Shared.csproj", "{B3D57259-BC59-4419-8FF0-64904A8106EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwellEase.Shared", "DwellEase.Shared\DwellEase.Shared.csproj", "{B3D57259-BC59-4419-8FF0-64904A8106EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DwellEase.ProjectTests", "DwellEase.ProjectTests\DwellEase.ProjectTests.csproj", "{83FE0005-D327-4702-841B-44EB4138BD40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C9FFAF-C29B-47D2-A83A-777319651773}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F65AC22C-7355-4944-B0D5-A9BCCAC0D3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C552B3-DF89-4A71-9C04-C033D17DFA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{B3D57259-BC59-4419-8FF0-64904A8106EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D57259-BC59-4419-8FF0-64904A8106EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D57259-BC59-4419-8FF0-64904A8106EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83FE0005-D327-4702-841B-44EB4138BD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83FE0005-D327-4702-841B-44EB4138BD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83FE0005-D327-4702-841B-44EB4138BD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83FE0005-D327-4702-841B-44EB4138BD40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
